@@ -6,6 +6,9 @@ Our goal is to gather the most detailed information about functionality, latency
 
 ### 👉 [Click here to view the Interactive Web Matrix](https://USBridge-Technologies.github.io/Remote-Access-Feature-Matrix/)
 
+> [!WARNING]
+> **Disclaimer:** The data in this matrix is community-driven and may contain inaccuracies. For guaranteed accuracy, please refer directly to the official documentation or contact the respective software/hardware providers.
+
 ---
 
 **Brought to you by the USBridge Team**
