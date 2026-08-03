@@ -1,0 +1,298 @@
+{
+  "name": "Parsec",
+  "key": "parsec",
+  "type": "software",
+  "website": "https://parsec.app",
+  "github": "",
+  "description": "A popular ultra-low-latency streaming client built for gaming and professional 3D/video work — best-in-class raw performance on the free tier, but color fidelity, virtual displays, and most collaboration features are locked behind the paid Warp/Teams plans.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "No",
+      "comment": "Hosting on Wayland graphical sessions is not supported architecturally."
+    },
+    "P2P (Direct Connection)": {
+      "status": "Yes"
+    },
+    "Relay Server": {
+      "status": "Yes",
+      "comment": "Uses STUN servers for initialization and NAT traversal to establish a direct P2P connection. The High Performance Relay (HPR) mechanism for forced traffic proxying and self-hosting your own relay is only available on the Enterprise plan."
+    },
+    "LAN Discovery": {
+      "status": "No"
+    },
+    "Tailscale Support": {
+      "status": "Partial",
+      "comment": "No native integration. It can automatically route UDP traffic over the Tailscale interface, but only if the VPN client is already installed on the OS."
+    },
+    "Open Source": {
+      "status": "No"
+    },
+    "Multi-Monitor Support": {
+      "status": "Paid",
+      "comment": "The free version only lets you switch between screens. Simultaneous output to multiple monitors (Virtual Displays) is a Teams feature."
+    },
+    "Drawing Tablet Support": {
+      "status": "Paid",
+      "comment": "Pen pressure/tilt passthrough only works with a Warp/Teams subscription."
+    },
+    "Gamepad Passthrough": {
+      "status": "Yes",
+      "comment": "One of the best XInput gamepad emulation implementations on the market, ideal for gaming."
+    },
+    "Audio Streaming": {
+      "status": "Yes"
+    },
+    "Microphone Passthrough": {
+      "status": "Paid",
+      "comment": "Microphone passthrough from client to host is behind a paywall (Warp/Teams)."
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": "Very aggressive and effective bitrate adaptation to minimize latency."
+    },
+    "H.264 Codec": {
+      "status": "Yes"
+    },
+    "H.265 Codec": {
+      "status": "Yes"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "V-Sync": {
+      "status": "Yes",
+      "comment": "Has a built-in V-Sync toggle and flexible FPS capping matched to the client monitor's refresh rate."
+    },
+    "Session Sharing": {
+      "status": "Yes",
+      "comment": "Native support for multi-user connections for collaborative work or gaming is available for free."
+    },
+    "Multi-User Sessions": {
+      "status": "No",
+      "comment": "The engine is fundamentally designed to capture a single specific graphical session (display). Terminal-server-style operation is not supported at all."
+    },
+    "Virtual Display": {
+      "status": "Paid",
+      "comment": "Creating up to three virtual displays is implemented via a proprietary VDD driver, but locked behind the paid Warp or Teams subscriptions."
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Paid",
+      "comment": "Only available on the paid Warp or Teams subscriptions. The free version is hard-locked to 4:2:0."
+    },
+    "Frame Rate (FPS)": {
+      "status": "240*",
+      "comment": "A base 60 FPS is available for free, while higher frame rates (up to 240 FPS) require a paid Warp subscription."
+    },
+    "Session Recording": {
+      "status": "No",
+      "comment": "There is no built-in screen recording feature even on the paid tiers; third-party software (OBS, ShadowPlay) is required."
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "No"
+    },
+    "Pre-Login Access": {
+      "status": "Yes",
+      "comment": "Available if Parsec is installed in Shared Mode (as a system service)."
+    },
+    "No Account Required": {
+      "status": "No"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Text synchronization works."
+    },
+    "SSO / OIDC": {
+      "status": "Paid",
+      "comment": "SAML/SSO integration is only available on the most expensive Parsec for Teams Enterprise plan."
+    },
+    "2FA / MFA": {
+      "status": "Yes",
+      "comment": "Two-factor authentication is available for free on any personal account."
+    },
+    "Address Book": {
+      "status": "Paid",
+      "comment": "Managing teams, groups, and company computers requires a Teams subscription."
+    },
+    "Audit Logs": {
+      "status": "Paid",
+      "comment": "Connection logging via the Guest Access API or the admin panel is only available in Teams."
+    },
+    "Mass Deployment": {
+      "status": "Paid",
+      "comment": "Scripted deployment using a service token is available for enterprise customers."
+    },
+    "RBAC": {
+      "status": "Paid",
+      "comment": "Role assignment (Admin, Member, Guest) is managed through the Teams console."
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "Paid",
+      "comment": "Blanking the host's physical display is only available with a Warp or Teams subscription."
+    },
+    "Remote Printing": {
+      "status": "No",
+      "comment": "The tool is focused on graphics work; there is no virtual printer driver."
+    },
+    "Generic USB Passthrough": {
+      "status": "Paid",
+      "comment": "Advanced passthrough of arbitrary USB devices is implemented via VirtualHere integration and only available on Teams plans."
+    },
+    "File Manager UI": {
+      "status": "No",
+      "comment": "There is no dedicated file management interface. File transfer (paid version only) works via plain Drag & Drop."
+    },
+    "Text Chat": {
+      "status": "Yes",
+      "comment": "A built-in basic text chat is available through the in-session overlay during an active connection."
+    },
+    "On-Screen Whiteboard": {
+      "status": "No",
+      "comment": "No drawing or annotation tools are available."
+    },
+    "Proxy Support": {
+      "status": "No",
+      "comment": "The client uses a proprietary UDP protocol (BUD) and does not natively support routing through standard SOCKS5/HTTP proxies."
+    },
+    "UAC Handling": {
+      "status": "Yes",
+      "comment": "For full interaction and input delivery to the Windows secure desktop, the host app needs to be installed as a system service — otherwise UAC prompts may render as a black screen or block input."
+    },
+    "HDR Support": {
+      "status": "No"
+    },
+    "OTA Updates": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Self-hosted": {
+      "status": "No"
+    },
+    "Moonlight protocol": {
+      "status": "No"
+    },
+    "Drag & Drop": {
+      "status": "Paid",
+      "comment": "File transfer isn't supported at all on the free version; it's only available in Parsec for Teams."
+    },
+    "Browser client": {
+      "status": "Yes",
+      "comment": "A lightweight web client is available at web.parsec.app."
+    },
+    "Android host": {
+      "status": "No",
+      "comment": "Client-side only (receiving)."
+    },
+    "Raspberry Pi host": {
+      "status": "No",
+      "comment": "Client-side only (receiving)."
+    },
+    "Headless mode": {
+      "status": "Paid",
+      "comment": "Without a monitor, the free version requires an HDMI dummy plug. The Virtual Displays feature is Enterprise-only."
+    },
+    "Hardware encoding": {
+      "status": "Yes"
+    },
+    "Hardware decoding": {
+      "status": "Yes"
+    },
+    "Portable": {
+      "status": "No"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes",
+      "comment": "Parsec's reference platform. Maximum performance and direct integration with hardware video encoders (DXGI/NVFBC)."
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Yes",
+      "comment": "Works great with hardware acceleration on Apple Silicon (M1/M2/M3) processors."
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes",
+      "comment": "Linux hosting is officially geared mainly toward proprietary NVIDIA drivers and specific distro configurations."
+    },
+    "Linux Wayland: Host": {
+      "status": "No",
+      "comment": "Parsec's architecture isn't adapted to Wayland capture protocols; hosting is only possible by switching the session back to X11."
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "No"
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "No",
+      "comment": "There is no official native iPhone/iPad app."
+    },
+    "Web Browser: Client": {
+      "status": "Yes",
+      "comment": "The web client works, but has bitrate and hardware decoding limitations compared to the desktop app."
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3060": {
+      "status": ""
+    },
+    "NVIDIA GTX 1060": {
+      "status": ""
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": ""
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": ""
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Excellent performance with no session time limits, but hard technical restrictions: a single monitor only, and 4:2:0 chroma subsampling (text can look mushy)."
+    },
+    "Personal: Monthly": {
+      "status": "$9.99/mo",
+      "comment": "Warp plan. Removes the technical restrictions: unlocks 4:4:4 mode, virtual displays, and graphics tablet pressure passthrough."
+    },
+    "Personal: Annual": {
+      "status": "$99/yr"
+    },
+    "Team / Business: Monthly": {
+      "status": "$35/seat",
+      "comment": "Teams plan. Billed per user (seat). Unlocks the admin console, RBAC roles, and advanced passthrough for complex USB devices."
+    },
+    "Team / Business: Annual": {
+      "status": "$360/seat"
+    },
+    "Enterprise": {
+      "status": "From $30/seat",
+      "comment": "For large teams (typically 30+ users). Adds corporate SSO/SAML integration, the Audit API, and the ability to self-host your own Team Relay router."
+    }
+  }
+}

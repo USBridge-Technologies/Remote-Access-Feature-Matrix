@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Desktop Feature Matrix</title>
+    <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <div class="matrix-type-switch">
+        <a href="?type=soft" id="type-btn-soft" class="type-btn active">Software Remote Access</a>
+        <a href="?type=kvm" id="type-btn-kvm" class="type-btn">Hardware (KVM-over-IP) Access</a>
+    </div>
+    
+    <div class="tabs-container" style="align-items: center;">
+        <button class="tab-btn active" data-tab="features">Features</button>
+        <button class="tab-btn" data-tab="os">Operating Systems</button>
+        <button class="tab-btn" data-tab="hardware">Hardware & Performance</button>
+        <button class="tab-btn" data-tab="pricing">Pricing</button>
+        <button id="add-provider-btn" class="add-provider-header-btn" title="Add a new provider">+ Add Software</button>
+    </div>
+
+    <div class="panel">
+        <div id="controls">
+            
+            
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; flex: 1; align-items: flex-start;">
+                
+                <div class="dropdown" id="feature-dropdown-container">
+                    <button class="dropdown-btn" id="feature-dropdown-btn">
+                        Feature Filters: <strong id="feature-count">31/31</strong> ▾
+                    </button>
+                    <div class="dropdown-menu dropdown-large" id="feature-dropdown-menu">
+                        <div class="dropdown-search">
+                            <input type="text" id="feature-search-input" placeholder="Search features...">
+                        </div>
+                        <div class="dropdown-actions">
+                            <button id="feature-select-all">Select All</button>
+                            <button id="feature-deselect-all">Deselect All</button>
+                        </div>
+                        <div class="dropdown-list" id="feature-checkbox-list">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="dropdown">
+                    <button class="dropdown-btn" id="soft-dropdown-btn">
+                        Software Providers: <strong id="soft-count">5/5</strong> ▾
+                    </button>
+                    <div class="dropdown-menu" id="soft-dropdown-menu">
+                        <div class="dropdown-search">
+                            <input type="text" id="soft-search-input" placeholder="Search provider...">
+                        </div>
+                        <div class="dropdown-actions">
+                            <button id="soft-select-all">Select All</button>
+                            <button id="soft-deselect-all">Deselect All</button>
+                        </div>
+                        <div class="dropdown-list" id="soft-checkbox-list">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <button id="restore-features-btn" class="restore-btn" style="display: none;">Reset Row Filters</button>
+            </div>
+
+            
+            <div id="category-filters" style="display: flex; gap: 8px; flex-wrap: wrap; flex: 1; justify-content: flex-end; align-content: flex-start;">
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div id="matrix-table"></div>
+
+    
+    <div id="edit-cell-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Edit value</h3>
+            <div class="form-group">
+                <label for="modal-status-select">Status:</label>
+                
+                <select id="modal-status-select" class="form-control">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Partial">Partial</option>
+                    <option value="Paid">Paid</option>
+                    <option value="In Development">In Development</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+                <input type="text" id="modal-status-input" class="form-control" style="display: none;" placeholder="Enter value...">
+                
+                <div id="hardware-inputs-block" style="display: none; margin-top: 10px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <label for="modal-fps-val-input" style="font-size: 12px; color: #ccc; display: block; margin-bottom: 4px;">FPS (frames/sec):</label>
+                            <input type="text" id="modal-fps-val-input" class="form-control" placeholder="120 FPS">
+                        </div>
+                        <div>
+                            <label for="modal-latency-val-input" style="font-size: 12px; color: #ccc; display: block; margin-bottom: 4px;">Latency:</label>
+                            <input type="text" id="modal-latency-val-input" class="form-control" placeholder="8 ms">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="modal-comment-input">Comment (max 150 chars):</label>
+                <textarea id="modal-comment-input" class="form-control" rows="3" maxlength="150" placeholder="Add a note (optional)..."></textarea>
+                <div class="char-counter"><span id="char-count">0</span> / 150</div>
+            </div>
+            <div class="modal-actions">
+                <button id="modal-cancel-btn" class="restore-btn" style="background: #323232; border-color: #212121;">Cancel</button>
+                <button id="modal-save-btn" class="restore-btn" style="background: #c3e679; color: #111111;">Save</button>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <div id="submit-changes-modal" class="modal">
+        <div class="modal-content dropdown-large" style="position: relative;">
+            <button id="submit-close-btn" style="position: absolute; top: 16px; right: 20px; background: none; border: none; color: #888888; font-size: 18px; cursor: pointer; line-height: 1; transition: color 0.2s;" title="Close">✕</button>
+            <h3 style="margin-top: 0; padding-right: 30px;">Submit provider changes to GitHub</h3>
+            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 16px; line-height: 1.4;" id="submit-modal-description">
+                Below are the parameters for the selected provider. You can copy this JSON or submit it directly via a Pull Request.
+            </p>
+
+            
+            <div id="draft-meta-block" style="display: none; background: #1a1a1a; padding: 16px; border-radius: 8px; border: 1px solid #333333; margin-bottom: 16px;">
+                <h4 style="margin-top: 0; margin-bottom: 12px; color: #c3e679; font-size: 14px;">Information about new software provider</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="draft-meta-name" style="font-size: 12px; color: #aaa;">Provider Name *:</label>
+                        <input type="text" id="draft-meta-name" class="form-control" placeholder="e.g. MyRemoteDesktop">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="draft-meta-site" style="font-size: 12px; color: #aaa;">Official Website:</label>
+                        <input type="url" id="draft-meta-site" class="form-control" placeholder="https://example.com">
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="draft-meta-github" style="font-size: 12px; color: #aaa;">GitHub Link:</label>
+                        <input type="url" id="draft-meta-github" class="form-control" placeholder="https://github.com/...">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="draft-meta-desc" style="font-size: 12px; color: #aaa;">Short Description:</label>
+                        <input type="text" id="draft-meta-desc" class="form-control" placeholder="Provider description...">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label id="changes-diff-label">Modified provider file (JSON):</label>
+                <textarea id="changes-diff-view" class="form-control" rows="8" readonly style="font-family: monospace; font-size: 12px; background: #111111; color: #c3e679; border-color: #323232;"></textarea>
+            </div>
+
+            
+            <div id="pr-auth-block" style="display: none; background: #181818; padding: 14px; border-radius: 8px; border: 1px solid #333333; margin-top: 12px; margin-bottom: 12px;">
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label for="github-pat-input" style="font-size: 12px; color: #ccc;">GitHub Personal Access Token (PAT):</label>
+                    <input type="password" id="github-pat-input" class="form-control" placeholder="github_pat_...">
+                </div>
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label for="commit-message-input" style="font-size: 12px; color: #ccc;">Commit Message:</label>
+                    <input type="text" id="commit-message-input" class="form-control" value="Update provider data">
+                </div>
+                <button id="execute-pr-btn" class="restore-btn" style="background: #3b82f6; color: #ffffff; width: 100%; font-weight: bold; margin-top: 6px;">Send Pull Request</button>
+            </div>
+
+            <div class="modal-actions" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%;">
+                <button id="toggle-pr-btn" class="restore-btn" style="background: #212121; border: 1px solid #3c3c3c; color: #ffffff; padding: 12px 16px; font-size: 14px; font-weight: 600; min-height: 48px; border-radius: 8px; cursor: pointer; width: 100%;">Auto-commit / PR</button>
+                <button id="copy-json-btn" class="restore-btn" style="background: #c3e679; color: #111111; padding: 12px 16px; font-size: 14px; font-weight: 700; min-height: 48px; border-radius: 8px; cursor: pointer; width: 100%;">Copy JSON</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="provider-card-modal" class="modal">
+        <div class="modal-content" style="position: relative; max-width: 440px; text-align: center; padding: 28px 24px;">
+            <button id="provider-card-close-btn" style="position: absolute; top: 16px; right: 20px; background: none; border: none; color: #888888; font-size: 18px; cursor: pointer; line-height: 1; transition: color 0.2s;" title="Close">✕</button>
+            
+            
+            <div id="provider-card-logo-wrapper" style="margin: 0 auto 16px; width: 68px; height: 68px; border-radius: 50%; overflow: hidden; background: #212121; border: 2px solid #c3e679; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; color: #c3e679; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            </div>
+
+            <h3 id="provider-card-title" style="margin-top: 0; margin-bottom: 8px; font-size: 20px; color: #ffffff;">Name</h3>
+            <p id="provider-card-desc" style="font-size: 13px; color: #94a3b8; line-height: 1.5; margin-bottom: 20px;">
+                Description...
+            </p>
+
+            
+            
+            <div id="provider-card-carousel" class="kvm-carousel" style="display: none; margin-top: 16px;">
+                <button class="carousel-btn prev-btn">❮</button>
+                <div class="carousel-track-container">
+                    <div id="provider-carousel-track" class="carousel-track">
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn">❯</button>
+                <div id="provider-carousel-dots" class="carousel-dots"></div>
+            </div>
+
+            <div id="provider-card-links" style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px;">
+                <a id="provider-card-site-link" href="#" target="_blank" class="restore-btn" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #c3e679; color: #111111; font-weight: bold; text-decoration: none; padding: 12px 16px; border-radius: 8px;">
+                    <span>Website</span>
+                </a>
+                <a id="provider-card-github-link" href="#" target="_blank" class="restore-btn" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #212121; border: 1px solid #3c3c3c; color: #ffffff; text-decoration: none; padding: 12px 16px; border-radius: 8px;">
+                    <img src="./asset/icons/github.svg" class="category-icon" style="width: 20px; height: 20px; filter: invert(1);"> <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="changes-floating-bar" style="display: none;">
+        <span id="changes-counter-text">1 parameter modified</span>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button id="propose-changes-btn" class="restore-btn" style="background: #c3e679; color: #111111; padding: 10px 20px; font-size: 14px;">Propose changes</button>
+            <button id="discard-changes-btn" class="restore-btn" style="background: #323232; border-color: #212121; padding: 10px 14px; font-size: 14px;" title="Discard all changes and exit">✕</button>
+        </div>
+    </div>
+
+    
+    <!-- Add New Parameter Modal -->
+    <div id="add-param-modal" class="modal">
+        <div class="modal-content dropdown-large" style="position: relative;">
+            <button id="add-param-close-btn" style="position: absolute; top: 16px; right: 20px; background: none; border: none; color: #888888; font-size: 18px; cursor: pointer; line-height: 1; transition: color 0.2s;" title="Close">✕</button>
+            <h3 id="add-param-modal-title" style="margin-top: 0; padding-right: 30px;">Propose a new parameter</h3>
+            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 16px; line-height: 1.4;">
+                Fill out the form to generate JSON for adding to the comparison schema.
+            </p>
+            <div class="form-group">
+                <label for="new-param-name">Parameter name:</label>
+                <input type="text" id="new-param-name" class="form-control" placeholder="e.g. Hardware encryption">
+            </div>
+            <div class="form-group">
+                <label for="new-param-desc">Description (tooltip ⓘ) — max 150 chars:</label>
+                <textarea id="new-param-desc" class="form-control" rows="2" maxlength="150" placeholder="Briefly describe the parameter..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="new-param-type">Data type:</label>
+                <select id="new-param-type" class="form-control">
+                    <option value="boolean" selected>Boolean (Yes/No)</option>
+                    <option value="text">Text / Value</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Classification categories:</label>
+                <div id="new-param-categories-list" style="display: flex; flex-direction: column; gap: 8px; background: #212121; padding: 12px; border-radius: 8px; border: 1px solid #323232;">
+                    
+                </div>
+            </div>
+
+            
+            <div id="add-param-pr-auth-block" style="display: none; background: #181818; padding: 14px; border-radius: 8px; border: 1px solid #333333; margin-top: 12px; margin-bottom: 12px;">
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label for="new-param-github-pat" style="font-size: 12px; color: #ccc;">GitHub Personal Access Token (PAT):</label>
+                    <input type="password" id="new-param-github-pat" class="form-control" placeholder="github_pat_...">
+                </div>
+                <button id="execute-add-param-pr-btn" class="restore-btn" style="background: #3b82f6; color: #ffffff; width: 100%; font-weight: bold; margin-top: 6px;">Send Pull Request</button>
+            </div>
+
+            <div class="modal-actions" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%;">
+                <button id="toggle-add-param-pr-btn" class="restore-btn" style="background: #212121; border: 1px solid #3c3c3c; color: #ffffff; padding: 12px 16px; font-size: 14px; font-weight: 600; min-height: 48px; border-radius: 8px; cursor: pointer; width: 100%;">Auto-commit / PR</button>
+                <button id="add-param-save-btn" class="restore-btn" style="background: #c3e679; color: #111111; padding: 12px 16px; font-size: 14px; font-weight: 700; min-height: 48px; border-radius: 8px; cursor: pointer; width: 100%;">Copy JSON</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="add-provider-modal" class="modal">
+        <div class="modal-content dropdown-large">
+            <h3>Add new provider</h3>
+            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 16px; line-height: 1.4;">
+                Fill in the basic information. After that, the provider will appear in the table, and you can fill in all its parameters before submitting.
+            </p>
+            <div class="form-group">
+                <label for="new-provider-name">Software Provider Name:</label>
+                <input type="text" id="new-provider-name" class="form-control" placeholder="E.g., UltraVNC">
+            </div>
+            <div class="form-group">
+                <label for="new-provider-site">Official Website:</label>
+                <input type="url" id="new-provider-site" class="form-control" placeholder="https://www.uvnc.com">
+            </div>
+            <div class="form-group">
+                <label for="new-provider-github">GitHub Link (if any):</label>
+                <input type="url" id="new-provider-github" class="form-control" placeholder="https://github.com/ultravnc/UltraVNC">
+            </div>
+            <div class="form-group">
+                <label for="new-provider-desc">Short description (max 200 chars):</label>
+                <textarea id="new-provider-desc" class="form-control" rows="2" maxlength="200" placeholder="Popular free open-source solution for Windows..."></textarea>
+            </div>
+
+            <div class="modal-actions" style="margin-top: 20px;">
+                <button id="add-provider-cancel-btn" class="restore-btn" style="background: #323232; border-color: #212121;">Cancel</button>
+                <button id="add-provider-save-btn" class="restore-btn" style="background: #c3e679; color: #111111; font-weight: bold;">Add to Table</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="kvm-card-modal" class="modal">
+        <div class="modal-content kvm-card-content">
+            <button id="kvm-card-close" class="modal-close">✕</button>
+            
+            <div class="kvm-card-header">
+                <img id="kvm-card-logo" src="" alt="Logo">
+                <h2 id="kvm-card-title">Device Model</h2>
+            </div>
+
+            
+            <div id="kvm-card-carousel" class="kvm-carousel" style="display: none;">
+                <button class="carousel-btn prev-btn">❮</button>
+                <div class="carousel-track-container">
+                    <div id="kvm-carousel-track" class="carousel-track">
+                        
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn">❯</button>
+                <div id="kvm-carousel-dots" class="carousel-dots"></div>
+            </div>
+
+            <div class="kvm-card-body">
+                <div id="kvm-company-desc" class="kvm-desc-block" style="display: none;">
+                    <h4>About Company</h4>
+                    <p></p>
+                </div>
+                <div id="kvm-model-desc" class="kvm-desc-block" style="display: none;">
+                    <h4>About Model</h4>
+                    <p></p>
+                </div>
+            </div>
+
+            <div id="kvm-card-links" class="kvm-card-links">
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="global-tooltip" class="tooltip-text" style="display: none; position: fixed; z-index: 99999; pointer-events: none;"></div>
+    <script src="app.js?v=3"></script>
+</body>
+</html>

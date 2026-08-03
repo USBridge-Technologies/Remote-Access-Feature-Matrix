@@ -1,0 +1,290 @@
+[
+  {
+    "name": "SoC / Processor",
+    "categories": [
+      "computing"
+    ],
+    "description": "Chip model, cores, clock speed.",
+    "type": "text"
+  },
+  {
+    "name": "RAM",
+    "categories": [
+      "computing"
+    ],
+    "description": "Capacity, type.",
+    "type": "text"
+  },
+  {
+    "name": "Onboard Storage",
+    "categories": [
+      "computing"
+    ],
+    "description": "eMMC/SSD, if present (separate from the SD card).",
+    "type": "boolean"
+  },
+  {
+    "name": "SD Card",
+    "categories": [
+      "computing"
+    ],
+    "description": "Slot, supported class/capacity, removable or not.",
+    "type": "boolean"
+  },
+  {
+    "name": "Capture Chip",
+    "categories": [
+      "capture"
+    ],
+    "description": "E.g. TC358743, a dedicated ASIC, etc.",
+    "type": "text"
+  },
+  {
+    "name": "Max. Input Resolution/Refresh Rate",
+    "categories": [
+      "capture"
+    ],
+    "description": "Hardware limit of the capture chip.",
+    "type": "text"
+  },
+  {
+    "name": "HDCP Support",
+    "categories": [
+      "capture"
+    ],
+    "description": "Support for HDCP.",
+    "type": "boolean"
+  },
+  {
+    "name": "USB Ports",
+    "categories": [
+      "ports"
+    ],
+    "description": "Count, versions (2.0/3.0), purpose (OTG/host).",
+    "type": "text"
+  },
+  {
+    "name": "HDMI Input",
+    "categories": [
+      "ports"
+    ],
+    "description": "Number of HDMI inputs.",
+    "type": "text"
+  },
+  {
+    "name": "HDMI Output",
+    "categories": [
+      "ports"
+    ],
+    "description": "For passthrough, number of outputs.",
+    "type": "text"
+  },
+  {
+    "name": "Ethernet Port",
+    "categories": [
+      "ports"
+    ],
+    "description": "Speed: 100Mbit / 1Gbit / 2.5G.",
+    "type": "text"
+  },
+  {
+    "name": "Serial/RS232 Port",
+    "categories": [
+      "ports"
+    ],
+    "description": "Availability, connector type (RJ45/DB9).",
+    "type": "boolean"
+  },
+  {
+    "name": "GPIO Pins",
+    "categories": [
+      "ports"
+    ],
+    "description": "Count, purpose.",
+    "type": "boolean"
+  },
+  {
+    "name": "Expansion Slot",
+    "categories": [
+      "ports"
+    ],
+    "description": "mini-PCIe / M.2 — for a modem, etc.",
+    "type": "text"
+  },
+  {
+    "name": "Kensington Lock",
+    "categories": [
+      "ports"
+    ],
+    "description": "Physical anti-theft lock slot.",
+    "type": "boolean"
+  },
+  {
+    "name": "Wi-Fi",
+    "categories": [
+      "wireless"
+    ],
+    "description": "Standard, built-in or external antenna.",
+    "type": "text"
+  },
+  {
+    "name": "Bluetooth",
+    "categories": [
+      "wireless"
+    ],
+    "description": "Version.",
+    "type": "text"
+  },
+  {
+    "name": "Cellular/LTE/5G",
+    "categories": [
+      "wireless"
+    ],
+    "description": "Cellular modem support.",
+    "type": "boolean"
+  },
+  {
+    "name": "Display",
+    "categories": [
+      "display"
+    ],
+    "description": "Presence, type (OLED/LCD), resolution, diagonal size.",
+    "type": "boolean"
+  },
+  {
+    "name": "LED Indicators",
+    "categories": [
+      "display"
+    ],
+    "description": "Which statuses they show.",
+    "type": "boolean"
+  },
+  {
+    "name": "Power Supply",
+    "categories": [
+      "power"
+    ],
+    "description": "Power requirements.",
+    "type": "text"
+  },
+  {
+    "name": "Voltage/Power Connector",
+    "categories": [
+      "power"
+    ],
+    "description": "E.g. 5V USB-C / 12V DC barrel, etc.",
+    "type": "text"
+  },
+  {
+    "name": "Power Consumption",
+    "categories": [
+      "power"
+    ],
+    "description": "In watts (typical/peak).",
+    "type": "text"
+  },
+  {
+    "name": "PoE (Power over Ethernet)",
+    "categories": [
+      "power"
+    ],
+    "description": "Hardware PoE support.",
+    "type": "boolean"
+  },
+  {
+    "name": "Backup Power / Supercapacitor",
+    "categories": [
+      "power"
+    ],
+    "description": "For the RTC in case of power loss.",
+    "type": "boolean"
+  },
+  {
+    "name": "Cooling",
+    "categories": [
+      "cooling"
+    ],
+    "description": "Passive/active, presence of a fan.",
+    "type": "text"
+  },
+  {
+    "name": "Case Material",
+    "categories": [
+      "cooling"
+    ],
+    "description": "Plastic/metal (EMI shielding).",
+    "type": "text"
+  },
+  {
+    "name": "Form Factor",
+    "categories": [
+      "cooling"
+    ],
+    "description": "Device size and form factor.",
+    "type": "text"
+  },
+  {
+    "name": "Dimensions (L×W×H)",
+    "categories": [
+      "cooling"
+    ],
+    "description": "Physical dimensions.",
+    "type": "text"
+  },
+  {
+    "name": "Weight",
+    "categories": [
+      "cooling"
+    ],
+    "description": "Device weight.",
+    "type": "text"
+  },
+  {
+    "name": "Mounting",
+    "categories": [
+      "cooling"
+    ],
+    "description": "DIN rail, VESA, rack-mount, desktop.",
+    "type": "text"
+  },
+  {
+    "name": "Operating Temperature",
+    "categories": [
+      "cooling"
+    ],
+    "description": "Range in °C.",
+    "type": "text"
+  },
+  {
+    "name": "Power Control Interface",
+    "categories": [
+      "host_power"
+    ],
+    "description": "Type: relay, GPIO, ATX connector.",
+    "type": "text"
+  },
+  {
+    "name": "Watchdog / Auto-Reboot",
+    "categories": [
+      "host_power"
+    ],
+    "description": "Hardware watchdog.",
+    "type": "boolean"
+  },
+  {
+    "name": "Certifications",
+    "categories": [
+      "certification"
+    ],
+    "description": "CE / FCC / RoHS.",
+    "type": "text"
+  },
+  {
+    "name": "Warranty",
+    "categories": [
+      "certification"
+    ],
+    "description": "Warranty period.",
+    "type": "text"
+  }
+]

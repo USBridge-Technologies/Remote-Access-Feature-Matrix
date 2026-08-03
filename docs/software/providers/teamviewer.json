@@ -1,0 +1,285 @@
+{
+  "name": "TeamViewer",
+  "key": "teamviewer",
+  "type": "software",
+  "website": "https://teamviewer.com",
+  "github": "",
+  "description": "A veteran enterprise remote-access and IT-support platform with deep corporate identity/security integrations — though many advanced features sit behind paid tiers.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "No",
+      "comment": "Relies on standard APIs. Unattended access requires switching the system back to X11."
+    },
+    "P2P (Direct Connection)": {
+      "status": "Yes"
+    },
+    "Relay Server": {
+      "status": "Yes",
+      "comment": "Uses the vendor's own global router infrastructure as a fallback when P2P fails. Free for personal use, and included in the price for commercial licenses — but you cannot self-host your own relay server within a closed corporate network on standard plans."
+    },
+    "LAN Discovery": {
+      "status": "Yes"
+    },
+    "Tailscale Support": {
+      "status": "No"
+    },
+    "Open Source": {
+      "status": "No"
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes"
+    },
+    "Drawing Tablet Support": {
+      "status": "Partial",
+      "comment": "Basic input works, but extended USB device passthrough with pressure sensitivity is unstable."
+    },
+    "Gamepad Passthrough": {
+      "status": "No"
+    },
+    "Audio Streaming": {
+      "status": "Yes"
+    },
+    "Microphone Passthrough": {
+      "status": "Yes"
+    },
+    "Adaptive Bitrate": {
+      "status": "Partial",
+      "comment": "Behaves sluggishly: instead of smoothly adjusting the bitrate on the fly as the connection degrades, the session often freezes or drops frames abruptly."
+    },
+    "H.264 Codec": {
+      "status": "Yes"
+    },
+    "H.265 Codec": {
+      "status": "Yes"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "V-Sync": {
+      "status": "No"
+    },
+    "Session Sharing": {
+      "status": "Paid",
+      "comment": "Technically available, but on the free tier collaborative sessions are instantly cut off by commercial-use detection triggers."
+    },
+    "Multi-User Sessions": {
+      "status": "Paid",
+      "comment": "Full multi-user support is only available on Windows Server under expensive enterprise licenses (Tensor / Enterprise)."
+    },
+    "Virtual Display": {
+      "status": "Paid",
+      "comment": "The virtual monitor feature is built in, but only available to holders of paid commercial licenses."
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "No",
+      "comment": "Uses 4:2:0 chroma subsampling to save bandwidth."
+    },
+    "Frame Rate (FPS)": {
+      "status": "60*",
+      "comment": "Nominally rated up to 60 FPS, but in practice the heavy codec often drags the real frame rate down to 5-10 FPS."
+    },
+    "Session Recording": {
+      "status": "Paid",
+      "comment": "Manual local recording is included in the base tier, but centralized automatic session logging is only available on enterprise licenses."
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "Paid"
+    },
+    "Pre-Login Access": {
+      "status": "Partial",
+      "comment": "Works via a background system service, but limited by commercial-use policy rules."
+    },
+    "No Account Required": {
+      "status": "No",
+      "comment": "Regular use requires an account, otherwise sessions are quickly flagged and blocked for 'suspected commercial use.'"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Supports text and files."
+    },
+    "SSO / OIDC": {
+      "status": "Paid",
+      "comment": "Single sign-on integration (SAML, Azure AD) is only available on Tensor-tier licenses."
+    },
+    "2FA / MFA": {
+      "status": "Yes",
+      "comment": "Basic two-factor authentication is free, but enforced corporate 2FA policies require a paid license."
+    },
+    "Address Book": {
+      "status": "Paid",
+      "comment": "The basic contact list is heavily limited. Shared device groups and routing are paid-only features."
+    },
+    "Audit Logs": {
+      "status": "Paid",
+      "comment": "Detailed connection reports and the security audit console are included in enterprise plans."
+    },
+    "Mass Deployment": {
+      "status": "Paid",
+      "comment": "Silent deployment via MSI packages with assignment parameters (Assignment Tool) is not available in the free version."
+    },
+    "RBAC": {
+      "status": "Paid",
+      "comment": "Granular permission management, user profiles, and Conditional Access require the Tensor tier."
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "Paid",
+      "comment": "Screen-blanking is only available with a commercial license (Business tier and above)."
+    },
+    "Remote Printing": {
+      "status": "Paid",
+      "comment": "Requires a paid subscription for the virtual print driver to function."
+    },
+    "Generic USB Passthrough": {
+      "status": "Partial",
+      "comment": "Limited support; reliable operation with specific peripherals requires an enterprise plan."
+    },
+    "File Manager UI": {
+      "status": "Yes",
+      "comment": "The two-pane file manager is available for free, but is heavily monitored by algorithms for commercial-use detection."
+    },
+    "Text Chat": {
+      "status": "Yes"
+    },
+    "On-Screen Whiteboard": {
+      "status": "Yes"
+    },
+    "Proxy Support": {
+      "status": "Yes",
+      "comment": "Native HTTP and SOCKS proxy support in the client's network settings."
+    },
+    "UAC Handling": {
+      "status": "Yes",
+      "comment": "TeamViewer's background system service runs with SYSTEM privileges, allowing it to correctly display and handle UAC prompts on the Windows secure desktop."
+    },
+    "HDR Support": {
+      "status": "No"
+    },
+    "OTA Updates": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Self-hosted": {
+      "status": "No"
+    },
+    "Moonlight protocol": {
+      "status": "No"
+    },
+    "Drag & Drop": {
+      "status": "Yes"
+    },
+    "Browser client": {
+      "status": "Yes"
+    },
+    "Android host": {
+      "status": "Yes"
+    },
+    "Raspberry Pi host": {
+      "status": "Yes"
+    },
+    "Headless mode": {
+      "status": "Paid",
+      "comment": "Mass deployment on headless servers (via MSI packaging) is only available with a corporate subscription."
+    },
+    "Hardware encoding": {
+      "status": "Yes"
+    },
+    "Hardware decoding": {
+      "status": "Yes"
+    },
+    "Portable": {
+      "status": "Yes"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Yes"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes"
+    },
+    "Linux Wayland: Host": {
+      "status": "Partial",
+      "comment": "Supported, but occasional limitations occur with system key passthrough or remote printing."
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "Yes",
+      "comment": "Implemented via a separate TeamViewer Host app installed from Google Play."
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "Yes",
+      "comment": "Connections are available via the TeamViewer web portal."
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3060": {
+      "status": ""
+    },
+    "NVIDIA GTX 1060": {
+      "status": ""
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": ""
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": ""
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Partial",
+      "comment": "Personal use only. An aggressive heuristic algorithm is built in and frequently blocks sessions with a 'suspected commercial use' message."
+    },
+    "Personal: Monthly": {
+      "status": "$24.90/mo",
+      "comment": "Remote Access (Single User) plan. The price is quoted per month, but billing is exclusively annual — you must pay for all 12 months upfront."
+    },
+    "Personal: Annual": {
+      "status": "$298.80/yr"
+    },
+    "Team / Business: Monthly": {
+      "status": "$57.90/mo",
+      "comment": "Base business plan. Lets you administer a larger device fleet, but the number of simultaneous connection channels is strictly limited."
+    },
+    "Team / Business: Annual": {
+      "status": "$694.80/yr"
+    },
+    "Enterprise": {
+      "status": "From $149/mo",
+      "comment": "Premium/Corporate/Tensor tier. This is the only level that includes independent parallel sessions, SSO, audit logs, and silent MSI deployment."
+    }
+  }
+}

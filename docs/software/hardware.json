@@ -1,0 +1,50 @@
+[
+  {
+    "name": "NVIDIA RTX 4090",
+    "categories": [
+      "gpu"
+    ],
+    "description": "Flagship GPU: fastest hardware encoding (NVENC AV1/H.265) with the lowest possible latency.",
+    "type": "text"
+  },
+  {
+    "name": "NVIDIA RTX 3090",
+    "categories": [
+      "gpu"
+    ],
+    "description": "High-end graphics card built for 4K streaming and high frame rates.",
+    "type": "text"
+  },
+  {
+    "name": "NVIDIA RTX 3060",
+    "categories": [
+      "gpu"
+    ],
+    "description": "Mainstream mid-range GPU — the most common graphics card in use.",
+    "type": "text"
+  },
+  {
+    "name": "NVIDIA GTX 1060",
+    "categories": [
+      "gpu"
+    ],
+    "description": "Classic budget GPU from a previous generation, used to verify compatibility with older hardware.",
+    "type": "text"
+  },
+  {
+    "name": "Apple Silicon GPU (Metal)",
+    "categories": [
+      "gpu"
+    ],
+    "description": "Graphics accelerator on Apple Mac computers (encoding via VideoToolbox).",
+    "type": "text"
+  },
+  {
+    "name": "Intel iGPU (QuickSync)",
+    "categories": [
+      "gpu"
+    ],
+    "description": "Integrated graphics core on Intel processors (QuickSync encoding).",
+    "type": "text"
+  }
+]

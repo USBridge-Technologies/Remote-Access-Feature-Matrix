@@ -1,0 +1,289 @@
+{
+  "name": "RustDesk",
+  "key": "rustdesk",
+  "type": "software",
+  "website": "https://rustdesk.com",
+  "github": "https://github.com/rustdesk/rustdesk",
+  "description": "A fully open-source alternative to proprietary remote-desktop tools — self-host the entire relay infrastructure for free, with an optional paid Pro layer for enterprise-grade admin, SSO, and access control.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "No",
+      "comment": "Uses PipeWire + the XDG Portal, which forces a system confirmation dialog."
+    },
+    "P2P (Direct Connection)": {
+      "status": "Yes"
+    },
+    "Relay Server": {
+      "status": "Yes",
+      "comment": "Implemented via the open hbbr component (RustDesk Relay Server). Public free relay servers work out of the box, but for full traffic control and to avoid the limitations of the public infrastructure, you need to self-host your own relay server."
+    },
+    "LAN Discovery": {
+      "status": "Yes",
+      "comment": "Supports discovering devices on the local network and connecting via Direct IP."
+    },
+    "Tailscale Support": {
+      "status": "Partial",
+      "comment": "No native integration. Only works if the Tailscale system service is installed separately on both machines and you connect via Direct IP."
+    },
+    "Open Source": {
+      "status": "Partial",
+      "comment": "Open Core model. The client itself and the base relay are open source, but the advanced RustDesk Pro Server (API, web admin console, OIDC) is closed-source."
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes"
+    },
+    "Drawing Tablet Support": {
+      "status": "Partial",
+      "comment": "The cursor works in mouse mode (absolute positioning). There is no native pen pressure passthrough; third-party software is needed for USB passthrough."
+    },
+    "Gamepad Passthrough": {
+      "status": "Yes",
+      "comment": "Basic passthrough is supported, but not at the level of a low-level XInput driver."
+    },
+    "Audio Streaming": {
+      "status": "Yes"
+    },
+    "Microphone Passthrough": {
+      "status": "Yes"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes"
+    },
+    "H.264 Codec": {
+      "status": "Yes"
+    },
+    "H.265 Codec": {
+      "status": "Yes"
+    },
+    "AV1 Codec": {
+      "status": "Yes",
+      "comment": "Hardware-accelerated on modern GPUs."
+    },
+    "V-Sync": {
+      "status": "No"
+    },
+    "Session Sharing": {
+      "status": "Yes",
+      "comment": "Multiple clients can freely connect to a single host using the same ID, with no licensing restrictions."
+    },
+    "Multi-User Sessions": {
+      "status": "Paid",
+      "comment": "The base software works with a single active session, while full administration and session isolation require deploying the closed-source RustDesk Pro Server."
+    },
+    "Virtual Display": {
+      "status": "Yes"
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Yes",
+      "comment": "Supports True Color (4:4:4) mode via the VP9 codec, free of charge as part of the open-source client."
+    },
+    "Frame Rate (FPS)": {
+      "status": "60"
+    },
+    "Session Recording": {
+      "status": "Yes",
+      "comment": "Built into the open-source client and available for free out of the box."
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "Yes"
+    },
+    "Pre-Login Access": {
+      "status": "Yes",
+      "comment": "Implemented via a default background system application and available for free in the open-source build."
+    },
+    "No Account Required": {
+      "status": "No",
+      "comment": "Using the public servers and IDs requires mandatory authentication via email or OAuth."
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes"
+    },
+    "SSO / OIDC": {
+      "status": "Paid",
+      "comment": "Integration with corporate identity providers is only available in RustDesk Pro."
+    },
+    "2FA / MFA": {
+      "status": "Paid",
+      "comment": "Server-side two-factor authentication is supported in RustDesk Pro."
+    },
+    "Address Book": {
+      "status": "Paid",
+      "comment": "A centralized address book with groups and access permissions is available in the Pro version."
+    },
+    "Audit Logs": {
+      "status": "Paid",
+      "comment": "Connection auditing and the web admin console are Pro-only."
+    },
+    "Mass Deployment": {
+      "status": "Paid",
+      "comment": "Custom client builds and scripts for silent, automated installation are provided with a Pro subscription."
+    },
+    "RBAC": {
+      "status": "Paid",
+      "comment": "Granular role-based access control is only available in Pro."
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "Yes",
+      "comment": "A basic implementation of privacy mode (turning off the remote PC's screen) is supported."
+    },
+    "Remote Printing": {
+      "status": "No",
+      "comment": "There is no built-in virtual driver for remote printing."
+    },
+    "Generic USB Passthrough": {
+      "status": "No",
+      "comment": "Driver-level passthrough of arbitrary USB devices is not supported."
+    },
+    "File Manager UI": {
+      "status": "Yes",
+      "comment": "A separate file manager window is available for convenient file transfers."
+    },
+    "Text Chat": {
+      "status": "Yes",
+      "comment": "A basic text chat is available for communicating with the support agent."
+    },
+    "On-Screen Whiteboard": {
+      "status": "No",
+      "comment": "No screen annotation tools are available."
+    },
+    "Proxy Support": {
+      "status": "Yes",
+      "comment": "Natively supports connecting via a SOCKS5 proxy in the network settings."
+    },
+    "UAC Handling": {
+      "status": "Yes",
+      "comment": "Only works correctly if the client is installed as a service."
+    },
+    "HDR Support": {
+      "status": "No"
+    },
+    "OTA Updates": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Self-hosted": {
+      "status": "Yes",
+      "comment": "The base server (hbbs/hbbr) is completely free to self-host."
+    },
+    "Moonlight protocol": {
+      "status": "No"
+    },
+    "Drag & Drop": {
+      "status": "Yes"
+    },
+    "Browser client": {
+      "status": "Yes",
+      "comment": "A web client is available for connecting directly from the browser."
+    },
+    "Android host": {
+      "status": "Yes"
+    },
+    "Raspberry Pi host": {
+      "status": "Yes"
+    },
+    "Headless mode": {
+      "status": "Yes",
+      "comment": "On Linux it works via virtual X11 sessions; on Windows an HDMI dummy plug may be required."
+    },
+    "Hardware encoding": {
+      "status": "Yes"
+    },
+    "Hardware decoding": {
+      "status": "Yes"
+    },
+    "Portable": {
+      "status": "Yes"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Yes"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes"
+    },
+    "Linux Wayland: Host": {
+      "status": "Yes",
+      "comment": "Natively supported, but on some distributions (e.g. Ubuntu with GNOME) starting before login requires GDM workarounds."
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "Yes",
+      "comment": "Works, but requires manually granting screen capture and control (Accessibility Service) permissions in the phone's settings."
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "Yes",
+      "comment": "A WebAssembly-based web client is available."
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3060": {
+      "status": ""
+    },
+    "NVIDIA GTX 1060": {
+      "status": ""
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": ""
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": ""
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Full access to the client's functionality. You can use the public servers (which can get congested) or self-host your own basic relay for free."
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$9.90/mo",
+      "comment": "Subscription for the self-hosted Pro server. Includes a web admin console, address book, OIDC, 2FA, and permission management."
+    },
+    "Team / Business: Annual": {
+      "status": "$118.80/yr"
+    },
+    "Enterprise": {
+      "status": "$19.90/mo",
+      "comment": "SaaS (Managed) plan. The same as Pro, but you don't need to administer the server yourself — RustDesk hosts and maintains the nodes on its own infrastructure."
+    }
+  }
+}

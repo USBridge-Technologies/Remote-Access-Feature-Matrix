@@ -1,0 +1,8 @@
+{
+  "name": "Draft",
+  "key": "draft",
+  "type": "kvm",
+  "website": "",
+  "github": "",
+  "description": "Draft of a new provider for filling and proposing changes."
+}

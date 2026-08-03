@@ -1,0 +1,43 @@
+name: Sync Provider JSONs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/software/*.json'
+      - 'docs/software/providers/*.json'
+      - 'docs/kvm/providers/*.json'
+      - 'scripts/update_providers.py'
+      - 'scripts/draft.json'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run sync script
+        run: |
+          export PYTHONIOENCODING=utf-8
+          python scripts/update_providers.py --apply-draft
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-sync: JSON formatting and schema update"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"

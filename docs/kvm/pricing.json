@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Device Price",
+    "categories": [
+      "hardware"
+    ],
+    "description": "The device's base price.",
+    "type": "text"
+  },
+  {
+    "name": "What's Included",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Whether the ATX board, cables, case, etc. are included in the box.",
+    "type": "text"
+  },
+  {
+    "name": "Cloud Access",
+    "categories": [
+      "software"
+    ],
+    "description": "Whether a proprietary cloud service for remote access exists, and whether it's paid.",
+    "type": "boolean"
+  },
+  {
+    "name": "Subscription",
+    "categories": [
+      "software"
+    ],
+    "description": "Whether a subscription is required at all, and for which features.",
+    "type": "boolean"
+  },
+  {
+    "name": "Additional Accessories",
+    "categories": [
+      "hardware"
+    ],
+    "description": "LTE modem, Wi-Fi antenna, Multiport/Switch expansion.",
+    "type": "boolean"
+  },
+  {
+    "name": "Software Licensing Model",
+    "categories": [
+      "software"
+    ],
+    "description": "Open source and free forever / proprietary with paid tiers.",
+    "type": "text"
+  }
+]

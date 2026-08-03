@@ -1,0 +1,289 @@
+{
+  "name": "AnyDesk",
+  "key": "anydesk",
+  "type": "software",
+  "website": "https://anydesk.com",
+  "github": "",
+  "description": "A well-known remote-access tool built around its proprietary DeskRT codec, tuned for crisp GUI and text rendering rather than general video — with most security, admin, and collaboration features gated behind paid business and enterprise tiers.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "No",
+      "comment": "Relies on PipeWire. Screen capture will not start without a manual confirmation from the user."
+    },
+    "P2P (Direct Connection)": {
+      "status": "Yes"
+    },
+    "Relay Server": {
+      "status": "Paid",
+      "comment": "Built on the vendor's own global distributed infrastructure. Available out of the box on cloud plans, but full traffic isolation and self-hosting your own relay inside a closed corporate network requires the top-tier Ultimate license with an On-Premises deployment."
+    },
+    "LAN Discovery": {
+      "status": "Yes"
+    },
+    "Tailscale Support": {
+      "status": "No"
+    },
+    "Open Source": {
+      "status": "No"
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes"
+    },
+    "Drawing Tablet Support": {
+      "status": "Partial",
+      "comment": "Basic input works, but accurate pressure and tilt passthrough can behave incorrectly."
+    },
+    "Gamepad Passthrough": {
+      "status": "No"
+    },
+    "Audio Streaming": {
+      "status": "Yes"
+    },
+    "Microphone Passthrough": {
+      "status": "Yes"
+    },
+    "Adaptive Bitrate": {
+      "status": "Partial",
+      "comment": "The DeskRT codec aggressively crushes quality and color depth, so when the network dips, on-screen text turns into unreadable pixel mush."
+    },
+    "H.264 Codec": {
+      "status": "No",
+      "comment": "Replaced by the proprietary DeskRT algorithm."
+    },
+    "H.265 Codec": {
+      "status": "No"
+    },
+    "AV1 Codec": {
+      "status": "No",
+      "comment": "Not used. AnyDesk relies on its proprietary DeskRT codec, purpose-built for transmitting GUIs (windows, text) rather than general video."
+    },
+    "V-Sync": {
+      "status": "No"
+    },
+    "Session Sharing": {
+      "status": "Paid",
+      "comment": "On the free version, parallel connections are quickly flagged as commercial activity and blocked."
+    },
+    "Multi-User Sessions": {
+      "status": "Paid",
+      "comment": "Supported in Enterprise configurations for terminal servers (Windows Server), but requires a specialized license."
+    },
+    "Virtual Display": {
+      "status": "No",
+      "comment": "There is no native built-in virtual display driver; users working with headless servers have to resort to third-party workarounds."
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "No"
+    },
+    "Frame Rate (FPS)": {
+      "status": "60",
+      "comment": "Thanks to the proprietary DeskRT codec, it reliably holds a true 60 FPS in normal scenarios and gracefully drops frames when the network dips, but is architecturally capped at 60 FPS."
+    },
+    "Session Recording": {
+      "status": "Paid",
+      "comment": "Session recording is blocked for free users and requires a commercial subscription."
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "Paid"
+    },
+    "Pre-Login Access": {
+      "status": "Partial",
+      "comment": "The service starts before login, but the reliability of unattended access on the free version depends on the detection algorithms."
+    },
+    "No Account Required": {
+      "status": "No",
+      "comment": "Like TeamViewer, the service has become aggressive about blocking connections without an account, citing suspected 'commercial use.'"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Works with text and files."
+    },
+    "SSO / OIDC": {
+      "status": "Paid",
+      "comment": "Corporate Single Sign-On integration is only available on the Advanced and Enterprise plans."
+    },
+    "2FA / MFA": {
+      "status": "Paid",
+      "comment": "2FA can be set up for free on a specific workstation, but global policies require payment."
+    },
+    "Address Book": {
+      "status": "Paid",
+      "comment": "The ability to create shared team address books is strictly tied to the license tier."
+    },
+    "Audit Logs": {
+      "status": "Paid",
+      "comment": "REST API access and detailed session logs are only available on the more expensive subscriptions."
+    },
+    "Mass Deployment": {
+      "status": "Paid",
+      "comment": "Generating a custom client (AnyDesk Custom Client) with policies for silent deployment is a paid feature."
+    },
+    "RBAC": {
+      "status": "Paid",
+      "comment": "Advanced role management in the my.anydesk console is only available to enterprise customers."
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "Paid",
+      "comment": "Screen Privacy mode requires installing a display driver and holding a paid license."
+    },
+    "Remote Printing": {
+      "status": "Paid",
+      "comment": "Works via the virtual AnyDesk Printer driver; the feature is locked on the free version."
+    },
+    "Generic USB Passthrough": {
+      "status": "Partial",
+      "comment": "Limited support (mainly smart card and simple USB dongle passthrough via TCP tunneling)."
+    },
+    "File Manager UI": {
+      "status": "Yes",
+      "comment": "A separate file transfer mode is available."
+    },
+    "Text Chat": {
+      "status": "Yes"
+    },
+    "On-Screen Whiteboard": {
+      "status": "Yes",
+      "comment": "A built-in Whiteboard drawing tool is available over the streamed screen."
+    },
+    "Proxy Support": {
+      "status": "Yes",
+      "comment": "Native support for HTTP, SOCKS5, and NTLM proxies."
+    },
+    "UAC Handling": {
+      "status": "Yes",
+      "comment": "Requires the app to be pre-installed as a system service. In portable (non-installed) mode, SYSTEM privileges are not used."
+    },
+    "HDR Support": {
+      "status": "No"
+    },
+    "OTA Updates": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Self-hosted": {
+      "status": "Paid",
+      "comment": "AnyDesk On-Premises exists as an isolated network appliance server, but it is very expensive and only sold on the Enterprise plan."
+    },
+    "Moonlight protocol": {
+      "status": "No"
+    },
+    "Drag & Drop": {
+      "status": "Yes"
+    },
+    "Browser client": {
+      "status": "Yes",
+      "comment": "A web client is available at go.anydesk.com."
+    },
+    "Android host": {
+      "status": "Yes"
+    },
+    "Raspberry Pi host": {
+      "status": "Yes"
+    },
+    "Headless mode": {
+      "status": "Yes",
+      "comment": "Sometimes requires installing a virtual display driver (built into the client) or a hardware monitor emulator."
+    },
+    "Hardware encoding": {
+      "status": "Yes"
+    },
+    "Hardware decoding": {
+      "status": "Yes"
+    },
+    "Portable": {
+      "status": "Yes"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Yes"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes"
+    },
+    "Linux Wayland: Host": {
+      "status": "Partial",
+      "comment": "Screen streaming works via PipeWire/XDG portals, but input control (mouse and keyboard emulation) often drops out or behaves unreliably."
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "Yes",
+      "comment": "Full remote control (not just screen viewing) requires installing an additional, phone-vendor-specific AnyDesk Control Plugin from Google Play."
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "Yes",
+      "comment": "Available via the go.anydesk.com portal (runs on WebAssembly)."
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3060": {
+      "status": ""
+    },
+    "NVIDIA GTX 1060": {
+      "status": ""
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": ""
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": ""
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Partial",
+      "comment": "Strictly non-commercial use only. There are session-time limits and aggressive connection blocking at the slightest suspicion of work-related use."
+    },
+    "Personal: Monthly": {
+      "status": "$14.90/mo",
+      "comment": "Solo plan (1 licensed user, 1 simultaneous outgoing connection). Billing requires paying 100% upfront for the full year."
+    },
+    "Personal: Annual": {
+      "status": "$178.80/yr"
+    },
+    "Team / Business: Monthly": {
+      "status": "$29.90/mo",
+      "comment": "Standard plan. Adds basic user management (up to 20 accounts), but only includes 1 parallel connection channel by default."
+    },
+    "Team / Business: Annual": {
+      "status": "$358.80/yr"
+    },
+    "Enterprise": {
+      "status": "$79.90/mo",
+      "comment": "Advanced plan. Includes mass deployment tools (MSI) and session auditing. True isolated On-Premises deployment (your own AnyDesk server) costs significantly more and is only sold on request."
+    }
+  }
+}

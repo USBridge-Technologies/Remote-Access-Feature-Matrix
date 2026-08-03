@@ -1,0 +1,379 @@
+[
+  {
+    "name": "FPS",
+    "categories": [
+      "video"
+    ],
+    "description": "Maximum frame rate.",
+    "type": "text"
+  },
+  {
+    "name": "Latency",
+    "categories": [
+      "video"
+    ],
+    "description": "End-to-end delay.",
+    "type": "text"
+  },
+  {
+    "name": "Resolution",
+    "categories": [
+      "video"
+    ],
+    "description": "Maximum supported resolution.",
+    "type": "text"
+  },
+  {
+    "name": "Dynamic Bandwidth Tuning",
+    "categories": [
+      "video"
+    ],
+    "description": "Automatically adjusts video quality and bitrate on the fly to match the user's current internet bandwidth.",
+    "type": "boolean"
+  },
+  {
+    "name": "Video Stream Protocol",
+    "categories": [
+      "video"
+    ],
+    "description": "Choice of transmission protocol (WebRTC for minimal latency vs. H.264/MJPEG for compatibility).",
+    "type": "text"
+  },
+  {
+    "name": "USB HID Emulation",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Software emulation of a keyboard and mouse (including absolute/relative positioning).",
+    "type": "boolean"
+  },
+  {
+    "name": "Mouse Modes (Absolute / Relative)",
+    "categories": [
+      "software"
+    ],
+    "description": "Switches between mouse modes (absolute — for browser/BIOS use, relative — for games and 3D applications).",
+    "type": "boolean"
+  },
+  {
+    "name": "Audio Streaming",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Captures and streams audio from the target machine.",
+    "type": "boolean"
+  },
+  {
+    "name": "Microphone",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Passes through the client's microphone.",
+    "type": "boolean"
+  },
+  {
+    "name": "Gamepad Support",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Supports passthrough of gamepads and game controllers.",
+    "type": "boolean"
+  },
+  {
+    "name": "Power Control",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Remote power on, power off, and hard-reset functionality for the PC.",
+    "type": "boolean"
+  },
+  {
+    "name": "Virtual Media Emulation",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Mounts virtual ISO, CD/DVD, and flash drive images for remote OS installation.",
+    "type": "boolean"
+  },
+  {
+    "name": "Physical HDD Emulation & RAM Cache",
+    "categories": [
+      "hardware",
+      "software"
+    ],
+    "description": "Emulates a full physical drive (HDD/SSD) with LPDDR4X caching of the network stream.",
+    "type": "boolean"
+  },
+  {
+    "name": "Read-Write Overlay (Non-Destructive Mode)",
+    "categories": [
+      "software"
+    ],
+    "description": "A safe overlay mode: session writes go to a separate layer, keeping the original image untouched.",
+    "type": "boolean"
+  },
+  {
+    "name": "GPIO Control via Web UI",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Controls GPIO pins (relays, smart outlets, lights) directly from the web interface.",
+    "type": "boolean"
+  },
+  {
+    "name": "Multiport KVM Support",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Software support for chaining and switching between multiple hosts.",
+    "type": "boolean"
+  },
+  {
+    "name": "PoE Support",
+    "categories": [
+      "network"
+    ],
+    "description": "Power over Ethernet.",
+    "type": "boolean"
+  },
+  {
+    "name": "Wake-on-LAN (WoL) Sender",
+    "categories": [
+      "network"
+    ],
+    "description": "Sends Magic Packets directly from the KVM UI to wake devices on the local network.",
+    "type": "boolean"
+  },
+  {
+    "name": "Wi-Fi",
+    "categories": [
+      "network"
+    ],
+    "description": "Wireless network support.",
+    "type": "boolean"
+  },
+  {
+    "name": "Ethernet (LAN)",
+    "categories": [
+      "network"
+    ],
+    "description": "Wired local network connection via RJ-45 cable.",
+    "type": "boolean"
+  },
+  {
+    "name": "Virtual Network Adapter",
+    "categories": [
+      "network"
+    ],
+    "description": "Emulates a virtual network card to share internet/network access with the target host.",
+    "type": "boolean"
+  },
+  {
+    "name": "Zero-Config Remote Access",
+    "categories": [
+      "network"
+    ],
+    "description": "Built-in VPN tunnel support (Tailscale / ZeroTier) for accessing the KVM without a public IP.",
+    "type": "boolean"
+  },
+  {
+    "name": "Clientless Browser",
+    "categories": [
+      "software"
+    ],
+    "description": "Desktop access without installing third-party clients, Java, or plugins (HTML5 / WebRTC).",
+    "type": "boolean"
+  },
+  {
+    "name": "Event Notifications (Alerting)",
+    "categories": [
+      "software"
+    ],
+    "description": "Sends notifications to Telegram, Discord, Slack, or Email on events (power loss, overheating, etc.).",
+    "type": "boolean"
+  },
+  {
+    "name": "Multi-User Collaboration",
+    "categories": [
+      "software"
+    ],
+    "description": "Collaborative mode where several admins view the same screen and hand control off to one another.",
+    "type": "boolean"
+  },
+  {
+    "name": "Open Source Firmware & Plugins",
+    "categories": [
+      "software"
+    ],
+    "description": "Open firmware source code, with support for installing third-party community modules/plugins.",
+    "type": "boolean"
+  },
+  {
+    "name": "REST API / Webhooks",
+    "categories": [
+      "software"
+    ],
+    "description": "An open API for controlling the KVM via scripts (Python, Ansible, Terraform).",
+    "type": "boolean"
+  },
+  {
+    "name": "Scripting",
+    "categories": [
+      "software"
+    ],
+    "description": "Support for scripting and automation (API, macros).",
+    "type": "boolean"
+  },
+  {
+    "name": "Serial Console Web Gateway",
+    "categories": [
+      "software"
+    ],
+    "description": "Opens and controls the serial console port directly through the web interface or SSH.",
+    "type": "boolean"
+  },
+  {
+    "name": "Software Ecosystem & Client",
+    "categories": [
+      "software"
+    ],
+    "description": "An ecosystem of applications and dedicated clients for access.",
+    "type": "boolean"
+  },
+  {
+    "name": "Software USB Replug",
+    "categories": [
+      "software"
+    ],
+    "description": "Software-simulated USB cable disconnect/reconnect (to reset devices that got stuck).",
+    "type": "boolean"
+  },
+  {
+    "name": "System Health & Fan Control",
+    "categories": [
+      "software"
+    ],
+    "description": "Software monitoring of system health and temperatures, plus control over cooling profiles.",
+    "type": "boolean"
+  },
+  {
+    "name": "2FA / TOTP Support",
+    "categories": [
+      "security"
+    ],
+    "description": "Supports two-factor authentication when logging into the KVM.",
+    "type": "boolean"
+  },
+  {
+    "name": "Audit Trail / Event Logging",
+    "categories": [
+      "security"
+    ],
+    "description": "A detailed activity log for the system (login events, ATX commands, image mounts).",
+    "type": "boolean"
+  },
+  {
+    "name": "Encrypted Stream (TLS 1.3 / AES-256)",
+    "categories": [
+      "security"
+    ],
+    "description": "Software-level encryption of the video stream and input commands.",
+    "type": "boolean"
+  },
+  {
+    "name": "Enterprise Auth (LDAP / AD / SSO)",
+    "categories": [
+      "security"
+    ],
+    "description": "Ability to integrate with corporate user directories.",
+    "type": "boolean"
+  },
+  {
+    "name": "No Subscription (On-Premise Only)",
+    "categories": [
+      "security"
+    ],
+    "description": "All features are guaranteed to work without paid subscriptions, cloud lock-in, or third-party servers.",
+    "type": "boolean"
+  },
+  {
+    "name": "Role-Based Access Control (RBAC)",
+    "categories": [
+      "security"
+    ],
+    "description": "Permission segregation (e.g. view-only, full access, ATX-only access).",
+    "type": "boolean"
+  },
+  {
+    "name": "Session Recording",
+    "categories": [
+      "security"
+    ],
+    "description": "Automatically records the admin session's video stream for later security audits.",
+    "type": "boolean"
+  },
+  {
+    "name": "AI Agents",
+    "categories": [
+      "advanced"
+    ],
+    "description": "Integration with AI agents for task automation and host management.",
+    "type": "boolean"
+  },
+  {
+    "name": "BIOS-in-Terminal (OCR)",
+    "categories": [
+      "advanced"
+    ],
+    "description": "Ability to work in the BIOS via a terminal, using OCR for text recognition.",
+    "type": "boolean"
+  },
+  {
+    "name": "Fleet Management / Central Dashboard",
+    "categories": [
+      "advanced"
+    ],
+    "description": "Support for consolidating multiple KVMs into a single management dashboard (data centers, device fleets).",
+    "type": "boolean"
+  },
+  {
+    "name": "Immutable Snapshots",
+    "categories": [
+      "advanced"
+    ],
+    "description": "Support for immutable state snapshots for safe rollback.",
+    "type": "boolean"
+  },
+  {
+    "name": "IPMI / Redfish Emulation",
+    "categories": [
+      "advanced"
+    ],
+    "description": "The KVM's ability to present itself as a standard server IPMI/iDRAC interface, for integration with monitoring systems.",
+    "type": "boolean"
+  },
+  {
+    "name": "Mass Deployment / Auto-Provisioning",
+    "categories": [
+      "advanced"
+    ],
+    "description": "Ability to quickly configure dozens of KVMs via configuration files (cloud-init / Ansible).",
+    "type": "boolean"
+  },
+  {
+    "name": "Privacy / Blank Screen Mode",
+    "categories": [
+      "advanced"
+    ],
+    "description": "Ability to programmatically turn off the physical monitor on the target PC during a session.",
+    "type": "boolean"
+  },
+  {
+    "name": "OTA Updates",
+    "categories": [
+      "software"
+    ],
+    "description": "Over-the-air (wireless) firmware/software updates.",
+    "type": "boolean"
+  }
+]

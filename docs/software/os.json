@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Windows: Host",
+    "categories": [
+      "windows"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "Windows: Client",
+    "categories": [
+      "windows"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "macOS: Host",
+    "categories": [
+      "macos"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "macOS: Client",
+    "categories": [
+      "macos"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "Linux X11: Host",
+    "categories": [
+      "linux"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "Linux Wayland: Host",
+    "categories": [
+      "linux"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "Linux: Client",
+    "categories": [
+      "linux"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "Android: Host",
+    "categories": [
+      "smartphone"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "Android: Client",
+    "categories": [
+      "smartphone"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "iOS: Client",
+    "categories": [
+      "smartphone"
+    ],
+    "type": "boolean"
+  },
+  {
+    "name": "Web Browser: Client",
+    "categories": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "type": "boolean"
+  }
+]

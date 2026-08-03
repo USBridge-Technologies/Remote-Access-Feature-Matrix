@@ -1,0 +1,233 @@
+{
+  "name": "USBridge",
+  "key": "usbridge",
+  "type": "software",
+  "website": "https://usbridge.io",
+  "github": "https://github.com/USBridge-Technologies/USBridge-Remote",
+  "description": "USBridge Remote is a unified high-performance client for managing remote machines. I designed it to combine hardware-level BIOS access (via USBridge KVM devices) and software-based remote desktop in a single, streamlined interface.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Yes",
+      "comment": "Works out of the box"
+    },
+    "P2P (Direct Connection)": {
+      "status": "Yes"
+    },
+    "Relay Server": {
+      "status": "Yes",
+      "comment": "Implemented on top of Tailscale's built-in relay mechanism (DERP), providing automatic fallback when a direct P2P connection is blocked."
+    },
+    "LAN Discovery": {
+      "status": "No"
+    },
+    "Tailscale Support": {
+      "status": "Yes",
+      "comment": "Native integration built into the client itself"
+    },
+    "Open Source": {
+      "status": "Partial",
+      "comment": "Open Core model. The base client and agent are fully open for community auditing, but the Pro version of the agent with enterprise features ships as closed-source."
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Gamepad Passthrough": {
+      "status": "Yes"
+    },
+    "Audio Streaming": {
+      "status": "Yes"
+    },
+    "Microphone Passthrough": {
+      "status": "No"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": ""
+    },
+    "H.264 Codec": {
+      "status": "Yes"
+    },
+    "H.265 Codec": {
+      "status": "Yes"
+    },
+    "AV1 Codec": {
+      "status": "Yes"
+    },
+    "V-Sync": {
+      "status": "Yes",
+      "comment": "Supports client-side frame synchronization to eliminate screen tearing."
+    },
+    "Session Sharing": {
+      "status": "No"
+    },
+    "Multi-User Sessions": {
+      "status": "No"
+    },
+    "Virtual Display": {
+      "status": "No"
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Paid"
+    },
+    "Frame Rate (FPS)": {
+      "status": "240",
+      "comment": "Supports up to 240 FPS via the Moonlight protocol (limited only by the underlying hardware)."
+    },
+    "Session Recording": {
+      "status": "No"
+    },
+    "ISO Mounting": {
+      "status": "In Development"
+    },
+    "Wake-on-LAN": {
+      "status": "No"
+    },
+    "Pre-Login Access": {
+      "status": "Yes",
+      "comment": "Windows and Linux"
+    },
+    "No Account Required": {
+      "status": "Yes",
+      "comment": "Using Tailscale requires authenticating with the Tailscale service itself"
+    },
+    "KVM Integration": {
+      "status": "Yes"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Text and files"
+    },
+    "SSO / OIDC": {
+      "status": "No"
+    },
+    "2FA / MFA": {
+      "status": "No"
+    },
+    "Address Book": {
+      "status": "No"
+    },
+    "Audit Logs": {
+      "status": "No"
+    },
+    "Mass Deployment": {
+      "status": "No"
+    },
+    "RBAC": {
+      "status": "No"
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "No"
+    },
+    "Remote Printing": {
+      "status": "No"
+    },
+    "Generic USB Passthrough": {
+      "status": "No"
+    },
+    "File Manager UI": {
+      "status": "No"
+    },
+    "Text Chat": {
+      "status": "No"
+    },
+    "On-Screen Whiteboard": {
+      "status": "No"
+    },
+    "Proxy Support": {
+      "status": "No"
+    },
+    "UAC Handling": {
+      "status": "Yes"
+    },
+    "HDR Support": {
+      "status": "No"
+    },
+    "OTA Updates": {
+      "status": "Yes",
+      "comment": ""
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Yes"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes"
+    },
+    "Linux Wayland: Host": {
+      "status": "Yes"
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "No"
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "In Development"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3090": {
+      "status": ""
+    },
+    "NVIDIA RTX 3060": {
+      "status": ""
+    },
+    "NVIDIA GTX 1060": {
+      "status": ""
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": ""
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": ""
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Unrestricted for personal use"
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$15/mo"
+    },
+    "Team / Business: Annual": {
+      "status": "$120/yr"
+    },
+    "Enterprise": {
+      "status": "On Request"
+    }
+  }
+}

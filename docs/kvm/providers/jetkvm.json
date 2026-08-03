@@ -1,0 +1,367 @@
+{
+  "name": "JetKVM",
+  "key": "jetkvm",
+  "type": "kvm",
+  "website": "https://jetkvm.com",
+  "github": "",
+  "description": "A tiny, open-source KVM-over-IP device built around a low-cost camera SoC — 1080p60 H.264 video with 30-60ms latency, free WebRTC cloud access, and hardware power control available as separate add-on boards.",
+  "features": {
+    "FPS": {
+      "status": "60",
+      "comment": "1080p @ 60 FPS via H.264 hardware encoding"
+    },
+    "Latency": {
+      "status": "30-60 ms"
+    },
+    "Resolution": {
+      "status": "1080p"
+    },
+    "Dynamic Bandwidth Tuning": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Video Stream Protocol": {
+      "status": "WebRTC (H.264)",
+      "comment": ""
+    },
+    "USB HID Emulation": {
+      "status": "Yes",
+      "comment": "Keyboard and mouse emulation over a single USB-C connection"
+    },
+    "Mouse Modes (Absolute / Relative)": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Audio Streaming": {
+      "status": "Yes",
+      "comment": ""
+    },
+    "Microphone": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Gamepad Support": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Power Control": {
+      "status": "Partial",
+      "comment": "Requires a separate ATX or DC Power Control add-on board connected via the expansion port; not built into the base unit"
+    },
+    "Virtual Media Emulation": {
+      "status": "Yes",
+      "comment": "The USB device class can be switched to present as a mass storage device"
+    },
+    "Physical HDD Emulation & RAM Cache": {
+      "status": "No",
+      "comment": ""
+    },
+    "Read-Write Overlay (Non-Destructive Mode)": {
+      "status": "No",
+      "comment": ""
+    },
+    "GPIO Control via Web UI": {
+      "status": "No",
+      "comment": "No general-purpose GPIO; only dedicated ATX/DC-power/serial expansion boards via the extension port"
+    },
+    "Multiport KVM Support": {
+      "status": "No",
+      "comment": "Single-port device with no documented chaining/switching between multiple hosts"
+    },
+    "PoE Support": {
+      "status": "Partial",
+      "comment": "Only on a separate PoE hardware variant (IEEE 802.3af), sold at a higher price than the base model"
+    },
+    "Wake-on-LAN (WoL) Sender": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Wi-Fi": {
+      "status": "No"
+    },
+    "Ethernet (LAN)": {
+      "status": "Yes",
+      "comment": "RJ45, 100 Mbps"
+    },
+    "Virtual Network Adapter": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Zero-Config Remote Access": {
+      "status": "Yes",
+      "comment": "Free JetKVM Cloud via WebRTC with STUN/TURN, works behind restrictive NAT with no port forwarding"
+    },
+    "Clientless Browser": {
+      "status": "Yes",
+      "comment": "Browser-based control, no client software required"
+    },
+    "Event Notifications (Alerting)": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Multi-User Collaboration": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Open Source Firmware & Plugins": {
+      "status": "Yes",
+      "comment": "System image, KVM runtime, dashboard, and even the cloud implementation are open source on GitHub (jetkvm/kvm)"
+    },
+    "REST API / Webhooks": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Scripting": {
+      "status": "Yes",
+      "comment": "SSH access via Developer Mode allows full customization"
+    },
+    "Serial Console Web Gateway": {
+      "status": "Partial",
+      "comment": "Available via a separate RS-232 serial console expansion board, not built into the base unit"
+    },
+    "Software Ecosystem & Client": {
+      "status": "Partial",
+      "comment": ""
+    },
+    "Software USB Replug": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "System Health & Fan Control": {
+      "status": "No",
+      "comment": ""
+    },
+    "2FA / TOTP Support": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Audit Trail / Event Logging": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Encrypted Stream (TLS 1.3 / AES-256)": {
+      "status": "Partial",
+      "comment": "WebRTC traffic through JetKVM Cloud is encrypted via DTLS-SRTP"
+    },
+    "Enterprise Auth (LDAP / AD / SSO)": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "No Subscription (On-Premise Only)": {
+      "status": "Yes",
+      "comment": "Cloud access is free with no subscription; the cloud implementation is also open source and can be self-hosted"
+    },
+    "Role-Based Access Control (RBAC)": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Session Recording": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "AI Agents": {
+      "status": "No",
+      "comment": ""
+    },
+    "BIOS-in-Terminal (OCR)": {
+      "status": "No",
+      "comment": ""
+    },
+    "Fleet Management / Central Dashboard": {
+      "status": "No",
+      "comment": ""
+    },
+    "Immutable Snapshots": {
+      "status": "No",
+      "comment": ""
+    },
+    "IPMI / Redfish Emulation": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Mass Deployment / Auto-Provisioning": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Privacy / Blank Screen Mode": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "OTA Updates": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Refresh Rate": {
+      "status": "60 Hz"
+    }
+  },
+  "pricing": {
+    "Device Price": {
+      "status": "$103 (Non-PoE) / $119 (PoE variant)",
+      "comment": ""
+    },
+    "What's Included": {
+      "status": "Partial",
+      "comment": "HDMI cable, USB-C to USB-A cable; power/data splitter no longer included as of shipments from May 2026 onward. The ATX/DC power control board is NOT included and is sold separately"
+    },
+    "Cloud Access": {
+      "status": "Free",
+      "comment": "JetKVM Cloud (WebRTC/STUN/TURN) is free, with no paid tier"
+    },
+    "Subscription": {
+      "status": "No"
+    },
+    "Additional Accessories": {
+      "status": "Partial",
+      "comment": "ATX Extension Board, DC Power Control Extension, and Serial Console Extension are all sold separately"
+    },
+    "Software Licensing Model": {
+      "status": "Open-source",
+      "comment": "Firmware, dashboard, and cloud implementation are all open source (Go/TypeScript/C) on GitHub"
+    }
+  },
+  "os": {},
+  "hardware": {
+    "SoC / Processor": {
+      "status": "Rockchip RV1106G3 — single-core ARM Cortex-A7 @ 1.0 GHz",
+      "comment": "Includes a hardware H.264/H.265 video encoder (VPU); originally designed for IP cameras"
+    },
+    "RAM": {
+      "status": "256 MB DDR3L",
+      "comment": "Integrated on-chip"
+    },
+    "Onboard Storage": {
+      "status": "No",
+      "comment": "Older units used 16 GB soldered eMMC; current units (as of the April 2026 update) use a swappable microSD card instead"
+    },
+    "SD Card": {
+      "status": "Yes",
+      "comment": "32 GB microSD (as of the April 2026 hardware refresh); user-replaceable if it fails"
+    },
+    "Capture Chip": {
+      "status": "External Toshiba HDMI-to-MIPI CSI bridge chip",
+      "comment": "Exact model number not disclosed by the manufacturer; needed because the Rockchip SoC has no native HDMI input"
+    },
+    "Max. Input Resolution/Refresh Rate": {
+      "status": "1920×1080@60Hz",
+      "comment": ""
+    },
+    "HDCP Support": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "USB Ports": {
+      "status": "1× USB-C (480 Mbps / USB 2.0 Hi-Speed)",
+      "comment": "Used for both power and keyboard/mouse/mass-storage emulation"
+    },
+    "HDMI Input": {
+      "status": "1",
+      "comment": "Mini-HDMI on older units; full-size HDMI on units shipped after the 2026 hardware refresh"
+    },
+    "HDMI Output": {
+      "status": "0",
+      "comment": "No HDMI passthrough output"
+    },
+    "Ethernet Port": {
+      "status": "1× RJ45, 100 Mbps",
+      "comment": ""
+    },
+    "Serial/RS232 Port": {
+      "status": "No",
+      "comment": "Available only via a separate Serial Console expansion board"
+    },
+    "GPIO Pins": {
+      "status": "No",
+      "comment": ""
+    },
+    "Expansion Slot": {
+      "status": "RJ12 / 5-pin expansion port",
+      "comment": "For connecting ATX power control, DC power control, or serial console add-on boards"
+    },
+    "Kensington Lock": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Wi-Fi": {
+      "status": "No"
+    },
+    "Bluetooth": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Cellular/LTE/5G": {
+      "status": "No"
+    },
+    "Display": {
+      "status": "Yes",
+      "comment": "1.69\" IPS capacitive touchscreen, 280×240 resolution"
+    },
+    "LED Indicators": {
+      "status": "No",
+      "comment": "Status information (IP, MAC address, cable/connection state) is shown on the touchscreen instead of separate LEDs"
+    },
+    "Power Supply": {
+      "status": "5V via USB-C",
+      "comment": "The PoE variant also supports IEEE 802.3af Power over Ethernet"
+    },
+    "Voltage/Power Connector": {
+      "status": "5V DC via USB-C, max 1A",
+      "comment": "Warning: USB-C PD chargers with voltage negotiation should not be used — higher voltage can damage the device and voids warranty"
+    },
+    "Power Consumption": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "PoE (Power over Ethernet)": {
+      "status": "Partial",
+      "comment": "Only on the separate PoE SKU (IEEE 802.3af compliant); the standard version has no PoE"
+    },
+    "Backup Power / Supercapacitor": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Cooling": {
+      "status": "Passive",
+      "comment": "No fan; side vents only"
+    },
+    "Case Material": {
+      "status": "Plastic",
+      "comment": ""
+    },
+    "Form Factor": {
+      "status": "Ultra-compact"
+    },
+    "Dimensions (L×W×H)": {
+      "status": "60 × 43 × 31 mm",
+      "comment": ""
+    },
+    "Weight": {
+      "status": "~30 g",
+      "comment": ""
+    },
+    "Mounting": {
+      "status": "Desktop only",
+      "comment": "No rack/DIN mounting hardware included"
+    },
+    "Operating Temperature": {
+      "status": "10-35°C operating / 0-47°C storage",
+      "comment": ""
+    },
+    "Power Control Interface": {
+      "status": "Separate ATX/DC power control add-on boards via the RJ12/5-pin expansion port",
+      "comment": ""
+    },
+    "Watchdog / Auto-Reboot": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Certifications": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Warranty": {
+      "status": "Unknown",
+      "comment": ""
+    }
+  }
+}

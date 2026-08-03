@@ -1,0 +1,145 @@
+{
+  "name": "Draft",
+  "key": "draft",
+  "type": "software",
+  "website": "",
+  "github": "",
+  "description": "Draft of a new provider for filling and proposing changes.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Unknown"
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Unknown"
+    },
+    "Drawing Tablet Support": {
+      "status": "Unknown"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Unknown"
+    },
+    "Session Recording": {
+      "status": "Unknown"
+    },
+    "ISO Mounting": {
+      "status": "Unknown"
+    },
+    "Adaptive Bitrate": {
+      "status": "Unknown"
+    },
+    "H.264 Codec": {
+      "status": "Unknown"
+    },
+    "H.265 Codec": {
+      "status": "Unknown"
+    },
+    "AV1 Codec": {
+      "status": "Unknown"
+    },
+    "Multi-User Sessions": {
+      "status": "Unknown"
+    },
+    "Tailscale Support": {
+      "status": "Unknown"
+    },
+    "Open Source": {
+      "status": "Unknown"
+    },
+    "Multi-Monitor Support": {
+      "status": "Unknown"
+    },
+    "Microphone Passthrough": {
+      "status": "Unknown"
+    },
+    "Wake-on-LAN": {
+      "status": "Unknown"
+    },
+    "Pre-Login Access": {
+      "status": "Unknown"
+    },
+    "No Account Required": {
+      "status": "Unknown"
+    },
+    "KVM Integration": {
+      "status": "Unknown"
+    },
+    "Shared Clipboard": {
+      "status": "Unknown"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Unknown"
+    },
+    "Windows: Client": {
+      "status": "Unknown"
+    },
+    "macOS: Host": {
+      "status": "Unknown"
+    },
+    "macOS: Client": {
+      "status": "Unknown"
+    },
+    "Linux X11: Host": {
+      "status": "Unknown"
+    },
+    "Linux Wayland: Host": {
+      "status": "Unknown"
+    },
+    "Linux: Client": {
+      "status": "Unknown"
+    },
+    "Android: Host": {
+      "status": "Unknown"
+    },
+    "Android: Client": {
+      "status": "Unknown"
+    },
+    "iOS: Client": {
+      "status": "Unknown"
+    },
+    "Web Browser: Client": {
+      "status": "Unknown"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Unknown"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Unknown"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Unknown"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Unknown"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Unknown"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Unknown"
+    }
+  },
+  "pricing": {
+    "Free Tier": {
+      "status": "Unknown"
+    },
+    "Personal: Monthly": {
+      "status": "Unknown"
+    },
+    "Personal: Annual": {
+      "status": "Unknown"
+    },
+    "Team / Business: Monthly": {
+      "status": "Unknown"
+    },
+    "Team / Business: Annual": {
+      "status": "Unknown"
+    },
+    "Enterprise": {
+      "status": "Unknown"
+    }
+  }
+}
