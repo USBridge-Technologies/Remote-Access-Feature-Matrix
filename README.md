@@ -4,7 +4,7 @@
 
 Our goal is to gather the most detailed information about functionality, latency, supported codecs, and hardware capabilities in one place, so everyone can choose the perfect tool for their needs.
 
-### 👉 [Click here to view the Interactive Web Matrix]()
+### 👉 [Click here to view the Interactive Web Matrix](https://USBridge-Technologies.github.io/Remote-Access-Feature-Matrix/)
 
 ---
 
@@ -33,7 +33,7 @@ We develop the ultimate zero-latency remote desktop solution and a top-tier hard
 
 We've made the contribution process as simple as possible for everyone! You don't need to understand code or clone the repository to contribute.
 
-1. Go to our interactive web matrix: ****
+1. Go to our interactive web matrix: **[https://USBridge-Technologies.github.io/Remote-Access-Feature-Matrix/](https://USBridge-Technologies.github.io/Remote-Access-Feature-Matrix/)**
 2. To **edit** a parameter: simply double-click on any cell in the table.
 3. To **add** a new provider: click the `+ Add New Provider` button in the top right corner.
 4. Click **"Send Pull Request"** in the popup bar at the bottom of the screen.
