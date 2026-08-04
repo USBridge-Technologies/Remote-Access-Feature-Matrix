@@ -1,5 +1,253 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "Chrome Remote Desktop",
+  "key": "chrome-remote-desktop",
+  "type": "software",
+  "website": "https://remotedesktop.google.com",
+  "github": "",
+  "description": "Google's free, browser-based remote access tool. No pricing tiers at all — access is gated behind your Google account instead of a paywall, with a lightweight host component and PIN-based session start.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Partial",
+      "comment": "Clipboard needs wl-clipboard installed manually on Wayland; historically the Linux host uses its own virtual X11 session"
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "No",
+      "comment": "Uses VP8/VP9 video encoding, not designed for lossless full-chroma UI rendering"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Unknown",
+      "comment": "No published fixed FPS figure; performance is modest, tuned for low-bandwidth use"
+    },
+    "Session Recording": {
+      "status": "No"
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": "VP8/VP9 over WebRTC adapts to available bandwidth"
+    },
+    "H.264 Codec": {
+      "status": "No",
+      "comment": "Uses VP8 (and VP9), not H.264"
+    },
+    "H.265 Codec": {
+      "status": "No"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "Multi-User Sessions": {
+      "status": "No"
+    },
+    "Tailscale Support": {
+      "status": "No"
+    },
+    "Open Source": {
+      "status": "Partial",
+      "comment": "The host/client code lives in the open Chromium source tree (BSD-style), but isn't marketed as a standalone OSS project"
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes",
+      "comment": "Shows all remote monitors; you can switch between them or view all at once"
+    },
+    "Microphone Passthrough": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "No",
+      "comment": "The target machine must already be awake to connect; no built-in WoL"
+    },
+    "Pre-Login Access": {
+      "status": "No"
+    },
+    "No Account Required": {
+      "status": "No",
+      "comment": "Access is gated behind a Google account on both ends, plus a per-host PIN"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Bidirectional text clipboard; on Linux requires xclip (X11) or wl-clipboard (Wayland) installed"
+    },
+    "P2P (Direct Connection)": {
+      "status": "Partial",
+      "comment": "WebRTC attempts a direct path but falls back through Google's own relay infrastructure"
+    },
+    "Relay Server": {
+      "status": "Yes",
+      "comment": "Uses Google's own infrastructure for NAT traversal/relay; not self-hostable"
+    },
+    "LAN Discovery": {
+      "status": "No",
+      "comment": "Relies on your Google account's device list, not local network broadcast"
+    },
+    "Gamepad Passthrough": {
+      "status": "No",
+      "comment": "Mobile apps offer gamepad-style touch controls for the UI, not physical controller passthrough"
+    },
+    "Audio Streaming": {
+      "status": "Partial",
+      "comment": "Real-time audio is best supported when connecting to a Windows host"
+    },
+    "V-Sync": {
+      "status": "No"
+    },
+    "Session Sharing": {
+      "status": "No"
+    },
+    "Virtual Display": {
+      "status": "Partial",
+      "comment": "On Linux, the host has historically run its own persistent virtual X11 session rather than mirroring the live desktop"
+    },
+    "SSO / OIDC": {
+      "status": "Partial",
+      "comment": "Inherits Google Workspace SSO if your org uses it; no support for arbitrary third-party OIDC/SAML"
+    },
+    "2FA / MFA": {
+      "status": "Yes",
+      "comment": "Via your Google account's own 2FA/passkey/security key support"
+    },
+    "Address Book": {
+      "status": "No",
+      "comment": "Just a simple \"My Computers\" list tied to your Google account, no team/group management"
+    },
+    "Audit Logs": {
+      "status": "Partial",
+      "comment": "Access is logged against your Google account activity; Workspace admins get more visibility on managed devices"
+    },
+    "Mass Deployment": {
+      "status": "Partial",
+      "comment": "Chrome Enterprise/Workspace admins can push the host via policy; not available for casual personal use"
+    },
+    "RBAC": {
+      "status": "No"
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "No"
+    },
+    "Remote Printing": {
+      "status": "No"
+    },
+    "Generic USB Passthrough": {
+      "status": "No"
+    },
+    "File Manager UI": {
+      "status": "No",
+      "comment": "No built-in file transfer feature at all — a well-known limitation"
+    },
+    "Text Chat": {
+      "status": "No"
+    },
+    "On-Screen Whiteboard": {
+      "status": "No"
+    },
+    "Proxy Support": {
+      "status": "Unknown"
+    },
+    "UAC Handling": {
+      "status": "Unknown"
+    },
+    "HDR Support": {
+      "status": "No"
+    },
+    "OTA Updates": {
+      "status": "Yes",
+      "comment": "Updates silently in the background like the rest of Chrome/Google software"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes",
+      "comment": "Best-supported host platform, incl. Windows Hello passthrough and audio redirection"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Yes",
+      "comment": "Newer Apple Silicon Macs get native GPU decode acceleration"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes"
+    },
+    "Linux Wayland: Host": {
+      "status": "Partial",
+      "comment": "Clipboard needs wl-clipboard installed manually; capture support has historically lagged X11"
+    },
+    "Linux: Client": {
+      "status": "Yes",
+      "comment": "Fully browser-based, works on any Linux distro with a supported browser"
+    },
+    "Android: Host": {
+      "status": "No",
+      "comment": "Android is client-only, not a remote-access target"
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "Yes",
+      "comment": "The core, defining way to use CRD — 100% browser-based on the controlling side"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable",
+      "comment": "Not a GPU-accelerated game-streaming tool; performance isn't GPU-tier dependent in the same way"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable",
+      "comment": "Apple Silicon Macs do get native GPU decode acceleration for smoother playback, though"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable"
+    }
+  },
+  "pricing": {
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Entirely free; there is no paid CRD tier at all, personal or business"
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$0"
+    },
+    "Team / Business: Annual": {
+      "status": "$0"
+    },
+    "Enterprise": {
+      "status": "$0",
+      "comment": "No separate paid Enterprise SKU; Chrome Enterprise/Workspace just adds admin policy controls"
+    },
+    "Pricing Model": {
+      "status": "Free (Google account required)"
+    }
+  }
 }
