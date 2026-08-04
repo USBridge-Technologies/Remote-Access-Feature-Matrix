@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 "_index": index
             };
 
-            providersList.forEach(provKey => {
+            providersListBackup.forEach(provKey => {
                 const provider = modifiedProvidersData[provKey] || providersData[provKey];
                 if (provider && provider[sectionKey] && provider[sectionKey][rowName]) {
                     const info = provider[sectionKey][rowName];
@@ -689,7 +689,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 providersList = requested.filter(p => loadedList.includes(p));
             }
         } else {
-            providersList = loadedList.filter(k => k !== "draft");
+            const defaultVisible = ["usbridge", "rustdesk", "parsec", "teamviewer", "usbridgekvm2.0", "jetkvm", "pikvm-v4-plus"];
+            providersList = loadedList.filter(k => k !== "draft" && defaultVisible.includes(k));
         }
         providersListBackup = [...loadedList];
 
