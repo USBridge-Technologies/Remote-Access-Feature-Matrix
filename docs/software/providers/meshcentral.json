@@ -1,0 +1,263 @@
+{
+  "name": "MeshCentral",
+  "key": "meshcentral",
+  "type": "software",
+  "website": "https://meshcentral.com",
+  "github": "https://github.com/Ylianst/MeshCentral",
+  "description": "A fully open-source, self-hosted remote monitoring and management platform — a 100% web-based console with no client software needed on the admin side, plus built-in RBAC, 2FA, and MSP-grade fleet management, all free forever since you host it yourself.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "No",
+      "comment": "Confirmed by the developers: full unattended access requires falling back to X11/XWayland; Wayland's security model otherwise requires user interaction"
+    },
+    "P2P (Direct Connection)": {
+      "status": "No",
+      "comment": "Architecture is hub-and-spoke: both the agent and the browser console connect out to your MeshCentral server, rather than connecting directly to each other"
+    },
+    "Relay Server": {
+      "status": "Yes",
+      "comment": "This is the core of how MeshCentral works — but note it's your own self-hosted server acting as the relay, not a vendor-run cloud relay"
+    },
+    "LAN Discovery": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Tailscale Support": {
+      "status": "Unknown",
+      "comment": "No native integration found; can likely be layered on top manually since agents just need network reachability to the server"
+    },
+    "Open Source": {
+      "status": "Yes",
+      "comment": "Apache-2.0 license, fully open source since its first public release"
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Gamepad Passthrough": {
+      "status": "No"
+    },
+    "Audio Streaming": {
+      "status": "Yes",
+      "comment": "Remote audio playback from the managed device is supported"
+    },
+    "Microphone Passthrough": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Adaptive Bitrate": {
+      "status": "Partial",
+      "comment": "Remote desktop scaling/optimization exists (e.g. improvements shipped for the Android agent), but not a fully documented adaptive-bitrate video pipeline"
+    },
+    "H.264 Codec": {
+      "status": "No",
+      "comment": "MeshCentral's remote desktop is a lightweight custom tile-update protocol, not H.264/video-codec based"
+    },
+    "H.265 Codec": {
+      "status": "No"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "V-Sync": {
+      "status": "No"
+    },
+    "Session Sharing": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Multi-User Sessions": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Virtual Display": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Frame Rate (FPS)": {
+      "status": "Unknown",
+      "comment": "Uses a custom tile/differential-update desktop protocol rather than fixed-FPS video streaming; no published number"
+    },
+    "Session Recording": {
+      "status": "Yes",
+      "comment": "Remote desktop sessions can be recorded to file for later review"
+    },
+    "ISO Mounting": {
+      "status": "No",
+      "comment": "Not a virtualization/KVM tool; no virtual media mounting"
+    },
+    "Wake-on-LAN": {
+      "status": "Yes"
+    },
+    "Pre-Login Access": {
+      "status": "Yes",
+      "comment": "The native agent runs as a system service and can reach the machine before Windows login, similar to other agent-based tools"
+    },
+    "No Account Required": {
+      "status": "Partial",
+      "comment": "The end user being helped doesn't need an account (ad-hoc session links can be generated), but the administrator/technician does need a MeshCentral account on the server"
+    },
+    "KVM Integration": {
+      "status": "Yes",
+      "comment": "The \"local device group\" feature can relay to agent-less devices over SSH/RDP/VNC — MeshCentral's own documentation cites this being used to reach Raritan IP-KVM switch ports remotely"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "An automatic clipboard feature was added, plus clipboard support in the web-based RDP client"
+    },
+    "SSO / OIDC": {
+      "status": "Yes",
+      "comment": "Supports SAML-based SSO and LDAP/Active Directory integration for enterprise authentication"
+    },
+    "2FA / MFA": {
+      "status": "Yes",
+      "comment": "Extensive options: TOTP apps, WebAuthn/FIDO2 hardware keys, Yubikey OTP, email codes, Duo (paid third-party service), and passwordless LoginKey 3FA"
+    },
+    "Address Book": {
+      "status": "Yes",
+      "comment": "Device groups (\"meshes\") serve as the organizational/address-book layer for managed machines"
+    },
+    "Audit Logs": {
+      "status": "Yes",
+      "comment": "Built-in event logging for server and session activity"
+    },
+    "Mass Deployment": {
+      "status": "Yes",
+      "comment": "Generates installable agent packages per device group for fleet rollout (MSI, scripts, etc.)"
+    },
+    "RBAC": {
+      "status": "Yes",
+      "comment": "Granular role-based access control across users, user groups, and device groups"
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Remote Printing": {
+      "status": "No",
+      "comment": "No dedicated virtual print driver documented"
+    },
+    "Generic USB Passthrough": {
+      "status": "No",
+      "comment": "No native low-level USB redirection protocol"
+    },
+    "File Manager UI": {
+      "status": "Yes",
+      "comment": "A remote file access/management interface is built into the web console"
+    },
+    "Text Chat": {
+      "status": "Yes",
+      "comment": "Built-in chat and on-screen notifications for communicating with the end user during a session"
+    },
+    "On-Screen Whiteboard": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Proxy Support": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "UAC Handling": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "HDR Support": {
+      "status": "No"
+    },
+    "OTA Updates": {
+      "status": "Yes",
+      "comment": "The server can push agent updates to managed devices automatically"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes"
+    },
+    "Windows: Client": {
+      "status": "Yes",
+      "comment": "Fully web-based; any modern browser works"
+    },
+    "macOS: Host": {
+      "status": "Yes"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes"
+    },
+    "Linux Wayland: Host": {
+      "status": "Partial",
+      "comment": "The agent connects and basic functions work, but full unattended remote desktop control currently needs XWayland/X11 fallback"
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "Yes",
+      "comment": "A dedicated MeshCentral Agent for Android exists"
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "Yes",
+      "comment": "The web console is the primary and only official client — no separate desktop app to install for the admin"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable",
+      "comment": "MeshCentral is an MSP/admin tool, not a GPU-accelerated game/3D streaming client — no GPU-dependent benchmark applies"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable"
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "Free / Open Source (self-hosted)"
+    },
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Completely free and open source; there is no official paid tier from the project itself since you self-host it"
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$0"
+    },
+    "Team / Business: Annual": {
+      "status": "$0"
+    },
+    "Enterprise": {
+      "status": "$0",
+      "comment": "No official enterprise SKU; some third-party providers sell managed/hosted MeshCentral instances, but that's not an official paid tier of the project"
+    }
+  }
+}
