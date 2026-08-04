@@ -2,7 +2,7 @@
   "name": "Moonlight / Sunshine",
   "key": "moonlight-sunshine",
   "type": "software",
-  "website": "https://sunshinestream.app",
+  "website": "https://moonlight-stream.org/",
   "github": "https://github.com/LizardByte/Sunshine",
   "description": "The open-source game-streaming pair: Sunshine is the self-hosted server (host), Moonlight is the client. Ultra-low-latency H.264/HEVC/AV1 streaming with hardware encoding, no cloud fees, no subscription.",
   "features": {
