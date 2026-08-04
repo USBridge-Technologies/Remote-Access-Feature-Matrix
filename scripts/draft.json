@@ -1,5 +1,261 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "Moonlight / Sunshine",
+  "key": "moonlight-sunshine",
+  "type": "software",
+  "website": "https://sunshinestream.app",
+  "github": "https://github.com/LizardByte/Sunshine",
+  "description": "The open-source game-streaming pair: Sunshine is the self-hosted server (host), Moonlight is the client. Ultra-low-latency H.264/HEVC/AV1 streaming with hardware encoding, no cloud fees, no subscription.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Yes",
+      "comment": "Sunshine captures via KMS on Wayland (needs one-time setcap); no per-session confirm dialog after that"
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "No",
+      "comment": "Video-codec based streaming (H.264/HEVC/AV1), standard chroma subsampling, not full 4:4:4"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Up to 240",
+      "comment": "Sunshine can stream at very high frame rates; actual FPS depends on host GPU encoder and network"
+    },
+    "Session Recording": {
+      "status": "No"
+    },
+    "ISO Mounting": {
+      "status": "No",
+      "comment": "Not a VM/KVM tool; game-streaming only"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": "Moonlight client adjusts to network conditions; Sunshine exposes bitrate/FEC tuning"
+    },
+    "H.264 Codec": {
+      "status": "Yes"
+    },
+    "H.265 Codec": {
+      "status": "Yes",
+      "comment": "HEVC, including HDR-capable Main10 profile"
+    },
+    "AV1 Codec": {
+      "status": "Yes",
+      "comment": "AV1 Main 8-bit/10-bit, on GPUs with AV1 encode support"
+    },
+    "Multi-User Sessions": {
+      "status": "No",
+      "comment": "Streams the host's single active display/session, not isolated multi-user terminal sessions"
+    },
+    "Tailscale Support": {
+      "status": "Partial",
+      "comment": "Works over any reachable network incl. Tailscale, but no native built-in integration"
+    },
+    "Open Source": {
+      "status": "Yes",
+      "comment": "Both Sunshine (GPL-3.0) and Moonlight clients are fully open source"
+    },
+    "Multi-Monitor Support": {
+      "status": "No",
+      "comment": "Streams one selected display at a time, not simultaneous multi-monitor output"
+    },
+    "Microphone Passthrough": {
+      "status": "No",
+      "comment": "No client-mic-to-host passthrough; the macOS mic permission is only for host audio capture"
+    },
+    "Wake-on-LAN": {
+      "status": "Yes",
+      "comment": "Moonlight can send a WoL packet to wake the Sunshine host before connecting"
+    },
+    "Pre-Login Access": {
+      "status": "No",
+      "comment": "Sunshine must be running as a logged-in session/service; no pre-login BIOS-style access"
+    },
+    "No Account Required": {
+      "status": "Yes",
+      "comment": "One-time PIN pairing between Moonlight and Sunshine; no cloud account needed"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "No"
+    },
+    "P2P (Direct Connection)": {
+      "status": "Yes",
+      "comment": "Direct connection to the Sunshine host's IP, over LAN or WAN with port forwarding"
+    },
+    "Relay Server": {
+      "status": "No",
+      "comment": "No built-in relay/TURN server; WAN access needs port forwarding or a VPN like Tailscale"
+    },
+    "LAN Discovery": {
+      "status": "Yes",
+      "comment": "Moonlight auto-discovers Sunshine hosts on the local network via mDNS"
+    },
+    "Gamepad Passthrough": {
+      "status": "Yes",
+      "comment": "Flagship feature: virtual Xbox 360/DS4 controller emulation on the host. Not supported on macOS"
+    },
+    "Audio Streaming": {
+      "status": "Yes"
+    },
+    "V-Sync": {
+      "status": "Unknown"
+    },
+    "Session Sharing": {
+      "status": "No",
+      "comment": "One active Moonlight client per Sunshine instance at a time"
+    },
+    "Virtual Display": {
+      "status": "Yes",
+      "comment": "Sunshine can create/manage a virtual display for headless streaming (Windows)"
+    },
+    "SSO / OIDC": {
+      "status": "No"
+    },
+    "2FA / MFA": {
+      "status": "No",
+      "comment": "Just one-time PIN pairing plus a web UI username/password; no ongoing 2FA"
+    },
+    "Address Book": {
+      "status": "No",
+      "comment": "Moonlight keeps a simple list of paired hosts, not a full team address book"
+    },
+    "Audit Logs": {
+      "status": "No"
+    },
+    "Mass Deployment": {
+      "status": "No"
+    },
+    "RBAC": {
+      "status": "No",
+      "comment": "Single admin credential set for the Sunshine web UI; no role-based permissions"
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "No"
+    },
+    "Remote Printing": {
+      "status": "No"
+    },
+    "Generic USB Passthrough": {
+      "status": "No",
+      "comment": "Only emulated game controllers are passed through, not arbitrary USB devices"
+    },
+    "File Manager UI": {
+      "status": "No"
+    },
+    "Text Chat": {
+      "status": "No"
+    },
+    "On-Screen Whiteboard": {
+      "status": "No"
+    },
+    "Proxy Support": {
+      "status": "Unknown"
+    },
+    "UAC Handling": {
+      "status": "Unknown",
+      "comment": "Depends on the capture backend used; not clearly documented across all methods"
+    },
+    "HDR Support": {
+      "status": "Yes",
+      "comment": "HEVC Main10/AV1 10-bit HDR streaming on supported GPUs (Windows and Linux via VAAPI)"
+    },
+    "OTA Updates": {
+      "status": "No",
+      "comment": "Updated manually via installer/package manager; no built-in auto-update push"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes",
+      "comment": "Sunshine's most mature and widely-used platform"
+    },
+    "Windows: Client": {
+      "status": "Yes",
+      "comment": "Moonlight for Windows"
+    },
+    "macOS: Host": {
+      "status": "Yes",
+      "comment": "Sunshine via VideoToolbox/CoreGraphics; gamepad passthrough not supported on macOS"
+    },
+    "macOS: Client": {
+      "status": "Yes",
+      "comment": "Moonlight for macOS"
+    },
+    "Linux X11: Host": {
+      "status": "Yes"
+    },
+    "Linux Wayland: Host": {
+      "status": "Yes",
+      "comment": "Via the KMS capture backend, requires a one-time setcap on the binary"
+    },
+    "Linux: Client": {
+      "status": "Yes",
+      "comment": "Moonlight for Linux, also used on Steam Deck and Raspberry Pi builds"
+    },
+    "Android: Host": {
+      "status": "No",
+      "comment": "Sunshine does not run as a host on Android"
+    },
+    "Android: Client": {
+      "status": "Yes",
+      "comment": "One of the most popular Moonlight clients, incl. NVIDIA Shield"
+    },
+    "iOS: Client": {
+      "status": "Yes",
+      "comment": "Moonlight for iOS/tvOS"
+    },
+    "Web Browser: Client": {
+      "status": "No",
+      "comment": "No official browser-based Moonlight client; only community/experimental projects exist"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Unknown",
+      "comment": "No official published benchmark table; performance follows NVENC encoder tier"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Unknown"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Unknown"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Unknown"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Unknown",
+      "comment": "Uses Apple VideoToolbox for hardware encoding on macOS hosts"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Unknown"
+    }
+  },
+  "pricing": {
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Completely free and open source, no paid tiers at all"
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$0"
+    },
+    "Team / Business: Annual": {
+      "status": "$0"
+    },
+    "Enterprise": {
+      "status": "$0"
+    },
+    "Pricing Model": {
+      "status": "Free / Open Source (self-hosted)"
+    }
+  }
 }
