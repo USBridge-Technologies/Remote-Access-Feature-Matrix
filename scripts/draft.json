@@ -1,5 +1,266 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "SPICE",
+  "key": "spice",
+  "type": "software",
+  "website": "https://www.spice-space.org",
+  "github": "",
+  "description": "The open-source display protocol built into QEMU/KVM hypervisors (Proxmox, oVirt, libvirt) for accessing a virtual machine's console — not a general-purpose remote desktop tool, but the native way to see and control a VM's screen, including pre-boot BIOS/bootloader access.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "No",
+      "comment": "The SPICE guest agent (spice-vdagent) does not support clipboard sync or resolution sync on Wayland guests; a fix is still in progress upstream"
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Yes",
+      "comment": "Lossless compression modes (QUIC/GLZ/LZ4) preserve full color fidelity for UI content, unlike video-oriented 4:2:0 codecs"
+    },
+    "Drawing Tablet Support": {
+      "status": "No",
+      "comment": "No native pen pressure/tilt passthrough"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Variable",
+      "comment": "Depends on the guest's virtual GPU (QXL/virtio-gpu) and network; no fixed cap"
+    },
+    "Session Recording": {
+      "status": "No",
+      "comment": "Not part of the protocol itself"
+    },
+    "ISO Mounting": {
+      "status": "No",
+      "comment": "Handled by the hypervisor (e.g. Proxmox), not by the SPICE protocol itself"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": "Automatically adjusts image compression/quality to available bandwidth"
+    },
+    "H.264 Codec": {
+      "status": "Yes",
+      "comment": "Supported for video regions via GStreamer-based streaming, in addition to still-image compression for the rest of the screen"
+    },
+    "H.265 Codec": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "Multi-User Sessions": {
+      "status": "Yes",
+      "comment": "Native by design — each VM is its own isolated session; this isn't RDP-style multi-session on a single OS instance"
+    },
+    "Tailscale Support": {
+      "status": "No",
+      "comment": "No native integration"
+    },
+    "Open Source": {
+      "status": "Yes",
+      "comment": "Fully open source (LGPL/GPL/BSD-style licensing), originally released by Red Hat in 2009"
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes",
+      "comment": "The QXL virtual display adapter supports multiple heads/monitors for a single VM"
+    },
+    "Microphone Passthrough": {
+      "status": "Yes",
+      "comment": "Audio recording (client mic to guest) is supported alongside audio playback"
+    },
+    "Wake-on-LAN": {
+      "status": "No",
+      "comment": "Not applicable — VMs are started via the hypervisor, not woken over the network"
+    },
+    "Pre-Login Access": {
+      "status": "Yes",
+      "comment": "Since SPICE renders the guest's raw framebuffer, it shows BIOS/bootloader/login screens just like a physical console"
+    },
+    "No Account Required": {
+      "status": "Partial",
+      "comment": "Depends on the hypervisor's configuration — access can rely on a SPICE server password or the management layer's own authentication (e.g. Proxmox ticket)"
+    },
+    "KVM Integration": {
+      "status": "No",
+      "comment": "Refers to hardware KVM-over-IP capture/control boards, not the KVM hypervisor SPICE is commonly paired with — these are unrelated uses of \"KVM\""
+    },
+    "Shared Clipboard": {
+      "status": "Partial",
+      "comment": "Works well via spice-vdagent on X11 guests; broken/unsupported on Wayland guests"
+    },
+    "P2P (Direct Connection)": {
+      "status": "Yes",
+      "comment": "The client connects directly to the SPICE server exposed by the hypervisor"
+    },
+    "Relay Server": {
+      "status": "No",
+      "comment": "No built-in relay/NAT traversal mechanism; typically reached via the hypervisor's management network or a manual reverse proxy/tunnel"
+    },
+    "LAN Discovery": {
+      "status": "No"
+    },
+    "Gamepad Passthrough": {
+      "status": "No",
+      "comment": "Not a native protocol feature"
+    },
+    "Audio Streaming": {
+      "status": "Yes",
+      "comment": "Audio playback from the guest is supported"
+    },
+    "V-Sync": {
+      "status": "No"
+    },
+    "Session Sharing": {
+      "status": "Partial",
+      "comment": "Multiple simultaneous client connections are an experimental/debug feature (SPICE_DEBUG_ALLOW_MC), not enabled by default"
+    },
+    "Virtual Display": {
+      "status": "Yes",
+      "comment": "Core to how SPICE works — the QXL virtual display adapter is the guest's video device"
+    },
+    "SSO / OIDC": {
+      "status": "No",
+      "comment": "Not part of the protocol; handled (if at all) by the hypervisor's management layer, e.g. Proxmox's own auth realms"
+    },
+    "2FA / MFA": {
+      "status": "No",
+      "comment": "Not part of the protocol; would come from the hypervisor's management UI, not SPICE itself"
+    },
+    "Address Book": {
+      "status": "No"
+    },
+    "Audit Logs": {
+      "status": "No",
+      "comment": "Not part of the protocol; the hypervisor may log VM console access separately"
+    },
+    "Mass Deployment": {
+      "status": "No",
+      "comment": "Not applicable at the protocol level"
+    },
+    "RBAC": {
+      "status": "No",
+      "comment": "Not part of the protocol; access control is managed by the hypervisor (e.g. Proxmox permissions)"
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "No"
+    },
+    "Remote Printing": {
+      "status": "No",
+      "comment": "No native print-redirection driver; a physical USB printer could in theory be passed through via USB redirection"
+    },
+    "Generic USB Passthrough": {
+      "status": "Yes",
+      "comment": "USB redirection (usbredir) is one of SPICE's marquee features, working at a low protocol level for arbitrary USB devices"
+    },
+    "File Manager UI": {
+      "status": "No",
+      "comment": "No dedicated two-pane file manager, though spice-vdagent supports drag-and-drop file transfer into the guest"
+    },
+    "Text Chat": {
+      "status": "No"
+    },
+    "On-Screen Whiteboard": {
+      "status": "No"
+    },
+    "Proxy Support": {
+      "status": "No",
+      "comment": "No native proxy setting; the connection can be manually tunneled (e.g. over SSH) but this isn't a built-in protocol feature"
+    },
+    "UAC Handling": {
+      "status": "Yes",
+      "comment": "Since SPICE streams the guest's raw framebuffer, UAC prompts on a Windows guest display normally without any special handling"
+    },
+    "HDR Support": {
+      "status": "No"
+    },
+    "OTA Updates": {
+      "status": "No",
+      "comment": "Not applicable — SPICE is a protocol/library, updated via the host OS's package manager, not an OTA mechanism"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "No",
+      "comment": "SPICE has no notion of a physical-desktop \"host\" — the server side is a library used by Linux-based hypervisors (QEMU/KVM), not something you run to share a Windows desktop"
+    },
+    "Windows: Client": {
+      "status": "Yes",
+      "comment": "virt-viewer/remote-viewer builds are available for Windows"
+    },
+    "macOS: Host": {
+      "status": "No",
+      "comment": "Same reasoning as Windows: Host — not applicable"
+    },
+    "macOS: Client": {
+      "status": "Partial",
+      "comment": "virt-viewer builds exist for macOS but are less commonly maintained/used than the Linux and Windows clients"
+    },
+    "Linux X11: Host": {
+      "status": "Yes",
+      "comment": "This is the \"native\" case — the SPICE server runs as part of QEMU/KVM on a Linux hypervisor host"
+    },
+    "Linux Wayland: Host": {
+      "status": "Partial",
+      "comment": "The hypervisor host itself runs fine under Wayland; the limitation is specifically with Wayland inside the guest VM (clipboard/resolution sync)"
+    },
+    "Linux: Client": {
+      "status": "Yes",
+      "comment": "virt-viewer/remote-viewer are native on Linux and the most common way to use SPICE"
+    },
+    "Android: Client": {
+      "status": "Partial",
+      "comment": "Third-party SPICE clients exist for Android (e.g. aSPICE), not an official first-party app"
+    },
+    "iOS: Client": {
+      "status": "Partial",
+      "comment": "Limited third-party SPICE client support exists on iOS"
+    },
+    "Web Browser: Client": {
+      "status": "Partial",
+      "comment": "spice-html5 is an experimental JavaScript/WebSocket client; Proxmox's own web console typically uses noVNC rather than full SPICE-over-browser"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable",
+      "comment": "SPICE performance depends on the guest's virtual GPU (QXL/virtio-gpu), not host GPU passthrough benchmarks, in typical deployments"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable"
+    }
+  },
+  "pricing": {
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Completely free and open source, no tiers or paid unlocks"
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$0"
+    },
+    "Team / Business: Annual": {
+      "status": "$0"
+    },
+    "Enterprise": {
+      "status": "$0",
+      "comment": "SPICE itself has no paid tier; Red Hat sells support subscriptions for the virtualization platforms (e.g. RHV) it's bundled into, not for SPICE itself"
+    },
+    "Pricing Model": {
+      "status": "Free / Open Source"
+    }
+  }
 }
