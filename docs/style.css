@@ -975,16 +975,6 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
         font-size: 13px;
     }
 
-    /* Fix frozen column transparency */
-    .tabulator-row .tabulator-cell.tabulator-frozen {
-        background-color: #171717 !important;
-        border-right: 1px solid #333 !important;
-    }
-    .tabulator-col.tabulator-frozen {
-        background-color: #212121 !important;
-        border-right: 1px solid #333 !important;
-    }
-
     /* Adjust font sizes and wrap text */
     .tabulator-cell, .tabulator-col-title {
         font-size: 12px !important;
@@ -998,4 +988,14 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
     }
+}
+
+/* Fix frozen column transparency (Global) */
+.tabulator-row .tabulator-cell.tabulator-frozen {
+    background-color: #171717 !important;
+    border-right: 1px solid #333 !important;
+}
+.tabulator-col.tabulator-frozen {
+    background-color: #212121 !important;
+    border-right: 1px solid #333 !important;
 }

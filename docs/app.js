@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 field: tabState.field, 
                 width: window.innerWidth <= 768 ? 180 : (currentTab === "hardware" ? 380 : 350),
                 minWidth: window.innerWidth <= 768 ? 180 : 250,
-                frozen: true,
+                frozen: window.innerWidth <= 768,
                 formatter: featureFormatter,
                 sorter: featureSorter,
                 vertAlign: "middle"
