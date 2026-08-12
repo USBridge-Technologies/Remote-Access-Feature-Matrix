@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const removeBtnHtml = `<button class="hide-provider-btn" data-provider-key="${provKey}" style="background: none; border: none; color: #777777; cursor: pointer; padding: 2px 4px; font-size: 12px; font-weight: bold; line-height: 1;" title="Скрыть поставщика из таблицы">✕</button>`;
 
-            columns.push({
+            const colDef = {
                 title: `<div style="position: relative; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 24px; padding-right: 36px;">${nameHtml}<div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 2px;">${editBtnHtml}${removeBtnHtml}</div></div>`,
                 field: provKey,
                 formatter: statusFormatter,
@@ -429,7 +429,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 headerHozAlign: "center",
                 vertAlign: "middle",
                 widthGrow: 1,
-                minWidth: window.innerWidth <= 768 ? 130 : undefined,
                 headerSort: false,
                 headerClick: function(e, column) {
                     if (e.target.closest(".edit-header-btn") || e.target.closest(".hide-provider-btn")) {
@@ -444,7 +443,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                         }
                     }
                 }
-            });
+            };
+            if (window.innerWidth <= 768) {
+                colDef.minWidth = 130;
+            }
+            columns.push(colDef);
         });
 
         return columns;
