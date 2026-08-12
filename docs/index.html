@@ -30,9 +30,18 @@
         <p>The ultimate community-driven feature matrix comparing the best remote desktop software (USBridge, RustDesk, Parsec, AnyDesk, TeamViewer, Moonlight) and Hardware KVM solutions (USBridge KVM, JetKVM, PiKVM). Compare latency, codecs, gaming performance, and hardware features.</p>
     </div>
     
-    <div class="matrix-type-switch">
-        <a href="?type=soft" id="type-btn-soft" class="type-btn active">Software Remote Access</a>
-        <a href="?type=kvm" id="type-btn-kvm" class="type-btn">Hardware (KVM-over-IP) Access</a>
+    <div class="top-header-wrapper" style="display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 24px;">
+        <div class="matrix-type-switch" style="margin-bottom: 0;">
+            <a href="?type=soft" id="type-btn-soft" class="type-btn active">
+                <span class="desktop-text">Software Remote Access</span><span class="mobile-text">Software</span>
+            </a>
+            <a href="?type=kvm" id="type-btn-kvm" class="type-btn">
+                <span class="desktop-text">Hardware (KVM-over-IP) Access</span><span class="mobile-text">Hardware (KVM)</span>
+            </a>
+        </div>
+        <button id="add-provider-btn" class="add-provider-header-btn" title="Add a new provider" style="position: absolute; right: 0;">
+            <span class="desktop-text">+ Add Software</span><span class="mobile-text">+</span>
+        </button>
     </div>
     
     <div class="tabs-container" style="align-items: center;">
@@ -40,7 +49,6 @@
         <button class="tab-btn" data-tab="os">Operating Systems</button>
         <button class="tab-btn" data-tab="hardware">Hardware & Performance</button>
         <button class="tab-btn" data-tab="pricing">Pricing</button>
-        <button id="add-provider-btn" class="add-provider-header-btn" title="Add a new provider">+ Add Software</button>
     </div>
 
     <div class="panel">

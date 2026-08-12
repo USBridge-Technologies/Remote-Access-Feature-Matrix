@@ -888,3 +888,114 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
 .modal-close:hover {
     color: #ffffff;
 }
+
+.mobile-text {
+    display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .desktop-text {
+        display: none;
+    }
+    .mobile-text {
+        display: inline;
+    }
+
+    body {
+        padding: 12px;
+        padding-bottom: 80px;
+    }
+    
+    .panel {
+        padding: 10px;
+        margin-bottom: 16px;
+    }
+    
+    .tabs-container {
+        flex-wrap: wrap;
+        gap: 4px;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+        flex: 1 1 auto;
+        text-align: center;
+    }
+    
+    .matrix-type-switch {
+        flex-direction: row;
+        gap: 6px;
+        padding: 0;
+    }
+    
+    .type-btn {
+        flex: 1;
+        padding: 8px 12px;
+        font-size: 13px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    
+    .add-provider-header-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        position: absolute !important;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .provider-card-modal-content,
+    .edit-provider-modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    #controls {
+        gap: 10px;
+    }
+    
+    .dropdown-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    /* Fix frozen column transparency */
+    .tabulator-row .tabulator-cell.tabulator-frozen {
+        background-color: #171717 !important;
+        border-right: 1px solid #333 !important;
+    }
+    .tabulator-col.tabulator-frozen {
+        background-color: #212121 !important;
+        border-right: 1px solid #333 !important;
+    }
+
+    /* Adjust font sizes and wrap text */
+    .tabulator-cell, .tabulator-col-title {
+        font-size: 12px !important;
+    }
+    
+    .feature-left > span {
+        white-space: normal;
+        text-overflow: clip;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+}

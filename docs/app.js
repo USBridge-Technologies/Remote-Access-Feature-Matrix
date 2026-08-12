@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const addProviderBtn = document.getElementById('add-provider-btn');
     if (addProviderBtn) {
-        addProviderBtn.textContent = dataType === 'kvm' ? '+ Add KVM' : '+ Add Software';
+        addProviderBtn.innerHTML = dataType === 'kvm' 
+            ? '<span class="desktop-text">+ Add KVM</span><span class="mobile-text">+</span>' 
+            : '<span class="desktop-text">+ Add Software</span><span class="mobile-text">+</span>';
     }
 
     
@@ -387,8 +389,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             { 
                 title: `${tabState.title} ${addParamBtnHtml}`, 
                 field: tabState.field, 
-                width: currentTab === "hardware" ? 380 : 350,
-                minWidth: 250,
+                width: window.innerWidth <= 768 ? 180 : (currentTab === "hardware" ? 380 : 350),
+                minWidth: window.innerWidth <= 768 ? 180 : 250,
+                frozen: true,
                 formatter: featureFormatter,
                 sorter: featureSorter,
                 vertAlign: "middle"
@@ -426,6 +429,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 headerHozAlign: "center",
                 vertAlign: "middle",
                 widthGrow: 1,
+                minWidth: window.innerWidth <= 768 ? 130 : undefined,
                 headerSort: false,
                 headerClick: function(e, column) {
                     if (e.target.closest(".edit-header-btn") || e.target.closest(".hide-provider-btn")) {
@@ -652,7 +656,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         table = new Tabulator("#matrix-table", {
             index: tabState.field,
             data: tabState.data,
-            layout: "fitColumns",
+            layout: window.innerWidth <= 768 ? "fitData" : "fitColumns",
             pagination: false,
             maxHeight: "calc(100vh - 120px)",
             initialSort: [{ column: tabState.field, dir: "asc" }],
@@ -689,7 +693,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 providersList = requested.filter(p => loadedList.includes(p));
             }
         } else {
-            const defaultVisible = ["usbridge", "rustdesk", "parsec", "teamviewer", "usbridgekvm2.0", "jetkvm", "pikvm-v4-plus"];
+            let defaultVisible = ["usbridge", "rustdesk", "parsec", "teamviewer", "usbridgekvm2.0", "jetkvm", "pikvm-v4-plus"];
+            if (window.innerWidth <= 768) {
+                defaultVisible = ["usbridge", "rustdesk", "parsec", "usbridgekvm2.0", "jetkvm"];
+            }
             providersList = loadedList.filter(k => k !== "draft" && defaultVisible.includes(k));
         }
         providersListBackup = [...loadedList];
