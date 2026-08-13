@@ -30,8 +30,8 @@
         <p>The ultimate community-driven feature matrix comparing the best remote desktop software (USBridge, RustDesk, Parsec, AnyDesk, TeamViewer, Moonlight) and Hardware KVM solutions (USBridge KVM, JetKVM, PiKVM). Compare latency, codecs, gaming performance, and hardware features.</p>
     </div>
     
-    <div class="top-header-wrapper" style="display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 24px;">
-        <div class="matrix-type-switch" style="margin-bottom: 0;">
+    <div class="top-header-wrapper">
+        <div class="matrix-type-switch">
             <a href="?type=soft" id="type-btn-soft" class="type-btn active">
                 <span class="desktop-text">Software Remote Access</span><span class="mobile-text">Software</span>
             </a>
@@ -39,16 +39,18 @@
                 <span class="desktop-text">Hardware (KVM-over-IP) Access</span><span class="mobile-text">Hardware (KVM)</span>
             </a>
         </div>
-        <button id="add-provider-btn" class="add-provider-header-btn" title="Add a new provider" style="position: absolute; right: 0;">
-            <span class="desktop-text">+ Add Software</span><span class="mobile-text">+</span>
-        </button>
     </div>
     
-    <div class="tabs-container" style="align-items: center;">
+    <div class="tabs-container">
         <button class="tab-btn active" data-tab="features">Features</button>
-        <button class="tab-btn" data-tab="os">Operating Systems</button>
-        <button class="tab-btn" data-tab="hardware">Hardware & Performance</button>
+        <button class="tab-btn" data-tab="os">
+            <span class="desktop-text">Operating Systems</span><span class="mobile-text">OS</span>
+        </button>
+        <button class="tab-btn" data-tab="hardware">
+            <span class="desktop-text">Hardware & Performance</span><span class="mobile-text">Hardware</span>
+        </button>
         <button class="tab-btn" data-tab="pricing">Pricing</button>
+        <button id="add-provider-btn-desktop" class="add-provider-header-btn desktop-only" title="Add a new provider">+ Add Software</button>
     </div>
 
     <div class="panel">
@@ -62,25 +64,42 @@
                         Feature Filters: <strong id="feature-count">31/31</strong> ▾
                     </button>
                     <div class="dropdown-menu dropdown-large" id="feature-dropdown-menu">
+                        <div class="mobile-modal-header">
+                            <div class="mobile-modal-title">
+                                <h3>Parameters</h3>
+                                <span class="modal-subtitle" id="feature-modal-subtitle"></span>
+                            </div>
+                            <button class="mobile-modal-close" id="close-feature-modal">✕</button>
+                        </div>
                         <div class="dropdown-search">
-                            <input type="text" id="feature-search-input" placeholder="Search features...">
+                            <input type="text" id="feature-search-input" placeholder="Search parameters...">
                         </div>
                         <div class="dropdown-actions">
                             <button id="feature-select-all">Select All</button>
                             <button id="feature-deselect-all">Deselect All</button>
                         </div>
-                        <div class="dropdown-list" id="feature-checkbox-list">
+                        <div class="dropdown-list" id="feature-checkbox-list" style="margin-bottom: 12px;">
                             
+                        </div>
+                        <div class="mobile-only" style="border-top: 1px solid #333; padding-top: 12px; margin-top: auto;">
+                            <div id="category-filters-mobile" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; padding: 0 12px;"></div>
                         </div>
                     </div>
                 </div>
 
                 
-                <div class="dropdown">
+                <div class="dropdown" id="provider-dropdown-container">
                     <button class="dropdown-btn" id="soft-dropdown-btn">
                         Software Providers: <strong id="soft-count">5/5</strong> ▾
                     </button>
                     <div class="dropdown-menu" id="soft-dropdown-menu">
+                        <div class="mobile-modal-header">
+                            <div class="mobile-modal-title">
+                                <h3>Providers</h3>
+                                <span class="modal-subtitle" id="provider-modal-subtitle"></span>
+                            </div>
+                            <button class="mobile-modal-close" id="close-provider-modal">✕</button>
+                        </div>
                         <div class="dropdown-search">
                             <input type="text" id="soft-search-input" placeholder="Search provider...">
                         </div>
@@ -88,19 +107,25 @@
                             <button id="soft-select-all">Select All</button>
                             <button id="soft-deselect-all">Deselect All</button>
                         </div>
-                        <div class="dropdown-list" id="soft-checkbox-list">
+                        <div class="dropdown-list" id="soft-checkbox-list" style="margin-bottom: 12px;">
                             
+                        </div>
+                        <div class="mobile-only" style="padding: 12px; border-top: 1px solid #333; margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
+                            <button id="add-provider-btn" style="width: 100%; padding: 10px; border-radius: 8px; background: rgba(195, 230, 121, 0.1); border: 1px solid rgba(195, 230, 121, 0.3); color: #c3e679; font-weight: bold; cursor: pointer; transition: background 0.2s;">
+                                + Add Solution
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <button id="restore-features-btn" class="restore-btn" style="display: none;">Reset Row Filters</button>
+                <button id="restore-features-btn" class="restore-btn desktop-only" style="display: none;">Reset Row Filters</button>
             </div>
-
             
-            <div id="category-filters" style="display: flex; gap: 8px; flex-wrap: wrap; flex: 1; justify-content: flex-end; align-content: flex-start;">
+            <div id="category-filters" class="desktop-only" style="display: flex; gap: 8px; flex-wrap: wrap; flex: 1; justify-content: flex-end; align-content: flex-start;">
                 
             </div>
+
+
 
         </div>
     </div>
@@ -223,6 +248,15 @@
                 Description...
             </p>
 
+            <div id="mobile-provider-actions" style="display: none; gap: 12px; margin-bottom: 20px;">
+                <button id="mobile-provider-edit-btn" style="flex: 1; padding: 12px; border-radius: 12px; background: #1a1a1a; border: 1px solid #333; color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: bold; font-size: 15px; cursor: pointer;">
+                    <img src="./asset/icons/edit.svg" style="width: 16px; height: 16px; filter: invert(1);"> Edit
+                </button>
+                <button id="mobile-provider-hide-btn" style="flex: 1; padding: 12px; border-radius: 12px; background: #3a1a1a; border: 1px solid #522; color: #ff5555; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: bold; font-size: 15px; cursor: pointer;">
+                    ✕ Hide
+                </button>
+            </div>
+
             
             
             <div id="provider-card-carousel" class="kvm-carousel" style="display: none; margin-top: 16px;">
@@ -333,6 +367,56 @@
         </div>
     </div>
 
+    <div class="modal" id="edit-provider-modal">
+        <div class="modal-content edit-provider-modal-content" style="max-width: 500px; position: relative;">
+            <div class="modal-header">
+                <h2 id="edit-provider-modal-title">Редактировать параметры</h2>
+                <button class="modal-close" onclick="closeEditProviderModal()">✕</button>
+            </div>
+            <div class="modal-body" id="edit-provider-modal-body">
+                <!-- Inputs are generated here -->
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+                <button class="restore-btn" onclick="closeEditProviderModal()">Отмена</button>
+                <button class="restore-btn" style="background: #c3e679; color: #111; border-color: #c3e679;" onclick="saveProviderEdits()">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Feature Detail Modal -->
+    <div class="modal" id="mobile-feature-modal">
+        <div class="modal-content" style="max-width: 90%; width: 400px; margin: auto; border-radius: 20px; border-bottom: 1px solid #333; background: #111; position: relative;">
+            <div class="modal-header" style="border-bottom: 1px solid #333; padding-bottom: 12px;">
+                <h2 id="mobile-feature-modal-title" style="font-size: 18px; line-height: 1.3; margin: 0; padding-right: 30px;">Feature Name</h2>
+                <button class="modal-close" onclick="closeMobileFeatureModal()">✕</button>
+            </div>
+            <div class="modal-body" style="padding-top: 16px;">
+                <p id="mobile-feature-modal-desc" style="color: #aaa; font-size: 14px; margin-bottom: 24px; line-height: 1.5;"></p>
+                <div style="display: flex; gap: 12px;">
+                    <button id="mobile-feature-pin-btn" style="flex: 1; padding: 12px; border-radius: 12px; background: #1a1a1a; border: 1px solid #333; color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: bold; font-size: 15px; cursor: pointer;">
+                        <span class="star-icon">☆</span> Pin to top
+                    </button>
+                    <button id="mobile-feature-hide-btn" style="flex: 1; padding: 12px; border-radius: 12px; background: #3a1a1a; border: 1px solid #522; color: #ff5555; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: bold; font-size: 15px; cursor: pointer;">
+                        ✕ Hide
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Cell Detail Modal -->
+    <div class="modal" id="mobile-cell-modal">
+        <div class="modal-content" style="max-width: 90%; width: 400px; margin: auto; border-radius: 20px; border-bottom: 1px solid #333; background: #111; position: relative; text-align: center;">
+            <div class="modal-header" style="border-bottom: 1px solid #333; padding-bottom: 12px; display: block; position: relative;">
+                <h2 id="mobile-cell-modal-title" style="font-size: 18px; line-height: 1.3; margin: 0; padding: 0 24px; color: #fff;">Feature - Provider</h2>
+                <button class="modal-close" onclick="closeMobileCellModal()" style="position: absolute; right: 0; top: -4px;">✕</button>
+            </div>
+            <div class="modal-body" style="padding-top: 16px;">
+                <div id="mobile-cell-modal-value" style="margin-bottom: 16px; display: inline-block;"></div>
+                <p id="mobile-cell-modal-desc" style="color: #aaa; font-size: 14px; margin-bottom: 0; line-height: 1.5;"></p>
+            </div>
+        </div>
+    </div>
     
     <div id="kvm-card-modal" class="modal">
         <div class="modal-content kvm-card-content">
@@ -370,6 +454,28 @@
                 
             </div>
         </div>
+    </div>
+
+    <div class="mobile-bottom-bar">
+        <button class="mobile-bottom-action-btn" id="cycle-provider-btn" title="Cycle Provider">
+            <svg width="20" height="20" viewBox="0 -0.5 17 17" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(1.000000, 0.000000)" fill="currentColor">
+                        <path d="M1.539,8.001 C2.367,8.001 2.918,7.45 2.918,6.622 L2.914,6.187 C2.914,6.187 2.709,4.954 4.354,4.954 L11.015,5 L11.015,6.759 C11.338,7.081 11.862,7.081 12.185,6.759 L14.758,4.187 C15.08,3.863 15.08,3.339 14.758,3.017 L12.185,0.292 C11.862,-0.03 11.338,-0.03 11.015,0.292 L11.015,2.137 C10.854,2.09 4.562,2.063 4.562,2.063 C0.851,2.063 0.039,4.492 0.039,5.47 L0.039,6.501 C0.039,7.329 0.711,8.001 1.539,8.001 L1.539,8.001 Z"></path>
+                        <path d="M13.5,8.042 C12.672,8.042 12,8.626 12,9.454 L12.002,10.411 C11.957,10.768 11.357,11.001 10.477,11.001 L3.938,11.001 L3.936,9.442 C3.614,9.12 3.09,9.12 2.766,9.442 L0.194,12.014 C-0.128,12.338 -0.128,12.862 0.194,13.184 L2.766,15.756 C3.09,16.08 3.614,16.08 3.936,15.756 L3.938,13.905 L10.477,13.905 C14.188,13.905 15,11.463 15,10.484 L15,9.453 C15,8.626 14.328,8.042 13.5,8.042 L13.5,8.042 Z"></path>
+                    </g>
+                </g>
+            </svg>
+        </button>
+        <button class="mobile-bottom-action-btn" id="mobile-filter-btn" title="Filters">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+        </button>
+        <button class="mobile-bottom-action-btn" id="mobile-change-solutions-btn" style="flex: 1;">
+            Change solutions <span id="mobile-soft-count" style="background: rgba(195,230,121,0.2); color: #c3e679; padding: 2px 6px; border-radius: 10px; font-size: 12px; margin-left: 6px;"></span>
+        </button>
+        <button class="mobile-bottom-action-btn" id="mobile-save-changes-btn" style="display: none; background-color: rgba(195,230,121,0.15); color: #c3e679;" title="Save Changes">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+        </button>
     </div>
 
     <div id="global-tooltip" class="tooltip-text" style="display: none; position: fixed; z-index: 99999; pointer-events: none;"></div>

@@ -18,10 +18,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const addProviderBtn = document.getElementById('add-provider-btn');
+    const addProviderBtnDesktop = document.getElementById('add-provider-btn-desktop');
     if (addProviderBtn) {
-        addProviderBtn.innerHTML = dataType === 'kvm' 
-            ? '<span class="desktop-text">+ Add KVM</span><span class="mobile-text">+</span>' 
-            : '<span class="desktop-text">+ Add Software</span><span class="mobile-text">+</span>';
+        addProviderBtn.textContent = dataType === 'kvm' ? '+ Add KVM' : '+ Add Solution';
+    }
+    if (addProviderBtnDesktop) {
+        addProviderBtnDesktop.textContent = dataType === 'kvm' ? '+ Add KVM' : '+ Add Software';
     }
 
     
@@ -149,8 +151,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>
         ` : "";
 
+        const fName = String(rowData[tabState.field]).replace(/"/g, '&quot;');
+        const pData = providersData[colField];
+        const pName = pData ? String(pData.name).replace(/"/g, '&quot;') : colField;
+        const cText = comment ? String(comment).replace(/"/g, '&quot;') : "";
+        const vHtml = badgeHtml.replace(/"/g, '&quot;');
+
         return `
-            <div class="status-cell-wrapper ${dirtyClass}" style="position: relative; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 24px; cursor: ${isEditMode && activeEditProvider === colField ? 'pointer' : 'default'}">
+            <div class="status-cell-wrapper ${dirtyClass}" data-feature="${fName}" data-provider="${pName}" data-comment="${cText}" data-value-html="${vHtml}" style="position: relative; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 24px; cursor: pointer;">
                 <div style="position: relative; display: inline-flex; align-items: center; justify-content: center;">
                     ${badgeHtml}
                     ${rightIconsHtml}
@@ -182,16 +190,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
             `;
         }
+        const pinnedTextColor = isStarred ? "color: #c3e679;" : "";
 
         return `
-            <div class="feature-cell">
+            <div class="feature-cell" style="cursor: pointer; ${pinnedTextColor}" onclick="if(window.innerWidth <= 768) openMobileFeatureModal('${value.replace(/'/g, "\\'")}')">
                 <div class="feature-left" style="display: flex; align-items: center;">
-                    <button class="${starClass}" data-feature="${value}" title="Закрепить вверху">${starIcon}</button>
+                    <button class="${starClass} desktop-only" data-feature="${value}" title="Закрепить вверху" onclick="event.stopPropagation()">${starIcon}</button>
                     ${osIconHtml}
-                    <span>${value}</span>
-                    ${descHtml}
+                    <span style="${isStarred && window.innerWidth <= 768 ? 'color: #c3e679;' : ''}">${value}</span>
+                    <div class="desktop-only">${descHtml}</div>
                 </div>
-                <button class="hide-feature-btn" data-feature="${value}" title="Скрыть параметр">✕</button>
+                <button class="hide-feature-btn desktop-only" data-feature="${value}" title="Скрыть параметр" onclick="event.stopPropagation()">✕</button>
             </div>
         `;
     }
@@ -220,13 +229,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         if (tabState.hidden.has(val)) return false;
         
-        if (activeCategoryFilter) {
-            const categories = data.categories || [];
-            if (!categories.includes(activeCategoryFilter)) return false;
-        }
-        
         return true;
     }
+
 
     function buildTabulatorData(schemaArray, sectionKey, fieldName) {
         return schemaArray.map((rowSchema, index) => {
@@ -383,22 +388,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         const tabState = state[currentTab];
         if (!tabState) return [];
         
-        const addParamBtnHtml = `<button id="add-param-btn-table" class="edit-header-btn" style="border: 1px dashed rgba(195, 230, 121, 0.4); color: #c3e679; border-radius: 4px; padding: 1px 6px; font-weight: bold; margin-left: 10px; cursor: pointer; font-size: 13px;" title="Предложить новый параметр">+</button>`;
+        const addParamBtnHtml = `<button id="add-param-btn-table" class="edit-header-btn desktop-only" style="border: 1px dashed rgba(195, 230, 121, 0.4); color: #c3e679; border-radius: 4px; padding: 1px 6px; font-weight: bold; margin-left: 10px; cursor: pointer; font-size: 13px;" title="Предложить новый параметр">+</button>`;
         
         const columns = [
             { 
-                title: `${tabState.title} ${addParamBtnHtml}`, 
+                title: window.innerWidth <= 768 ? `<span style="font-size: 11px; letter-spacing: 1px; color: #888;">PARAMETER</span>` : `${tabState.title} ${addParamBtnHtml}`, 
                 field: tabState.field, 
-                width: window.innerWidth <= 768 ? 180 : (currentTab === "hardware" ? 380 : 350),
-                minWidth: window.innerWidth <= 768 ? 180 : 250,
+                width: window.innerWidth <= 768 ? 140 : (currentTab === "hardware" ? 380 : 350),
+                minWidth: window.innerWidth <= 768 ? 140 : 250,
                 frozen: window.innerWidth <= 768,
                 formatter: featureFormatter,
                 sorter: featureSorter,
-                vertAlign: "middle"
+                vertAlign: "middle",
+                headerSort: window.innerWidth > 768
             }
         ];
 
         providersList.forEach(provKey => {
+            if (window.innerWidth <= 768 && isEditMode && activeEditProvider && activeEditProvider !== provKey) {
+                return;
+            }
+            
             const provider = providersData[provKey];
             if (!provider) return;
             const name = provider.name || provKey;
@@ -410,19 +420,36 @@ document.addEventListener('DOMContentLoaded', async () => {
             const fallbackHtmlEscaped = fallbackHtml.replace(/"/g, '&quot;');
             let logoIconHtml = `<img src="${logoPath}" alt="${name}" style="width: 24px; height: 24px; object-fit: cover; margin-right: 8px; flex-shrink: 0; border-radius: 50%;" onerror="this.outerHTML='${fallbackHtmlEscaped}'">`;
 
-            let nameHtml = `<span class="provider-name-clickable" data-provider-key="${provKey}" style="font-weight: 700; display: inline-flex; align-items: center;" title="Посмотреть информацию о поставщике">${logoIconHtml}<span>${name}</span></span>`;
+            let yesCountStr = "";
+            if ( (dataType === "soft" && (currentTab === "features" || currentTab === "os")) ||
+                 (dataType === "kvm" && currentTab === "features") ) {
+                let yesCount = 0;
+                let totalItems = tabState.data ? tabState.data.length : 0;
+                if (tabState.data) {
+                    tabState.data.forEach(row => {
+                        let val = row[provKey];
+                        if (val && String(val).toLowerCase() === "yes") {
+                            yesCount++;
+                        }
+                    });
+                }
+                yesCountStr = `<span style="font-size: 11px; color: #888; font-weight: normal; margin-top: 1px; display: block;">${yesCount}/${totalItems} yes</span>`;
+            }
+
+            const nameMaxWidth = window.innerWidth <= 768 ? "90px" : "250px";
+            let nameHtml = `<span class="provider-name-clickable" data-provider-key="${provKey}" style="font-weight: 700; display: inline-flex; align-items: center; max-width: 100%; overflow: hidden;" title="Посмотреть информацию о поставщике">${logoIconHtml}<span style="display: flex; flex-direction: column; align-items: flex-start; overflow: hidden;"><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: ${nameMaxWidth}; display: inline-block;">${name}</span>${yesCountStr}</span></span>`;
             if (dataType === "kvm") {
-                nameHtml = `<span class="provider-header-clickable" onclick="openKvmCard('${provKey}')" style="font-weight: 700; display: inline-flex; align-items: center;" title="Посмотреть информацию о модели">${logoIconHtml}<span>${name}</span></span>`;
+                nameHtml = `<span class="provider-header-clickable" onclick="openKvmCard('${provKey}')" style="font-weight: 700; display: inline-flex; align-items: center; max-width: 100%; overflow: hidden;" title="Посмотреть информацию о модели">${logoIconHtml}<span style="display: flex; flex-direction: column; align-items: flex-start; overflow: hidden;"><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: ${nameMaxWidth}; display: inline-block;">${name}</span>${yesCountStr}</span></span>`;
             }
             
             const editBtnHtml = isEditMode && activeEditProvider === provKey
-                ? `<button class="edit-header-btn" data-provider-key="${provKey}" style="background: none; border: none; cursor: pointer; padding: 2px; font-size: 13px;" title="Выйти из редактирования"><img src="./asset/icons/edit.svg" style="width: 14px; height: 14px; filter: invert(0.8) sepia(1) saturate(5) hue-rotate(45deg);"></button>`
-                : `<button class="edit-header-btn" data-provider-key="${provKey}" style="background: none; border: none; cursor: pointer; padding: 2px; font-size: 13px;" title="Редактировать этого поставщика"><img src="./asset/icons/edit.svg" style="width: 14px; height: 14px; filter: invert(1); opacity: 0.6;"></button>`;
+                ? `<button class="edit-header-btn desktop-only" data-provider-key="${provKey}" style="background: none; border: none; cursor: pointer; padding: 2px; font-size: 13px;" title="Выйти из редактирования"><img src="./asset/icons/edit.svg" style="width: 14px; height: 14px; filter: invert(0.8) sepia(1) saturate(5) hue-rotate(45deg);"></button>`
+                : `<button class="edit-header-btn desktop-only" data-provider-key="${provKey}" style="background: none; border: none; cursor: pointer; padding: 2px; font-size: 13px;" title="Редактировать этого поставщика"><img src="./asset/icons/edit.svg" style="width: 14px; height: 14px; filter: invert(1); opacity: 0.6;"></button>`;
 
-            const removeBtnHtml = `<button class="hide-provider-btn" data-provider-key="${provKey}" style="background: none; border: none; color: #777777; cursor: pointer; padding: 2px 4px; font-size: 12px; font-weight: bold; line-height: 1;" title="Скрыть поставщика из таблицы">✕</button>`;
+            const removeBtnHtml = `<button class="hide-provider-btn desktop-only" data-provider-key="${provKey}" style="background: none; border: none; color: #777777; cursor: pointer; padding: 2px 4px; font-size: 12px; font-weight: bold; line-height: 1;" title="Скрыть поставщика из таблицы">✕</button>`;
 
             const colDef = {
-                title: `<div style="position: relative; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 24px; padding-right: 36px;">${nameHtml}<div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 2px;">${editBtnHtml}${removeBtnHtml}</div></div>`,
+                title: `<div class="provider-header-wrapper">${nameHtml}<div class="provider-header-actions">${editBtnHtml}${removeBtnHtml}</div></div>`,
                 field: provKey,
                 formatter: statusFormatter,
                 hozAlign: "center",
@@ -517,6 +544,80 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     };
 
+    window.openMobileFeatureModal = function(featureName) {
+        const modal = document.getElementById("mobile-feature-modal");
+        const titleEl = document.getElementById("mobile-feature-modal-title");
+        const descEl = document.getElementById("mobile-feature-modal-desc");
+        const pinBtn = document.getElementById("mobile-feature-pin-btn");
+        const hideBtn = document.getElementById("mobile-feature-hide-btn");
+        
+        if (!modal) return;
+        
+        const tabState = state[currentTab];
+        const isStarred = tabState.starred.has(featureName);
+        const featureItem = tabState.all.find(f => f.name === featureName || f[tabState.field] === featureName);
+        
+        titleEl.textContent = featureName;
+        descEl.textContent = (featureItem && featureItem.description) ? featureItem.description : "Нет описания для данного параметра.";
+        
+        pinBtn.innerHTML = isStarred ? '<span class="star-icon" style="color: #ffb700;">★</span> Unpin' : '<span class="star-icon">☆</span> Pin to top';
+        
+        pinBtn.onclick = function() {
+            if (isStarred) {
+                tabState.starred.delete(featureName);
+            } else {
+                tabState.starred.add(featureName);
+            }
+            updateUrlState();
+            refreshMatrixTable();
+            closeMobileFeatureModal();
+        };
+        
+        hideBtn.onclick = function() {
+            tabState.hidden.add(featureName);
+            table.setFilter(combinedFilter);
+            updateFeatureCounts();
+            closeMobileFeatureModal();
+        };
+        
+        modal.classList.add("show");
+    };
+
+    window.closeMobileFeatureModal = function() {
+        const modal = document.getElementById("mobile-feature-modal");
+        if (modal) {
+            modal.classList.remove("show");
+        }
+    };
+
+    window.openMobileCellModal = function(featureName, providerName, valueHtml, description) {
+        const modal = document.getElementById("mobile-cell-modal");
+        const titleEl = document.getElementById("mobile-cell-modal-title");
+        const valueEl = document.getElementById("mobile-cell-modal-value");
+        const descEl = document.getElementById("mobile-cell-modal-desc");
+        
+        if (!modal) return;
+        
+        titleEl.innerHTML = `<span style="font-size: 14px; font-weight: normal; color: #888;">${featureName}</span><br/>${providerName}`;
+        valueEl.innerHTML = valueHtml;
+        
+        if (description && description.trim() !== "") {
+            descEl.textContent = description;
+            descEl.style.display = "block";
+        } else {
+            descEl.style.display = "none";
+        }
+        
+        modal.classList.add("show");
+    };
+
+    window.closeMobileCellModal = function() {
+        const modal = document.getElementById("mobile-cell-modal");
+        if (modal) {
+            modal.classList.remove("show");
+        }
+    };
+
     window.openProviderCardModal = async function(provKey) {
         const provider = providersData[provKey];
         if (!provider) return;
@@ -598,6 +699,42 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         };
 
+        const mobEditBtn = document.getElementById("mobile-provider-edit-btn");
+        const mobHideBtn = document.getElementById("mobile-provider-hide-btn");
+        
+        if (mobEditBtn) {
+            mobEditBtn.onclick = () => {
+                isEditMode = true;
+                activeEditProvider = provKey;
+                modal.classList.remove('show');
+                
+                if (!modifiedProvidersData[provKey]) {
+                    modifiedProvidersData[provKey] = JSON.parse(JSON.stringify(providersData[provKey]));
+                }
+                updateFloatingBar();
+                
+                refreshMatrixTable();
+            };
+        }
+        
+        if (mobHideBtn) {
+            mobHideBtn.onclick = () => {
+                modal.classList.remove('show');
+                if (isEditMode && activeEditProvider === provKey) {
+                    isEditMode = false;
+                    activeEditProvider = null;
+                }
+                providersList = providersList.filter(p => p !== provKey);
+                renderSoftCheckboxes();
+                if (table && typeof table.setColumns === 'function') {
+                    table.setColumns(generateColumnsConfig());
+                } else {
+                    refreshMatrixTable();
+                }
+                updateUrlState();
+            };
+        }
+
         if (currentProviderImages.length === 0) {
             if (window.providerImagesCache[provKey]) {
                 currentProviderImages = window.providerImagesCache[provKey];
@@ -622,7 +759,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         modal.classList.add("show");
     }
-
     const cardModalEl = document.getElementById("provider-card-modal");
     const cardCloseBtnEl = document.getElementById("provider-card-close-btn");
 
@@ -632,13 +768,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    if (cardModalEl) {
-        window.addEventListener("click", (e) => {
-            if (e.target === cardModalEl) {
-                cardModalEl.classList.remove("show");
-            }
-        });
-    }
+    window.addEventListener("click", (e) => {
+        if (e.target.classList.contains("modal")) {
+            e.target.classList.remove("show");
+        }
+    });
 
     function refreshMatrixTable() {
         const tabState = state[currentTab];
@@ -659,15 +793,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         table = new Tabulator("#matrix-table", {
             index: tabState.field,
             data: tabState.data,
-            layout: window.innerWidth <= 768 ? "fitData" : "fitColumns",
+            layout: (window.innerWidth <= 768 && (!isEditMode || !activeEditProvider)) ? "fitData" : "fitColumns",
             pagination: false,
             maxHeight: "calc(100vh - 120px)",
             initialSort: [{ column: tabState.field, dir: "asc" }],
+            initialFilter: combinedFilter,
             columns: generateColumnsConfig(),
             nestedFieldSeparator: false,
         });
-
-        table.setFilter(combinedFilter);
         
         let scrollRestored = false;
         table.on("renderComplete", () => {
@@ -696,7 +829,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 providersList = requested.filter(p => loadedList.includes(p));
             }
         } else {
-            let defaultVisible = ["usbridge", "rustdesk", "parsec", "teamviewer", "usbridgekvm2.0", "jetkvm", "pikvm-v4-plus"];
+            let defaultVisible = ["usbridge", "rustdesk", "parsec", "usbridgekvm2.0", "jetkvm", "pikvm-v4-plus"];
             if (window.innerWidth <= 768) {
                 defaultVisible = ["usbridge", "rustdesk", "parsec", "usbridgekvm2.0", "jetkvm"];
             }
@@ -758,16 +891,31 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         function renderSoftCheckboxes() {
             softCheckboxListContainer.innerHTML = "";
-            providersListBackup.forEach(provKey => {
+            const colors = ['#2196F3', '#E91E63', '#F44336', '#673AB7', '#03A9F4', '#FF9800', '#4CAF50', '#FFC107', '#9E9E9E'];
+            providersListBackup.forEach((provKey, index) => {
                 if (provKey === "draft" && !providersList.includes("draft")) {
                     return;
                 }
                 const provider = providersData[provKey];
                 const isChecked = providersList.includes(provKey);
+                const name = provider ? provider.name : provKey;
+                const initial = name.charAt(0).toUpperCase();
+                const color = colors[index % colors.length];
+                const logoPath = `./asset/${dataType === 'kvm' ? 'kvm' : 'soft'}/${provKey}/logo.png`;
+                const fallbackHtml = `<span class="provider-logo-circle" style="background-color: ${color};">${initial}</span>`;
+                const logoHtml = `<img src="${logoPath}" alt="${name}" class="provider-logo-circle" onerror="this.outerHTML='${fallbackHtml.replace(/"/g, '&quot;')}'">`;
+
                 const label = document.createElement('label');
+                label.className = `provider-list-item ${isChecked ? 'selected' : ''}`;
                 label.innerHTML = `
-                    <input type="checkbox" class="toggle-col" value="${provKey}" ${isChecked ? 'checked' : ''}>
-                    <span>${provider ? provider.name : provKey}</span>
+                    <div class="provider-list-left">
+                        ${logoHtml}
+                        <span class="provider-name">${name}</span>
+                    </div>
+                    <div class="provider-list-right">
+                        <span class="provider-shown-text">${isChecked ? 'shown' : ''}</span>
+                    </div>
+                    <input type="checkbox" class="toggle-col" value="${provKey}" ${isChecked ? 'checked' : ''} style="display:none;">
                 `;
                 softCheckboxListContainer.appendChild(label);
             });
@@ -818,30 +966,47 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         function renderCategoryFilters() {
             categoryContainer.innerHTML = "";
+            const categoryContainerMobile = document.getElementById("category-filters-mobile");
+            if (categoryContainerMobile) categoryContainerMobile.innerHTML = "";
             const configs = categoryConfigs[currentTab] || [];
             
             configs.forEach(config => {
-                const button = document.createElement("button");
-                button.className = "category-tag";
-                if (activeCategoryFilter === config.id) {
-                    button.classList.add("active");
-                }
-                button.innerHTML = config.label;
-                button.setAttribute("data-category", config.id);
-                
-                button.addEventListener("click", () => {
+                const createButton = () => {
+                    const button = document.createElement("button");
+                    button.className = "category-tag";
                     if (activeCategoryFilter === config.id) {
-                        activeCategoryFilter = null;
-                        button.classList.remove("active");
-                    } else {
-                        activeCategoryFilter = config.id;
-                        document.querySelectorAll(".category-tag").forEach(b => b.classList.remove("active"));
                         button.classList.add("active");
                     }
-                    table.setFilter(combinedFilter);
-                });
+                    button.innerHTML = config.label;
+                    button.setAttribute("data-category", config.id);
+                    
+                    button.addEventListener("click", () => {
+                        const tabState = state[currentTab];
+                        if (activeCategoryFilter === config.id) {
+                            activeCategoryFilter = null;
+                            tabState.hidden.clear();
+                        } else {
+                            activeCategoryFilter = config.id;
+                            
+                            tabState.hidden.clear();
+                            tabState.all.forEach(f => {
+                                const categories = f.categories || [];
+                                if (!categories.includes(config.id)) {
+                                    tabState.hidden.add(f.name);
+                                }
+                            });
+                        }
+                        renderCategoryFilters(); // Re-render to update 'active' class on all buttons
+                        table.setFilter(combinedFilter);
+                        const searchInput = document.getElementById('feature-search-input');
+                        if (searchInput) renderFeatureDropdown(searchInput.value.trim());
+                        if (typeof updateFeatureCounts === 'function') updateFeatureCounts();
+                    });
+                    return button;
+                };
                 
-                categoryContainer.appendChild(button);
+                categoryContainer.appendChild(createButton());
+                if (categoryContainerMobile) categoryContainerMobile.appendChild(createButton());
             });
         }
 
@@ -851,6 +1016,47 @@ document.addEventListener('DOMContentLoaded', async () => {
         const softMenu = document.getElementById('soft-dropdown-menu');
         const featureBtn = document.getElementById('feature-dropdown-btn');
         const featureMenu = document.getElementById('feature-dropdown-menu');
+        const mobileChangeBtn = document.getElementById('mobile-change-solutions-btn');
+        const cycleProviderBtn = document.getElementById('cycle-provider-btn');
+        const closeFeatureModalBtn = document.getElementById('close-feature-modal');
+        const closeProviderModalBtn = document.getElementById('close-provider-modal');
+
+        if (cycleProviderBtn) {
+            cycleProviderBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (providersList.length > 1) {
+                    const holder = document.querySelector('.tabulator-tableholder');
+                    let scrollY = 0, scrollX = 0;
+                    if (holder) {
+                        scrollY = holder.scrollTop;
+                        scrollX = holder.scrollLeft;
+                    }
+
+                    const lastProv = providersList.pop();
+                    providersList.unshift(lastProv);
+                    renderSoftCheckboxes();
+                    
+                    if (table && typeof table.setColumns === 'function') {
+                        try {
+                            table.setColumns(generateColumnsConfig());
+                        } catch (e) {
+                            console.error(e);
+                        }
+                        if (holder) {
+                            holder.scrollTop = scrollY;
+                            holder.scrollLeft = scrollX;
+                            setTimeout(() => {
+                                holder.scrollTop = scrollY;
+                                holder.scrollLeft = scrollX;
+                            }, 50);
+                        }
+                    } else {
+                        refreshMatrixTable();
+                    }
+                    updateUrlState();
+                }
+            });
+        }
 
         function closeAllDropdowns() {
             softMenu.classList.remove('show');
@@ -868,6 +1074,37 @@ document.addEventListener('DOMContentLoaded', async () => {
             softMenu.classList.remove('show');
             featureMenu.classList.toggle('show');
         });
+
+        if (mobileChangeBtn) {
+            mobileChangeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeAllDropdowns();
+                softMenu.classList.toggle('show');
+            });
+        }
+        
+        const mobileFilterBtn = document.getElementById('mobile-filter-btn');
+        if (mobileFilterBtn) {
+            mobileFilterBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeAllDropdowns();
+                featureMenu.classList.toggle('show');
+            });
+        }
+        
+        if (closeFeatureModalBtn) {
+            closeFeatureModalBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                featureMenu.classList.remove('show');
+            });
+        }
+        
+        if (closeProviderModalBtn) {
+            closeProviderModalBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                softMenu.classList.remove('show');
+            });
+        }
 
         document.addEventListener('click', () => {
             closeAllDropdowns();
@@ -902,11 +1139,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (!tabState) return;
             const visibleCount = tabState.all.length - tabState.hidden.size;
             
-            let titleText = "Feature Filters";
-            if (currentTab === "os") titleText = "OS Filters";
-            if (currentTab === "hardware") titleText = "Hardware Filters";
+            const featureModalSubtitle = document.getElementById('feature-modal-subtitle');
+            if (featureModalSubtitle) {
+                featureModalSubtitle.textContent = `${visibleCount} of ${tabState.all.length} shown`;
+            }
 
-            featureDropdownLabel.innerHTML = `${titleText}: <strong id="feature-count">${visibleCount}/${tabState.all.length}</strong> ▾`;
             document.getElementById('restore-features-btn').style.display = tabState.hidden.size > 0 ? 'inline-block' : 'none';
         }
 
@@ -927,6 +1164,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 } else {
                     tabState.hidden.add(item);
                 }
+                
+                if (activeCategoryFilter) {
+                    activeCategoryFilter = null;
+                    document.querySelectorAll(".category-tag").forEach(b => b.classList.remove("active"));
+                }
+                
                 table.setFilter(combinedFilter);
                 updateFeatureCounts();
             }
@@ -934,6 +1177,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         document.getElementById('feature-select-all').addEventListener('click', () => {
             state[currentTab].hidden.clear();
+            if (activeCategoryFilter) {
+                activeCategoryFilter = null;
+                document.querySelectorAll(".category-tag").forEach(b => b.classList.remove("active"));
+            }
             renderFeatureDropdown(document.getElementById('feature-search-input').value.trim());
             table.setFilter(combinedFilter);
             updateFeatureCounts();
@@ -942,6 +1189,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('feature-deselect-all').addEventListener('click', () => {
             const tabState = state[currentTab];
             tabState.all.forEach(f => tabState.hidden.add(f.name));
+            if (activeCategoryFilter) {
+                activeCategoryFilter = null;
+                document.querySelectorAll(".category-tag").forEach(b => b.classList.remove("active"));
+            }
             renderFeatureDropdown(document.getElementById('feature-search-input').value.trim());
             table.setFilter(combinedFilter);
             updateFeatureCounts();
@@ -951,7 +1202,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             const checkedCount = Array.from(document.querySelectorAll('.toggle-col:checked'))
                                       .filter(cb => cb.value !== 'draft').length;
             const totalCount = providersListBackup.filter(p => p !== 'draft').length;
-            document.getElementById('soft-count').textContent = `${checkedCount}/${totalCount}`;
+            const softCountEl = document.getElementById('soft-count');
+            if (softCountEl) softCountEl.textContent = `${checkedCount}/${totalCount}`;
+            const mobileSoftCountEl = document.getElementById('mobile-soft-count');
+            if (mobileSoftCountEl) mobileSoftCountEl.textContent = `${checkedCount}/${totalCount}`;
+            const providerModalSubtitle = document.getElementById('provider-modal-subtitle');
+            if (providerModalSubtitle) {
+                providerModalSubtitle.textContent = `${checkedCount} of ${totalCount} shown`;
+            }
             
             const dropdownBtn = document.getElementById('soft-dropdown-btn');
             if (dropdownBtn) {
@@ -976,12 +1234,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         softCheckboxListContainer.addEventListener('change', (e) => {
             if (e.target.classList.contains('toggle-col')) {
                 const fieldName = e.target.value;
+                const label = e.target.closest('.provider-list-item');
+                const shownText = label.querySelector('.provider-shown-text');
                 if (e.target.checked) {
                     if (!providersList.includes(fieldName)) {
                         providersList.push(fieldName);
                     }
+                    label.classList.add('selected');
+                    shownText.textContent = 'shown';
                 } else {
                     providersList = providersList.filter(k => k !== fieldName);
+                    label.classList.remove('selected');
+                    shownText.textContent = '';
                 }
                 updateUrlState();
                 
@@ -1049,16 +1313,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (itemName) {
                     if (tabState.starred.has(itemName)) {
                         tabState.starred.delete(itemName);
-                        e.target.classList.remove("active");
-                        e.target.textContent = "☆";
                     } else {
                         tabState.starred.add(itemName);
-                        e.target.classList.add("active");
-                        e.target.textContent = "★";
                     }
-                    table.setSort([
-                        { column: tabState.field, dir: "asc" }
-                    ]);
+                    updateUrlState();
+                    refreshMatrixTable();
                 }
                 return;
             }
@@ -1113,6 +1372,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                     updateSoftCount();
                     refreshMatrixTable();
                 }
+                return;
+            }
+
+            const statusCell = e.target.closest(".status-cell-wrapper");
+            if (statusCell && window.innerWidth <= 768 && !isEditMode) {
+                const fName = statusCell.getAttribute("data-feature");
+                const pName = statusCell.getAttribute("data-provider");
+                const cText = statusCell.getAttribute("data-comment");
+                const vHtml = statusCell.getAttribute("data-value-html");
+                
+                openMobileCellModal(fName, pName, vHtml, cText);
                 return;
             }
 
@@ -1241,8 +1511,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         function updateFloatingBar() {
             const bar = document.getElementById("changes-floating-bar");
+            const mobileSaveBtn = document.getElementById("mobile-save-changes-btn");
             if (!isEditMode || !activeEditProvider) {
                 bar.style.display = "none";
+                if (mobileSaveBtn) mobileSaveBtn.style.display = "none";
                 return;
             }
             
@@ -1253,10 +1525,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 document.getElementById("changes-counter-text").innerHTML = 
                     `Parameters modified for <strong>${providerName}</strong>: <strong>${count}</strong>`;
                 bar.style.display = "flex";
+                if (mobileSaveBtn) mobileSaveBtn.style.display = "flex";
             } else {
                 document.getElementById("changes-counter-text").innerHTML = 
                     `Editing mode <strong>${providerName}</strong> (no changes)`;
                 bar.style.display = "flex";
+                if (mobileSaveBtn) mobileSaveBtn.style.display = "flex";
             }
         }
 
@@ -1335,6 +1609,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             submitModal.classList.add("show");
         });
+
+        const mobileSaveBtn = document.getElementById("mobile-save-changes-btn");
+        if (mobileSaveBtn) {
+            mobileSaveBtn.addEventListener("click", () => {
+                document.getElementById("propose-changes-btn").click();
+            });
+        }
 
         document.getElementById("copy-json-btn").addEventListener("click", () => {
             const providerKey = activeEditProvider;
@@ -1726,8 +2007,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         const addProviderBtn = document.getElementById("add-provider-btn");
+        const addProviderBtnDesktop = document.getElementById("add-provider-btn-desktop");
         
-        addProviderBtn.addEventListener("click", () => {
+        function handleAddProvider() {
             try {
                 if (!providersList.includes("draft")) {
                     providersList.push("draft");
@@ -1750,7 +2032,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 console.error("Error adding draft:", err);
                 alert("Error: " + err.message);
             }
-        });
+        }
 
         document.getElementById("restore-features-btn").addEventListener("click", () => {
             state[currentTab].hidden.clear();

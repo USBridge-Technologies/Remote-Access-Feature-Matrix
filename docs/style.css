@@ -18,6 +18,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -353,11 +354,20 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
     height: auto !important; 
 }
 
-.tabulator-col, .tabulator-col-content, .tabulator-col-title-holder, .tabulator-headers {
+.tabulator-col, .tabulator-headers {
     background-color: #212121 !important;
     color: #ffffff !important;
     border-right: 1px solid #323232 !important;
-    height: auto !important; 
+}
+
+.tabulator-headers {
+    height: auto !important;
+}
+
+.tabulator-col-content, .tabulator-col-title-holder {
+    background-color: transparent !important;
+    color: inherit;
+    border: none !important;
 }
 
 .tabulator-col-content {
@@ -524,7 +534,7 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
 .modal {
     display: none;
     position: fixed;
-    z-index: 2000;
+    z-index: 11000;
     left: 0;
     top: 0;
     width: 100%;
@@ -626,6 +636,12 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
     z-index: 1500;
     animation: floatBarIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+@media (max-width: 768px) {
+    #changes-floating-bar {
+        display: none !important;
+    }
+}
 @keyframes floatBarIn {
     from { bottom: -60px; opacity: 0; }
     to { bottom: 24px; opacity: 1; }
@@ -664,11 +680,19 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
 }
 
 
+.top-header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 24px;
+}
+
 .matrix-type-switch {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 32px auto;
+    margin: 0;
     background-color: #171717;
     border-radius: 12px;
     padding: 6px;
@@ -893,6 +917,10 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
     display: none;
 }
 
+.mobile-modal-header, .mobile-bottom-bar {
+    display: none;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .desktop-text {
@@ -908,36 +936,55 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
     }
     
     .panel {
-        padding: 10px;
-        margin-bottom: 16px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-bottom: 8px;
     }
     
     .tabs-container {
-        flex-wrap: wrap;
-        gap: 4px;
-        border-bottom: none;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-bottom: 1px solid #333;
         padding-bottom: 0;
+        justify-content: space-between;
     }
     
     .tab-btn {
-        padding: 8px 12px;
+        flex: 1;
+        padding: 10px 4px;
         font-size: 13px;
-        flex: 1 1 auto;
+        background: transparent !important;
+        border-radius: 0;
+        color: #888888;
+        border-bottom: 2px solid transparent;
         text-align: center;
+    }
+    
+    .tab-btn.active {
+        color: #ffffff !important;
+        border-bottom: 2px solid #c3e679;
+        font-weight: 700;
+        box-shadow: none !important;
     }
     
     .matrix-type-switch {
         flex-direction: row;
         gap: 6px;
-        padding: 0;
+        padding: 4px;
+        margin: 0;
+        width: 100%;
+        background-color: #1a1a1a;
     }
     
     .type-btn {
         flex: 1;
-        padding: 8px 12px;
+        padding: 8px 4px;
         font-size: 13px;
         text-align: center;
         white-space: nowrap;
+        border-radius: 8px;
     }
     
     .add-provider-header-btn {
@@ -953,6 +1000,129 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
         right: 0;
         top: 50%;
         transform: translateY(-50%);
+        background: transparent !important;
+        border: 1px solid #c3e679 !important;
+        color: #c3e679 !important;
+    }
+    
+    #soft-dropdown-btn {
+        display: none;
+    }
+    
+    #feature-dropdown-container {
+        flex: 0 0 auto !important;
+    }
+    
+    #feature-dropdown-btn {
+        width: auto;
+        border-radius: 20px;
+        padding: 8px 16px;
+        font-size: 13px;
+        background-color: #1a1a1a;
+        color: #aaa;
+    }
+    
+    #feature-dropdown-menu,
+    #soft-dropdown-menu {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: #111111 !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 20px !important;
+        z-index: 10000 !important;
+        flex-direction: column;
+    }
+
+    #feature-dropdown-menu.show,
+    #soft-dropdown-menu.show {
+        display: flex !important;
+    }
+
+    .mobile-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+    }
+
+    .mobile-modal-title h3 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    .mobile-modal-title .modal-subtitle {
+        font-size: 12px;
+        color: #888888;
+    }
+
+    .mobile-modal-close {
+        background: #222;
+        border: none;
+        color: #888;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .mobile-bottom-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 16px;
+        background-color: #111111;
+        border-top: 1px solid #333;
+        z-index: 9999;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -4px 12px rgba(0,0,0,0.5);
+    }
+    
+    .mobile-bottom-bar {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .mobile-bottom-action-btn {
+        background: #1a1a1a;
+        border: none;
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 0.1s ease, transform 0.1s ease;
+    }
+
+    .mobile-bottom-action-btn:active {
+        background-color: #333;
+        transform: scale(0.97);
+    }
+
+    .mobile-bottom-action-btn:focus,
+    .mobile-bottom-action-btn:focus-visible {
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
     }
     
     .provider-card-modal-content,
@@ -998,4 +1168,145 @@ button:focus, button:focus-visible, input:focus, input:focus-visible {
 .tabulator-col.tabulator-frozen {
     background-color: #212121 !important;
     border-right: 1px solid #333 !important;
+}
+
+.provider-header-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 24px;
+}
+@media (min-width: 769px) {
+    .provider-header-wrapper {
+        padding-right: 36px;
+    }
+}
+.provider-header-actions {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+#soft-checkbox-list label.provider-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+@media (hover: hover) {
+    #soft-checkbox-list label.provider-list-item:hover {
+        background: #252525;
+    }
+}
+
+#soft-checkbox-list label.provider-list-item:active {
+    background: #333;
+    transform: scale(0.98);
+}
+
+#soft-checkbox-list label.provider-list-item.selected {
+    border-color: #c3e679;
+}
+
+#soft-checkbox-list label.provider-list-item .provider-list-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#soft-checkbox-list label.provider-list-item .provider-logo-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    object-fit: cover;
+}
+
+#soft-checkbox-list label.provider-list-item .provider-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+}
+
+#soft-checkbox-list label.provider-list-item .provider-list-right .provider-shown-text {
+    font-size: 13px;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    #soft-dropdown-menu .dropdown-list,
+    #feature-dropdown-menu .dropdown-list {
+        flex: 1;
+        max-height: none !important;
+        min-height: 0;
+        padding-right: 12px;
+        padding-bottom: 12px;
+    }
+    
+    #feature-dropdown-btn {
+        display: none !important;
+    }
+    
+    #feature-checkbox-list label {
+        padding: 14px 12px;
+        font-size: 15px;
+        margin-bottom: 6px;
+        background: #1a1a1a;
+        border-radius: 10px;
+        border: 1px solid #333;
+    }
+    
+    #feature-checkbox-list input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 4px;
+    }
+    
+    .dropdown-actions button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .feature-left span {
+        white-space: normal !important;
+        line-height: 1.2;
+        font-size: 13px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .tabulator-row .tabulator-cell {
+        white-space: normal !important;
+        overflow-wrap: break-word;
+    }
+    
+    #mobile-provider-actions {
+        display: flex !important;
+    }
 }
