@@ -13,13 +13,14 @@ export function ProviderCard({ provider, onClose, onEdit, onHide }) {
     if (!provider) return;
     
     setCurrentImgIndex(0);
-    setImages([]);
+    const typeFolder = provider.type === 'software' ? 'soft' : 'kvm';
+    const firstImg = `asset/${typeFolder}/${provider.key}/1.png`;
+    setImages([firstImg]); // Show first image immediately
 
     const loadImages = async () => {
-      const typeFolder = provider.type === 'software' ? 'soft' : 'kvm';
-      const validImages = [];
+      const validImages = [firstImg];
       
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 2; i <= 10; i++) {
         const imgPath = `asset/${typeFolder}/${provider.key}/${i}.png`;
         try {
           const res = await fetch(`${import.meta.env.BASE_URL}${imgPath}`, { method: 'HEAD' });
@@ -33,6 +34,8 @@ export function ProviderCard({ provider, onClose, onEdit, onHide }) {
           break;
         }
       }
+      // If we didn't find any more images, we don't need to update state
+      // unless we want to trigger a re-render. We update it anyway.
       setImages(validImages);
     };
 
@@ -101,6 +104,11 @@ export function ProviderCard({ provider, onClose, onEdit, onHide }) {
                 src={`${import.meta.env.BASE_URL}${images[currentImgIndex]}`} 
                 alt={`${provider.name} screenshot ${currentImgIndex + 1}`} 
                 className="carousel-img"
+                onError={(e) => {
+                  if (currentImgIndex === 0 && images.length === 1) {
+                    setImages([]);
+                  }
+                }}
               />
             </div>
             <button className="carousel-nav right" onClick={handleNextImg}>

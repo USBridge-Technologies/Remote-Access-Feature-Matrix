@@ -106,6 +106,15 @@ function App() {
       });
       setSelectedFeatures(new Set(rawData.rows.map(r => r.name)));
       setIsProvidersInitialized(true);
+      
+      // Preload first screenshots in the background
+      rawData.columns.forEach(p => {
+        if (p.key !== 'draft') {
+          const typeFolder = type === 'kvm' ? 'kvm' : 'soft';
+          const img = new Image();
+          img.src = `${import.meta.env.BASE_URL}asset/${typeFolder}/${p.key}/1.png`;
+        }
+      });
     }
   }, [type, tab, rawData.loading, isMobile]);
 
