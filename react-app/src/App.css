@@ -243,13 +243,25 @@ body {
 
 @media (max-width: 768px) {
   .main-content {
-    padding-bottom: 12px;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 12px));
   }
+  
   .mobile-action-bar {
-    bottom: 12px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
     left: 12px !important;
     right: 12px !important;
     border-radius: 20px !important;
+  }
+  
+  .tabs-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .tabs-container::-webkit-scrollbar {
+    display: none;
   }
   
   .category-pills {
