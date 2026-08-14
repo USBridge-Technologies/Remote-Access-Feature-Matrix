@@ -267,5 +267,6 @@
       "comment": "Quoted through Citrix/reseller channels based on user count and edition"
     }
   },
-  "mobileName": "Citrix HDX / ICA"
+  "mobileName": "Citrix ICA",
+  "subtype": "protocol"
 }
