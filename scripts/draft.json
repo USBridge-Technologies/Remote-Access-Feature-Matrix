@@ -1,5 +1,57 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "TightVNC",
+  "key": "tightvnc",
+  "type": "soft",
+  "changes": {
+    "features": {
+      "Pricing Model": {
+        "status": {
+          "before": "",
+          "after": "Unknown"
+        }
+      },
+      "Address Book": {
+        "status": {
+          "before": "UNKNOWN",
+          "after": "Unknown"
+        }
+      },
+      "Audio Streaming": {
+        "status": {
+          "before": "UNKNOWN",
+          "after": "Unknown"
+        }
+      },
+      "Audit Logs": {
+        "status": {
+          "before": "UNKNOWN",
+          "after": "Unknown"
+        }
+      },
+      "File Manager UI": {
+        "status": {
+          "before": "UNKNOWN",
+          "after": "Unknown"
+        }
+      },
+      "Frame Rate (FPS)": {
+        "status": {
+          "before": "Unknown",
+          "after": "Unknown"
+        }
+      },
+      "Gamepad Passthrough": {
+        "status": {
+          "before": "UNKNOWN",
+          "after": "Unknown"
+        }
+      },
+      "Generic USB Passthrough": {
+        "status": {
+          "before": "UNKNOWN",
+          "after": "Unknown"
+        }
+      }
+    }
+  }
 }
