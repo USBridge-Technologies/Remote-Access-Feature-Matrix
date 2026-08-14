@@ -153,6 +153,9 @@
     "OTA Updates": {
       "status": "Yes",
       "comment": ""
+    },
+    "Web Browser: Client": {
+      "status": "Yes"
     }
   },
   "os": {

@@ -1,15 +1,5 @@
 {
-  "name": "USBridge",
-  "key": "usbridge",
-  "type": "soft",
-  "changes": {
-    "features": {
-      "Web Browser: Client": {
-        "status": {
-          "before": "",
-          "after": "Yes"
-        }
-      }
-    }
-  }
+  "name": "",
+  "key": "",
+  "changes": {}
 }
