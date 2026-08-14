@@ -254,14 +254,12 @@ body {
   }
   
   .tabs-container {
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    gap: 2px;
   }
   
-  .tabs-container::-webkit-scrollbar {
-    display: none;
+  .tab-btn {
+    padding: 8px 8px 6px 8px;
+    font-size: 14px;
   }
   
   .category-pills {
