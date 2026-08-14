@@ -135,8 +135,8 @@
 }
 
 .badge-unknown {
-  background-color: rgba(139, 233, 253, 0.2);
-  color: #8be9fd;
+  background-color: rgba(136, 136, 136, 0.2);
+  color: #888888;
 }
 
 .badge-default {
