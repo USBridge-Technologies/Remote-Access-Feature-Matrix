@@ -286,6 +286,15 @@
   overflow: hidden;
   /* Removed to allow mobile scrolling */
   text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-item-subtype {
+  margin-left: 6px;
+  color: #a87ffb; /* purple */
+  font-size: 11px;
+  font-weight: 500;
 }
 
 .dropdown-item-status {

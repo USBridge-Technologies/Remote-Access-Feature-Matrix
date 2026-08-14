@@ -291,5 +291,6 @@
     "asset/soft/rustdesk/2.png",
     "asset/soft/rustdesk/3.png"
   ],
-  "mobileName": "RustDesk"
+  "mobileName": "RustDesk",
+  "subtype": "application"
 }

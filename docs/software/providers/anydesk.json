@@ -291,5 +291,6 @@
     "asset/soft/anydesk/2.png",
     "asset/soft/anydesk/3.png"
   ],
-  "mobileName": "AnyDesk"
+  "mobileName": "AnyDesk",
+  "subtype": "application"
 }

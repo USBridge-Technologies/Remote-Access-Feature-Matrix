@@ -251,5 +251,6 @@
       "comment": "Corporate tier adds SSO, multiple admins, remote deployment, granular group/user settings"
     }
   },
-  "mobileName": "GoToMyPC"
+  "mobileName": "GoToMyPC",
+  "subtype": "application"
 }

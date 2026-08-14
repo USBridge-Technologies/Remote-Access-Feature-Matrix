@@ -274,5 +274,6 @@
       "comment": "Bundled into Windows Server + RDS CAL licensing, or Azure Virtual Desktop/Windows 365 subscriptions"
     }
   },
-  "mobileName": "Microsoft RDP"
+  "mobileName": "Microsoft RDP",
+  "subtype": "protocol"
 }

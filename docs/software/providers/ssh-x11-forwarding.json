@@ -263,5 +263,6 @@
       "comment": "No product to license — it's a protocol capability, not a company or paid tier"
     }
   },
-  "mobileName": "SSH + X11 Forwarding"
+  "mobileName": "SSH + X11 Forwarding",
+  "subtype": "protocol"
 }

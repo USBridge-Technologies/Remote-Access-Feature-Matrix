@@ -270,5 +270,6 @@
   "images": [
     "asset/soft/spice/1.png"
   ],
-  "mobileName": "SPICE"
+  "mobileName": "SPICE",
+  "subtype": "protocol"
 }

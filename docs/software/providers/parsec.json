@@ -299,5 +299,6 @@
     "asset/soft/parsec/1.png",
     "asset/soft/parsec/2.png"
   ],
-  "mobileName": "Parsec"
+  "mobileName": "Parsec",
+  "subtype": "application"
 }

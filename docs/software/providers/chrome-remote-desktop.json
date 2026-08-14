@@ -254,5 +254,6 @@
     "asset/soft/chrome-remote-desktop/1.png",
     "asset/soft/chrome-remote-desktop/2.png"
   ],
-  "mobileName": "CRD"
+  "mobileName": "CRD",
+  "subtype": "application"
 }

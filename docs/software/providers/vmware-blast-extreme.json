@@ -265,5 +265,6 @@
       "comment": "Per-CCU or named-user Horizon licensing via reseller; now bundled under Broadcom/Omnissa post-2023 VMware acquisition"
     }
   },
-  "mobileName": "VMware Blast Extreme"
+  "mobileName": "VMware Blast Extreme",
+  "subtype": "protocol"
 }

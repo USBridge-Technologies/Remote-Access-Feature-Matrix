@@ -260,5 +260,6 @@
       "comment": "No official paid/enterprise tier; purely community-maintained"
     }
   },
-  "mobileName": "X2Go"
+  "mobileName": "X2Go",
+  "subtype": "application"
 }

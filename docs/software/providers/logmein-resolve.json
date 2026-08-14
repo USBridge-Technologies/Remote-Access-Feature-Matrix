@@ -256,5 +256,6 @@
       "comment": "Adds SSO, Zero Trust access controls, mass device deployment, advanced reporting/activity logs"
     }
   },
-  "mobileName": "LogMeIn Resolve"
+  "mobileName": "LogMeIn Resolve",
+  "subtype": "application"
 }

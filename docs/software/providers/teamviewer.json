@@ -286,5 +286,6 @@
     "asset/soft/teamviewer/1.png",
     "asset/soft/teamviewer/2.png"
   ],
-  "mobileName": "TeamV"
+  "mobileName": "TeamV",
+  "subtype": "application"
 }

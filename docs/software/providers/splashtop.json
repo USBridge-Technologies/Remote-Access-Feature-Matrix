@@ -262,5 +262,6 @@
       "comment": "SSO/SAML, SIEM logging, IP whitelisting, cloud recording; SOS support plans run ~$22-33/technician/mo"
     }
   },
-  "mobileName": "Splashtop"
+  "mobileName": "Splashtop",
+  "subtype": "application"
 }

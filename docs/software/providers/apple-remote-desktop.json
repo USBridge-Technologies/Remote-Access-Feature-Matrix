@@ -262,5 +262,6 @@
       "comment": "Single Mac App Store purchase per admin console; can manage an unlimited number of Macs"
     }
   },
-  "mobileName": "Apple Remote Desktop (ARD)"
+  "mobileName": "Apple Remote Desktop (ARD)",
+  "subtype": "application"
 }

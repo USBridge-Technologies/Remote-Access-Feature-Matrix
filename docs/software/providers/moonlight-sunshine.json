@@ -262,5 +262,6 @@
     "asset/soft/moonlight-sunshine/1.png",
     "asset/soft/moonlight-sunshine/2.png"
   ],
-  "mobileName": "Moonlight"
+  "mobileName": "Moonlight",
+  "subtype": "application"
 }

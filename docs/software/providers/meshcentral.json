@@ -263,5 +263,6 @@
   "images": [
     "asset/soft/meshcentral/1.png"
   ],
-  "mobileName": "Mesh"
+  "mobileName": "Mesh",
+  "subtype": "application"
 }

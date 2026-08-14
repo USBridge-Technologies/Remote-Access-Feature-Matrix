@@ -257,5 +257,6 @@
       "comment": "One-time license pricing scales with edition/features, not a recurring subscription"
     }
   },
-  "mobileName": "NoMachine (NX)"
+  "mobileName": "NoMachine (NX)",
+  "subtype": "application"
 }

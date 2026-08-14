@@ -263,5 +263,6 @@
       "comment": "No enterprise SKU, licensing, or management console — same free build for everyone"
     }
   },
-  "mobileName": "TightVNC"
+  "mobileName": "TightVNC",
+  "subtype": "application"
 }

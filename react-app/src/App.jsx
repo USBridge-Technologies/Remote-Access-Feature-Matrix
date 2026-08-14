@@ -344,7 +344,7 @@ function App() {
     menuTitle: "Providers",
     menuSubtitle: `${selectedProviders.size} of ${(rawData.columns || []).filter(c => c.key !== 'draft').length} shown`,
     isMobile: isMobile,
-    items: (rawData.columns || []).filter(c => c.key !== 'draft').map(c => ({ id: c.key, label: c.name, icon: c.icon })),
+    items: (rawData.columns || []).filter(c => c.key !== 'draft').map(c => ({ id: c.key, label: c.name, icon: c.icon, subtype: c.subtype })),
     selectedItems: selectedProviders,
     onToggle: toggleProvider,
     onSelectAll: selectAllProviders,

@@ -183,7 +183,12 @@ export function DropdownFilter({
                         )}
                       </span>
                     )}
-                    <span className="dropdown-item-text">{item.label}</span>
+                    <span className="dropdown-item-text">
+                      {item.label}
+                      {item.subtype === 'protocol' && (
+                        <span className="dropdown-item-subtype">(protocol)</span>
+                      )}
+                    </span>
                   </span>
                   {showStatusLabel && (
                     <span className="dropdown-item-status">

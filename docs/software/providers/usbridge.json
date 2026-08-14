@@ -238,5 +238,6 @@
       "status": "On Request"
     }
   },
-  "mobileName": "USBridge"
+  "mobileName": "USBridge",
+  "subtype": "application"
 }

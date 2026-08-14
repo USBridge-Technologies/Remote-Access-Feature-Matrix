@@ -142,5 +142,6 @@
       "status": "Unknown"
     }
   },
-  "mobileName": "Draft"
+  "mobileName": "Draft",
+  "subtype": "application"
 }

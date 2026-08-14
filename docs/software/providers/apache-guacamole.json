@@ -265,5 +265,6 @@
       "comment": "No official paid tier; some third parties sell managed hosting/support around it, not from the Apache project itself"
     }
   },
-  "mobileName": "Apache Guacamole"
+  "mobileName": "Apache Guacamole",
+  "subtype": "application"
 }

@@ -260,5 +260,6 @@
       "comment": "Adds SSO, up to 256-bit AES encryption, and centralized fleet management"
     }
   },
-  "mobileName": "RealVNC Connect"
+  "mobileName": "RealVNC Connect",
+  "subtype": "application"
 }
