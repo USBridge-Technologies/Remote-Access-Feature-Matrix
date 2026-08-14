@@ -78,7 +78,7 @@
       "status": "Paid"
     },
     "Frame Rate (FPS)": {
-      "status": "120",
+      "status": "240",
       "comment": "Supports up to 240 FPS via the Moonlight protocol (limited only by the underlying hardware)."
     },
     "Session Recording": {

@@ -1,15 +1,5 @@
 {
-  "name": "USBridge",
-  "key": "usbridge",
-  "type": "soft",
-  "changes": {
-    "features": {
-      "Frame Rate (FPS)": {
-        "status": {
-          "before": "120",
-          "after": "240"
-        }
-      }
-    }
-  }
+  "name": "",
+  "key": "",
+  "changes": {}
 }
