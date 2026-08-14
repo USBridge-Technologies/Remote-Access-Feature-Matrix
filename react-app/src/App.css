@@ -204,8 +204,9 @@ body {
 }
 
 @media (hover: hover) {
-  .mobile-action-bar .icon-btn-large:hover,
-  
+  .mobile-action-bar .icon-btn-large:hover {
+    background-color: #3a3a3a;
+  }
 }
 
 .mobile-action-bar .wide-btn {
@@ -226,7 +227,9 @@ body {
 }
 
 @media (hover: hover) {
-  
+  .mobile-action-bar .wide-btn:hover {
+    background-color: #3a3a3a;
+  }
 }
 
 .count-badge {
