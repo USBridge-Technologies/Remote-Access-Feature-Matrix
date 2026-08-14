@@ -1,15 +1,5 @@
 {
-  "name": "USBridge",
-  "key": "usbridge",
-  "type": "soft",
-  "changes": {
-    "features": {
-      "ISO Mounting": {
-        "status": {
-          "before": "In Development",
-          "after": "No"
-        }
-      }
-    }
-  }
+  "name": "",
+  "key": "",
+  "changes": {}
 }
