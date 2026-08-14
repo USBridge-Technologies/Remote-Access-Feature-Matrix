@@ -47,3 +47,19 @@ We've made the contribution process as simple as possible for everyone! You don'
 4. Click **"Send Pull Request"** in the popup bar at the bottom of the screen.
 
 The system will automatically generate a JSON file and send a Pull Request on your behalf. We welcome all contributions to help keep this matrix accurate and up to date!
+
+---
+
+## 📊 Methodology
+
+**Where the data comes from:** Every parameter is initially populated using public sources — official documentation, vendor websites, changelogs, and technical reviews — not internal testing on our end. This is a starting point, not a final verdict.
+
+**What Yes / Partial / No mean:**
+- **Yes** — the feature is documented and available without extra workarounds.
+- **Partial** — the feature exists but is limited (e.g. paid-tier only, requires a specific OS version, or has known bugs/caveats — see the ⓘ tooltip on each cell for specifics).
+- **No** — not supported, or no public evidence it's supported.
+- **Unknown** — we couldn't find a reliable public source either way. We'd rather show "Unknown" than guess.
+
+**This is why it's open-source.** Software changes fast — a "Partial" today might be "Yes" next release, and pricing pages update constantly. Rather than claiming to be a permanently accurate authority, we're built so **anyone can fix what's wrong right now**, without touching code (see "How to Contribute" above). Every entry, right or wrong, is meant to get better over time through the community — not through us alone.
+
+**Conflict of interest note:** USBridge (both the KVM and the remote-access software) is our own product, listed alongside its competitors. We've tried to be evenhanded, but you should weigh that when reading our own entries.
