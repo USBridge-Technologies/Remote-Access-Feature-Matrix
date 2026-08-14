@@ -1,0 +1,271 @@
+{
+  "name": "Citrix HDX / ICA",
+  "key": "citrix-hdx-ica",
+  "type": "software",
+  "website": "https://www.citrix.com/products/citrix-virtual-apps-and-desktops",
+  "github": "",
+  "description": "The oldest of the big three enterprise VDI protocols (ICA dates back to the early 1990s, long before RDP existed), now branded HDX within Citrix Virtual Apps and Desktops. Its Thinwire technology selectively applies H.264/H.265/AV1 only to moving regions of the screen while keeping text and static content losslessly compressed.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Partial",
+      "comment": "Tech-preview support (VDA 2603) on RHEL/Rocky/Ubuntu, but HDX 3D Pro and Linux app sessions aren't supported under it yet"
+    },
+    "P2P (Direct Connection)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Relay Server": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "LAN Discovery": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Tailscale Support": {
+      "status": "No"
+    },
+    "Open Source": {
+      "status": "No"
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes",
+      "comment": "Plug-and-play multi-monitor, with up to ~4K per window"
+    },
+    "Drawing Tablet Support": {
+      "status": "Unknown"
+    },
+    "Gamepad Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audio Streaming": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Microphone Passthrough": {
+      "status": "Yes",
+      "comment": "HDX RealTime supports bidirectional audio for webcam/softphone scenarios"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": "Thinwire adaptive display selectively encodes only actively-changing screen regions"
+    },
+    "H.264 Codec": {
+      "status": "Yes"
+    },
+    "H.265 Codec": {
+      "status": "Yes",
+      "comment": "Including 4:4:4 support since Citrix Workspace app 2305, with GPU-offloaded decoding"
+    },
+    "AV1 Codec": {
+      "status": "Yes",
+      "comment": "Supported on both NVIDIA and Intel GPUs"
+    },
+    "V-Sync": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Session Sharing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Multi-User Sessions": {
+      "status": "Yes",
+      "comment": "One of Citrix's original strengths — shared-session hosting (formerly XenApp) for many concurrent users per server"
+    },
+    "Virtual Display": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Yes",
+      "comment": "\"Visually lossless\" YUV 4:4:4 mode is supported, plus a true \"Pixel perfect\" fully lossless option"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Configurable",
+      "comment": "No fixed number; H.265 4:4:4 support alone was measured internally at ~4x the FPS of H.264 4:4:4 at the same bandwidth"
+    },
+    "Session Recording": {
+      "status": "Yes",
+      "comment": "Citrix Session Recording is a named feature within Citrix Virtual Apps and Desktops"
+    },
+    "ISO Mounting": {
+      "status": "No",
+      "comment": "Client drive mapping exists, but that's not literal virtual-media/ISO mounting"
+    },
+    "Wake-on-LAN": {
+      "status": "Yes",
+      "comment": "Supported for Remote PC Access scenarios (waking physical office PCs)"
+    },
+    "Pre-Login Access": {
+      "status": "Partial",
+      "comment": "Users authenticate via Citrix Workspace/StoreFront first, then reach the delivered session"
+    },
+    "No Account Required": {
+      "status": "No"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Bidirectional, with policy-level controls for security"
+    },
+    "SSO / OIDC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "2FA / MFA": {
+      "status": "Partial",
+      "comment": "Supported via NetScaler Gateway/Citrix Workspace identity integration, not a core ICA protocol feature itself"
+    },
+    "Address Book": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audit Logs": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Mass Deployment": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "RBAC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Remote Printing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Generic USB Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "File Manager UI": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Text Chat": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "On-Screen Whiteboard": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Proxy Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "UAC Handling": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "HDR Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "OTA Updates": {
+      "status": "UNKNOWN",
+      "comment": ""
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes",
+      "comment": "The primary VDA (Virtual Delivery Agent) platform"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "No",
+      "comment": "Citrix doesn't deliver virtualized macOS desktops"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes",
+      "comment": "Actively developed Linux VDA, e.g. version 2603"
+    },
+    "Linux Wayland: Host": {
+      "status": "Partial",
+      "comment": "Tech-preview status with notable limitations (no HDX 3D Pro, no app-only sessions)"
+    },
+    "Linux: Client": {
+      "status": "Yes",
+      "comment": "Actively maintained, recently gained general-availability ARM64 support"
+    },
+    "Android: Host": {
+      "status": "No"
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "Yes",
+      "comment": "HTML5-based Citrix Workspace web access"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable",
+      "comment": "Targets datacenter/professional GPUs (NVIDIA GRID, Intel Iris Pro) for hardware encoding, not consumer GeForce cards"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable",
+      "comment": "Intel Iris Pro hardware encoding is explicitly supported, but no consumer-benchmark table is published"
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "No"
+    },
+    "Personal: Monthly": {
+      "status": "Not applicable",
+      "comment": "Enterprise VDI product, not sold to individuals"
+    },
+    "Personal: Annual": {
+      "status": "Not applicable"
+    },
+    "Team / Business: Monthly": {
+      "status": "Not applicable",
+      "comment": "Sold as per-user/per-device subscriptions to Citrix Virtual Apps and Desktops, not a self-serve price"
+    },
+    "Team / Business: Annual": {
+      "status": "Custom pricing"
+    },
+    "Enterprise": {
+      "status": "Custom pricing",
+      "comment": "Quoted through Citrix/reseller channels based on user count and edition"
+    }
+  },
+  "mobileName": "Citrix HDX / ICA"
+}

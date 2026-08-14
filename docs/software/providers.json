@@ -22,5 +22,6 @@
   "apple-remote-desktop",
   "ssh-x11-forwarding",
   "dwservice",
-  "hp-teradici-pcoip"
+  "hp-teradici-pcoip",
+  "citrix-hdx-ica"
 ]
