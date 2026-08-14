@@ -4,12 +4,12 @@
   "type": "software",
   "website": "https://usbridge.io",
   "github": "https://github.com/USBridge-Technologies/USBridge-Remote",
+  "description": "USBridge Remote is a unified high-performance client for managing remote machines. I designed it to combine hardware-level BIOS access (via USBridge KVM devices) and software-based remote desktop in a single, streamlined interface.",
   "images": [
     "asset/soft/usbridge/1.png",
     "asset/soft/usbridge/2.png",
     "asset/soft/usbridge/3.png"
   ],
-  "description": "USBridge Remote is a unified high-performance client for managing remote machines. I designed it to combine hardware-level BIOS access (via USBridge KVM devices) and software-based remote desktop in a single, streamlined interface.",
   "features": {
     "Wayland Unattended Access": {
       "status": "Yes",
