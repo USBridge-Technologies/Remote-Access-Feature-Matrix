@@ -253,5 +253,6 @@
       "comment": "Still essentially bandwidth-tiered pricing rather than a distinct enterprise feature set"
     }
   },
-  "mobileName": "DWService"
+  "mobileName": "DWService",
+   "subtype": "application"
 }
