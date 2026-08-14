@@ -38,11 +38,11 @@
       "status": "No"
     },
     "Gamepad Passthrough": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Audio Streaming": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Microphone Passthrough": {
@@ -120,11 +120,11 @@
       "comment": "Only a single static password; no two-factor authentication support"
     },
     "Address Book": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Audit Logs": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Mass Deployment": {
@@ -144,11 +144,11 @@
       "comment": ""
     },
     "Generic USB Passthrough": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "File Manager UI": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Text Chat": {
@@ -174,6 +174,9 @@
     "OTA Updates": {
       "status": "UNKNOWN",
       "comment": ""
+    },
+    "Pricing Model": {
+      "status": "Unknown"
     }
   },
   "os": {
