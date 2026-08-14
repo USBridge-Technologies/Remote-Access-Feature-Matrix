@@ -236,22 +236,22 @@
   },
   "hardware": {
     "NVIDIA RTX 4090": {
-      "status": ""
+      "status": "Not applicable"
     },
     "NVIDIA RTX 3090": {
-      "status": ""
+      "status": "Not applicable"
     },
     "NVIDIA RTX 3060": {
-      "status": ""
+      "status": "Not applicable"
     },
     "NVIDIA GTX 1060": {
-      "status": ""
+      "status": "Not applicable"
     },
     "Apple Silicon GPU (Metal)": {
-      "status": ""
+      "status": "Not applicable"
     },
     "Intel iGPU (QuickSync)": {
-      "status": ""
+      "status": "Not applicable"
     }
   },
   "pricing": {
