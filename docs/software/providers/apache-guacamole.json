@@ -1,0 +1,269 @@
+{
+  "name": "Apache Guacamole",
+  "key": "apache-guacamole",
+  "type": "software",
+  "website": "https://guacamole.apache.org",
+  "github": "https://github.com/apache/guacamole-client",
+  "description": "A clientless, open-source web gateway to your existing RDP/VNC/SSH/Telnet servers — install it once on a server, and anyone reaches those endpoints through nothing but an HTTPS browser tab, with centralized auth, session recording, and no per-host client install.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Partial",
+      "comment": "Guacamole doesn't capture screens itself — it proxies your existing RDP/VNC server, so Wayland support depends on that backend"
+    },
+    "P2P (Direct Connection)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Relay Server": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "LAN Discovery": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Tailscale Support": {
+      "status": "No",
+      "comment": "No native integration, though putting Guacamole behind Tailscale/Cloudflare Tunnel is a common security recommendation"
+    },
+    "Open Source": {
+      "status": "Yes",
+      "comment": "Apache Software Foundation top-level project, Apache 2.0 license"
+    },
+    "Multi-Monitor Support": {
+      "status": "No",
+      "comment": "Renders a single monitor in-browser, though the remote resolution updates dynamically as you resize the window"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Gamepad Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audio Streaming": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Microphone Passthrough": {
+      "status": "Unknown"
+    },
+    "Adaptive Bitrate": {
+      "status": "Unknown"
+    },
+    "H.264 Codec": {
+      "status": "No",
+      "comment": "Uses its own lightweight instruction protocol to relay backend screen updates, not a video codec"
+    },
+    "H.265 Codec": {
+      "status": "No"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "V-Sync": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Session Sharing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Multi-User Sessions": {
+      "status": "Partial",
+      "comment": "Depends on the backend server's own capability (e.g. RDS multi-session); Guacamole itself is just the gateway"
+    },
+    "Virtual Display": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Partial",
+      "comment": "Renders backend RDP/VNC updates as an image stream; fidelity depends on the proxied protocol/server, not Guacamole itself"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Unknown",
+      "comment": "No fixed published figure; performance depends on the backend protocol and network"
+    },
+    "Session Recording": {
+      "status": "Yes",
+      "comment": "Records graphical (and optionally keystroke) session activity, with in-browser playback since 1.5.0"
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "No"
+    },
+    "Pre-Login Access": {
+      "status": "Yes",
+      "comment": "Since it proxies RDP/VNC directly, it shows the target's actual login screen like a normal client would"
+    },
+    "No Account Required": {
+      "status": "No",
+      "comment": "Users must log into the Guacamole web gateway itself before reaching any connection"
+    },
+    "KVM Integration": {
+      "status": "Partial",
+      "comment": "Since Guacamole already speaks RDP/VNC, it can proxy into a KVM device's existing VNC/RDP interface, though this isn't a dedicated feature"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Bidirectional clipboard sync via the Asynchronous Clipboard API"
+    },
+    "SSO / OIDC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "2FA / MFA": {
+      "status": "Yes",
+      "comment": "Built-in TOTP since 1.0.0, plus Duo, RADIUS, and YubiKey extension support"
+    },
+    "Address Book": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audit Logs": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Mass Deployment": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "RBAC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Remote Printing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Generic USB Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "File Manager UI": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Text Chat": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "On-Screen Whiteboard": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Proxy Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "UAC Handling": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "HDR Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "OTA Updates": {
+      "status": "UNKNOWN",
+      "comment": ""
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Partial",
+      "comment": "Reachable as an RDP/VNC target; the Guacamole server itself (guacd) is typically deployed on Linux"
+    },
+    "Windows: Client": {
+      "status": "Yes",
+      "comment": "Any modern browser, no software install needed"
+    },
+    "macOS: Host": {
+      "status": "Partial",
+      "comment": "Reachable as a VNC/SSH target; the Guacamole server itself isn't natively deployed on macOS"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes",
+      "comment": "Native deployment platform for the guacd/Tomcat stack, and easily reachable as an X11 VNC/SSH target"
+    },
+    "Linux Wayland: Host": {
+      "status": "Partial",
+      "comment": "Depends entirely on whichever VNC/RDP server is proxied on the Wayland target"
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "No"
+    },
+    "Android: Client": {
+      "status": "Yes",
+      "comment": "Touch-friendly HTML5 web client works in mobile browsers"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "Yes",
+      "comment": "This is the entire point of Guacamole — 100% browser-based, zero client install ever required"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable",
+      "comment": "A protocol gateway, not a GPU-accelerated streaming client"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable"
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Completely free and open source, no tiers or paid unlocks at all"
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$0"
+    },
+    "Team / Business: Annual": {
+      "status": "$0"
+    },
+    "Enterprise": {
+      "status": "$0",
+      "comment": "No official paid tier; some third parties sell managed hosting/support around it, not from the Apache project itself"
+    }
+  },
+  "mobileName": "Apache Guacamole"
+}
