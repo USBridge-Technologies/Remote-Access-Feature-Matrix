@@ -259,5 +259,9 @@
       "status": "$0",
       "comment": "No official enterprise SKU; some third-party providers sell managed/hosted MeshCentral instances, but that's not an official paid tier of the project"
     }
-  }
+  },
+  "images": [
+    "asset/soft/meshcentral/1.png"
+  ],
+  "mobileName": "Mesh"
 }

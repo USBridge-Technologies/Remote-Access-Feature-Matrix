@@ -266,5 +266,9 @@
       "status": "$0",
       "comment": "SPICE itself has no paid tier; Red Hat sells support subscriptions for the virtualization platforms (e.g. RHV) it's bundled into, not for SPICE itself"
     }
-  }
+  },
+  "images": [
+    "asset/soft/spice/1.png"
+  ],
+  "mobileName": "SPICE"
 }

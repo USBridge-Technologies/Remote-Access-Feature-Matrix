@@ -249,5 +249,10 @@
       "status": "$0",
       "comment": "No separate paid Enterprise SKU; Chrome Enterprise/Workspace just adds admin policy controls"
     }
-  }
+  },
+  "images": [
+    "asset/soft/chrome-remote-desktop/1.png",
+    "asset/soft/chrome-remote-desktop/2.png"
+  ],
+  "mobileName": "CRD"
 }

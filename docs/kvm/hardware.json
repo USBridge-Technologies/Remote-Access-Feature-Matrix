@@ -2,7 +2,7 @@
   {
     "name": "SoC / Processor",
     "categories": [
-      "computing"
+      "Computing Platform"
     ],
     "description": "Chip model, cores, clock speed.",
     "type": "text"
@@ -10,7 +10,7 @@
   {
     "name": "RAM",
     "categories": [
-      "computing"
+      "Computing Platform"
     ],
     "description": "Capacity, type.",
     "type": "text"
@@ -18,7 +18,7 @@
   {
     "name": "Onboard Storage",
     "categories": [
-      "computing"
+      "Computing Platform"
     ],
     "description": "eMMC/SSD, if present (separate from the SD card).",
     "type": "boolean"
@@ -26,7 +26,7 @@
   {
     "name": "SD Card",
     "categories": [
-      "computing"
+      "Computing Platform"
     ],
     "description": "Slot, supported class/capacity, removable or not.",
     "type": "boolean"
@@ -34,7 +34,7 @@
   {
     "name": "Capture Chip",
     "categories": [
-      "capture"
+      "Video Capture"
     ],
     "description": "E.g. TC358743, a dedicated ASIC, etc.",
     "type": "text"
@@ -42,7 +42,7 @@
   {
     "name": "Max. Input Resolution/Refresh Rate",
     "categories": [
-      "capture"
+      "Video Capture"
     ],
     "description": "Hardware limit of the capture chip.",
     "type": "text"
@@ -50,7 +50,7 @@
   {
     "name": "HDCP Support",
     "categories": [
-      "capture"
+      "Video Capture"
     ],
     "description": "Support for HDCP.",
     "type": "boolean"
@@ -58,7 +58,7 @@
   {
     "name": "USB Ports",
     "categories": [
-      "ports"
+      "Ports & Connectors"
     ],
     "description": "Count, versions (2.0/3.0), purpose (OTG/host).",
     "type": "text"
@@ -66,7 +66,7 @@
   {
     "name": "HDMI Input",
     "categories": [
-      "ports"
+      "Ports & Connectors"
     ],
     "description": "Number of HDMI inputs.",
     "type": "text"
@@ -74,7 +74,7 @@
   {
     "name": "HDMI Output",
     "categories": [
-      "ports"
+      "Ports & Connectors"
     ],
     "description": "For passthrough, number of outputs.",
     "type": "text"
@@ -82,7 +82,7 @@
   {
     "name": "Ethernet Port",
     "categories": [
-      "ports"
+      "Ports & Connectors"
     ],
     "description": "Speed: 100Mbit / 1Gbit / 2.5G.",
     "type": "text"
@@ -90,7 +90,7 @@
   {
     "name": "Serial/RS232 Port",
     "categories": [
-      "ports"
+      "Ports & Connectors"
     ],
     "description": "Availability, connector type (RJ45/DB9).",
     "type": "boolean"
@@ -98,7 +98,7 @@
   {
     "name": "GPIO Pins",
     "categories": [
-      "ports"
+      "Ports & Connectors"
     ],
     "description": "Count, purpose.",
     "type": "boolean"
@@ -106,7 +106,7 @@
   {
     "name": "Expansion Slot",
     "categories": [
-      "ports"
+      "Ports & Connectors"
     ],
     "description": "mini-PCIe / M.2 — for a modem, etc.",
     "type": "text"
@@ -114,7 +114,7 @@
   {
     "name": "Kensington Lock",
     "categories": [
-      "ports"
+      "Ports & Connectors"
     ],
     "description": "Physical anti-theft lock slot.",
     "type": "boolean"
@@ -122,7 +122,7 @@
   {
     "name": "Wi-Fi",
     "categories": [
-      "wireless"
+      "Wireless"
     ],
     "description": "Standard, built-in or external antenna.",
     "type": "text"
@@ -130,7 +130,7 @@
   {
     "name": "Bluetooth",
     "categories": [
-      "wireless"
+      "Wireless"
     ],
     "description": "Version.",
     "type": "text"
@@ -138,7 +138,7 @@
   {
     "name": "Cellular/LTE/5G",
     "categories": [
-      "wireless"
+      "Wireless"
     ],
     "description": "Cellular modem support.",
     "type": "boolean"
@@ -146,7 +146,7 @@
   {
     "name": "Display",
     "categories": [
-      "display"
+      "Display"
     ],
     "description": "Presence, type (OLED/LCD), resolution, diagonal size.",
     "type": "boolean"
@@ -154,7 +154,7 @@
   {
     "name": "LED Indicators",
     "categories": [
-      "display"
+      "Display"
     ],
     "description": "Which statuses they show.",
     "type": "boolean"
@@ -162,7 +162,7 @@
   {
     "name": "Power Supply",
     "categories": [
-      "power"
+      "Power"
     ],
     "description": "Power requirements.",
     "type": "text"
@@ -170,7 +170,7 @@
   {
     "name": "Voltage/Power Connector",
     "categories": [
-      "power"
+      "Power"
     ],
     "description": "E.g. 5V USB-C / 12V DC barrel, etc.",
     "type": "text"
@@ -178,7 +178,7 @@
   {
     "name": "Power Consumption",
     "categories": [
-      "power"
+      "Power"
     ],
     "description": "In watts (typical/peak).",
     "type": "text"
@@ -186,7 +186,7 @@
   {
     "name": "PoE (Power over Ethernet)",
     "categories": [
-      "power"
+      "Power"
     ],
     "description": "Hardware PoE support.",
     "type": "boolean"
@@ -194,7 +194,7 @@
   {
     "name": "Backup Power / Supercapacitor",
     "categories": [
-      "power"
+      "Power"
     ],
     "description": "For the RTC in case of power loss.",
     "type": "boolean"
@@ -202,7 +202,7 @@
   {
     "name": "Cooling",
     "categories": [
-      "cooling"
+      "Cooling & Chassis"
     ],
     "description": "Passive/active, presence of a fan.",
     "type": "text"
@@ -210,7 +210,7 @@
   {
     "name": "Case Material",
     "categories": [
-      "cooling"
+      "Cooling & Chassis"
     ],
     "description": "Plastic/metal (EMI shielding).",
     "type": "text"
@@ -218,7 +218,7 @@
   {
     "name": "Form Factor",
     "categories": [
-      "cooling"
+      "Cooling & Chassis"
     ],
     "description": "Device size and form factor.",
     "type": "text"
@@ -226,7 +226,7 @@
   {
     "name": "Dimensions (L×W×H)",
     "categories": [
-      "cooling"
+      "Cooling & Chassis"
     ],
     "description": "Physical dimensions.",
     "type": "text"
@@ -234,7 +234,7 @@
   {
     "name": "Weight",
     "categories": [
-      "cooling"
+      "Cooling & Chassis"
     ],
     "description": "Device weight.",
     "type": "text"
@@ -242,7 +242,7 @@
   {
     "name": "Mounting",
     "categories": [
-      "cooling"
+      "Cooling & Chassis"
     ],
     "description": "DIN rail, VESA, rack-mount, desktop.",
     "type": "text"
@@ -250,7 +250,7 @@
   {
     "name": "Operating Temperature",
     "categories": [
-      "cooling"
+      "Cooling & Chassis"
     ],
     "description": "Range in °C.",
     "type": "text"
@@ -258,7 +258,7 @@
   {
     "name": "Power Control Interface",
     "categories": [
-      "host_power"
+      "Host Power Mgmt"
     ],
     "description": "Type: relay, GPIO, ATX connector.",
     "type": "text"
@@ -266,7 +266,7 @@
   {
     "name": "Watchdog / Auto-Reboot",
     "categories": [
-      "host_power"
+      "Host Power Mgmt"
     ],
     "description": "Hardware watchdog.",
     "type": "boolean"
@@ -274,7 +274,7 @@
   {
     "name": "Certifications",
     "categories": [
-      "certification"
+      "Certification"
     ],
     "description": "CE / FCC / RoHS.",
     "type": "text"
@@ -282,7 +282,7 @@
   {
     "name": "Warranty",
     "categories": [
-      "certification"
+      "Certification"
     ],
     "description": "Warranty period.",
     "type": "text"

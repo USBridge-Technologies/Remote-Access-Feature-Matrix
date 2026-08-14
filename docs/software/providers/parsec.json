@@ -294,5 +294,10 @@
       "status": "From $30/seat",
       "comment": "For large teams (typically 30+ users). Adds corporate SSO/SAML integration, the Audit API, and the ability to self-host your own Team Relay router."
     }
-  }
+  },
+  "images": [
+    "asset/soft/parsec/1.png",
+    "asset/soft/parsec/2.png"
+  ],
+  "mobileName": "Parsec"
 }

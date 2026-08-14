@@ -4,5 +4,6 @@
   "type": "kvm",
   "website": "",
   "github": "",
-  "description": "Draft of a new provider for filling and proposing changes."
+  "description": "This is a template for submitting a request to add a new provider. You can add the name, logo, and description at the final stage after filling in the features and clicking Save in the top panel.",
+  "mobileName": "Draft"
 }

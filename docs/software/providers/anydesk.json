@@ -285,5 +285,11 @@
       "status": "$79.90/mo",
       "comment": "Advanced plan. Includes mass deployment tools (MSI) and session auditing. True isolated On-Premises deployment (your own AnyDesk server) costs significantly more and is only sold on request."
     }
-  }
+  },
+  "images": [
+    "asset/soft/anydesk/1.png",
+    "asset/soft/anydesk/2.png",
+    "asset/soft/anydesk/3.png"
+  ],
+  "mobileName": "AnyDesk"
 }

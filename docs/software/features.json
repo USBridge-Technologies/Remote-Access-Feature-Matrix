@@ -1,265 +1,372 @@
 [
   {
     "name": "Wayland Unattended Access",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Allows unattended remote connections to Wayland-based Linux sessions without requiring physical confirmation on the host.",
     "type": "boolean"
   },
   {
     "name": "P2P (Direct Connection)",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Direct peer-to-peer connection between client and host, with support for tunneling over secure overlay networks (e.g. Tailscale) for NAT traversal without configuring public IPs.",
     "type": "boolean"
   },
   {
     "name": "Relay Server",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Routes encrypted traffic through an intermediary relay server when a direct P2P connection is blocked by firewalls or strict NAT.",
     "type": "boolean"
   },
   {
     "name": "LAN Discovery",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Automatically discovers available machines on the same local network via broadcast/multicast, without manually entering IP addresses or device IDs.",
     "type": "boolean"
   },
   {
     "name": "Tailscale Support",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Built-in or straightforward support for connecting over the Tailscale mesh VPN, enabling secure access without configuring a public IP.",
     "type": "boolean"
   },
   {
     "name": "Open Source",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Source code is fully open, allowing independent security audits and self-built clients.",
     "type": "boolean"
   },
   {
     "name": "Multi-Monitor Support",
-    "categories": ["gaming", "sysadmin", "artist"],
+    "categories": [
+      "Gaming",
+      "Sysadmin",
+      "Artist & Design"
+    ],
     "description": "Displays multiple monitors from the remote computer at once, or allows quickly switching between them.",
     "type": "boolean"
   },
   {
     "name": "Drawing Tablet Support",
-    "categories": ["artist"],
+    "categories": [
+      "Artist & Design"
+    ],
     "description": "Passes through input from graphics tablets (Wacom, Huion), including pen pressure sensitivity and tilt.",
     "type": "boolean"
   },
   {
     "name": "Gamepad Passthrough",
-    "categories": ["gaming"],
+    "categories": [
+      "Gaming"
+    ],
     "description": "Passes through and emulates game controllers (Xbox, PlayStation, Switch Pro), including rumble/force feedback.",
     "type": "boolean"
   },
   {
     "name": "Audio Streaming",
-    "categories": ["gaming", "artist"],
+    "categories": [
+      "Gaming",
+      "Artist & Design"
+    ],
     "description": "Streams high-quality, low-latency stereo audio from the remote system.",
     "type": "boolean"
   },
   {
     "name": "Microphone Passthrough",
-    "categories": ["gaming"],
+    "categories": [
+      "Gaming"
+    ],
     "description": "Streams audio from the client's microphone to the remote host (e.g. for calls or voice input).",
     "type": "boolean"
   },
   {
     "name": "Adaptive Bitrate",
-    "categories": ["gaming", "artist", "sysadmin"],
+    "categories": [
+      "Gaming",
+      "Artist & Design",
+      "Sysadmin"
+    ],
     "description": "Dynamically adjusts the video stream's bitrate and quality based on current network conditions and available bandwidth.",
     "type": "boolean"
   },
   {
     "name": "H.264 Codec",
-    "categories": ["gaming", "artist", "sysadmin"],
+    "categories": [
+      "Gaming",
+      "Artist & Design",
+      "Sysadmin"
+    ],
     "description": "Supports the widely compatible H.264/AVC video compression codec.",
     "type": "boolean"
   },
   {
     "name": "H.265 Codec",
-    "categories": ["gaming", "artist", "sysadmin"],
+    "categories": [
+      "Gaming",
+      "Artist & Design",
+      "Sysadmin"
+    ],
     "description": "Supports the H.265/HEVC codec, reducing transmitted data volume while maintaining high quality.",
     "type": "boolean"
   },
   {
     "name": "AV1 Codec",
-    "categories": ["gaming", "artist"],
+    "categories": [
+      "Gaming",
+      "Artist & Design"
+    ],
     "description": "Supports the modern, royalty-free AV1 codec for maximum compression efficiency.",
     "type": "boolean"
   },
   {
     "name": "V-Sync",
-    "categories": ["gaming", "artist"],
+    "categories": [
+      "Gaming",
+      "Artist & Design"
+    ],
     "description": "Vertical frame synchronization to eliminate screen tearing and ensure smooth rendering.",
     "type": "boolean"
   },
   {
     "name": "Session Sharing",
-    "categories": ["sysadmin", "gaming", "artist"],
+    "categories": [
+      "Sysadmin",
+      "Gaming",
+      "Artist & Design"
+    ],
     "description": "Allows multiple users to connect to the same active desktop or session simultaneously.",
     "type": "boolean"
   },
   {
     "name": "Multi-User Sessions",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Supports multiple simultaneous, independent user sessions on a single host (isolated sessions, RDP-style).",
     "type": "boolean"
   },
   {
     "name": "Virtual Display",
-    "categories": ["sysadmin", "gaming", "artist"],
+    "categories": [
+      "Sysadmin",
+      "Gaming",
+      "Artist & Design"
+    ],
     "description": "Creates software-based virtual monitors on the remote host, useful for headless servers or cloud VMs without a physical display.",
     "type": "boolean"
   },
   {
     "name": "4:4:4 Chroma Subsampling",
-    "categories": ["artist"],
+    "categories": [
+      "Artist & Design"
+    ],
     "description": "Supports full, uncompressed 4:4:4 chroma sampling, avoiding distortion of text and colors.",
     "type": "boolean"
   },
   {
     "name": "Frame Rate (FPS)",
-    "categories": ["gaming", "artist"],
+    "categories": [
+      "Gaming",
+      "Artist & Design"
+    ],
     "description": "Supports high frame rates (60/120/144+ FPS) for maximum smoothness with dynamic content.",
     "type": "text"
   },
   {
     "name": "Session Recording",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Records remote sessions to a video file for security audits and access control.",
     "type": "boolean"
   },
   {
     "name": "ISO Mounting",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Remotely mounts ISO images and virtual drives on the target machine.",
     "type": "boolean"
   },
   {
     "name": "Wake-on-LAN",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Remotely powers on or wakes a shut-down computer by sending a magic packet over the local network.",
     "type": "boolean"
   },
   {
     "name": "Pre-Login Access",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Connects to the remote machine before user authentication (at the OS lock or login screen), e.g. right after a reboot.",
     "type": "boolean"
   },
   {
     "name": "No Account Required",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Direct connections work without a mandatory account registration with the provider's cloud service.",
     "type": "boolean"
   },
   {
     "name": "KVM Integration",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Integrates with hardware capture/control boards (KVM over IP) for low-level administration at the BIOS level.",
     "type": "boolean"
   },
   {
     "name": "Shared Clipboard",
-    "categories": ["sysadmin", "artist"],
+    "categories": [
+      "Sysadmin",
+      "Artist & Design"
+    ],
     "description": "Bidirectional clipboard sync — copied text, images, or files are available on both machines.",
     "type": "boolean"
   },
   {
     "name": "SSO / OIDC",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Integrates with enterprise identity providers (Azure AD, Okta, Google Workspace) for centralized single sign-on.",
     "type": "boolean"
   },
   {
     "name": "2FA / MFA",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Two-factor authentication to protect access to the management console, address book, and endpoint devices.",
     "type": "boolean"
   },
   {
     "name": "Address Book",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Centralized address book with sync, device grouping, and team sharing.",
     "type": "boolean"
   },
   {
     "name": "Audit Logs",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Centralized logging of all connections, authentication attempts, and settings changes for security audits and compliance.",
     "type": "boolean"
   },
   {
     "name": "Mass Deployment",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Silent, automated installation (via MSI, scripts, or MDM) with preconfigured server-binding keys.",
     "type": "boolean"
   },
   {
     "name": "RBAC",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Role-Based Access Control for granular permission management across admins and users.",
     "type": "boolean"
   },
   {
     "name": "Privacy Mode (Black Screen)",
-    "categories": ["sysadmin", "artist"],
+    "categories": [
+      "Sysadmin",
+      "Artist & Design"
+    ],
     "description": "Blanks the remote computer's physical monitor and locks its local mouse/keyboard, so no one nearby can see what the remote user is doing.",
     "type": "boolean"
   },
   {
     "name": "Remote Printing",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Print redirection — prints a document open on the remote computer to the client's local printer.",
     "type": "boolean"
   },
   {
     "name": "Generic USB Passthrough",
-    "categories": ["sysadmin", "artist"],
+    "categories": [
+      "Sysadmin",
+      "Artist & Design"
+    ],
     "description": "End-to-end passthrough of any USB device over the network (license dongles, flash drives, 3D mice like SpaceMouse, non-standard hardware) — not limited to gamepads and tablets.",
     "type": "boolean"
   },
   {
     "name": "File Manager UI",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "A dedicated two-pane file manager interface for background file transfers, independent of the graphical session (in addition to standard drag & drop).",
     "type": "boolean"
   },
   {
     "name": "Text Chat",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Built-in text messenger overlaying the remote screen, for communication between a support agent and the end user.",
     "type": "boolean"
   },
   {
     "name": "On-Screen Whiteboard",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Annotation tools for drawing over the screen with a marker, to show the remote user where to click.",
     "type": "boolean"
   },
   {
     "name": "Proxy Support",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Native support for connecting through corporate HTTP/SOCKS5 proxy servers to bypass strict firewalls.",
     "type": "boolean"
   },
   {
     "name": "UAC Handling",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Allows remote interaction with Windows User Account Control (UAC) prompts — viewing, clicking, and approving elevated-privilege requests without losing session control or hitting a black screen.",
     "type": "boolean"
   },
   {
     "name": "HDR Support",
-    "categories": ["sysadmin"],
+    "categories": [
+      "Sysadmin"
+    ],
     "description": "Supports transmitting and displaying High Dynamic Range (HDR) video, preserving accurate color, high contrast, and detail in the remote session.",
     "type": "boolean"
   },
   {
     "name": "OTA Updates",
-    "categories": ["software"],
+    "categories": [
+      "Software"
+    ],
     "description": "Automatic over-the-air (wireless) updates for software/firmware.",
     "type": "boolean"
   }

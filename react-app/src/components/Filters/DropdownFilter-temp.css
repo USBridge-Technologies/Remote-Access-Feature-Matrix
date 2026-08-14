@@ -1,0 +1,18 @@
+
+.dropdown-add-btn {
+  width: 100%;
+  background-color: transparent;
+  color: #c3e679;
+  border: none;
+  border-top: 1px solid #333333;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-add-btn:hover {
+  background-color: rgba(195, 230, 121, 0.1);
+}

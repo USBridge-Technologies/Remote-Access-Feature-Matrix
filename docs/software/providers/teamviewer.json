@@ -281,5 +281,10 @@
       "status": "From $149/mo",
       "comment": "Premium/Corporate/Tensor tier. This is the only level that includes independent parallel sessions, SSO, audit logs, and silent MSI deployment."
     }
-  }
+  },
+  "images": [
+    "asset/soft/teamviewer/1.png",
+    "asset/soft/teamviewer/2.png"
+  ],
+  "mobileName": "TeamV"
 }

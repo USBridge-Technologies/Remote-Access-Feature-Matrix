@@ -1,43 +1,57 @@
 [
   {
     "name": "Pricing Model",
-    "categories": ["general"],
+    "categories": [
+      "General"
+    ],
     "description": "The product's overall monetization type (Freemium, Open Source, Paid Subscription).",
     "type": "boolean"
   },
   {
     "name": "Free Tier",
-    "categories": ["personal"],
+    "categories": [
+      "Personal"
+    ],
     "description": "Availability of a fully free plan for personal use.",
     "type": "boolean"
   },
   {
     "name": "Personal: Monthly",
-    "categories": ["personal"],
+    "categories": [
+      "Personal"
+    ],
     "description": "Cost of one month's subscription for a single personal user.",
     "type": "boolean"
   },
   {
     "name": "Personal: Annual",
-    "categories": ["personal"],
+    "categories": [
+      "Personal"
+    ],
     "description": "Cost of an individual subscription when billed annually.",
     "type": "boolean"
   },
   {
     "name": "Team / Business: Monthly",
-    "categories": ["business"],
+    "categories": [
+      "Business"
+    ],
     "description": "Monthly cost for a team or small business plan.",
     "type": "boolean"
   },
   {
     "name": "Team / Business: Annual",
-    "categories": ["business"],
+    "categories": [
+      "Business"
+    ],
     "description": "Cost of a team subscription when billed annually.",
     "type": "boolean"
   },
   {
     "name": "Enterprise",
-    "categories": ["business"],
+    "categories": [
+      "Business"
+    ],
     "description": "A plan for large organizations, with custom features, dedicated servers, and 24/7 support.",
     "type": "boolean"
   }

@@ -285,5 +285,11 @@
       "status": "$19.90/mo",
       "comment": "SaaS (Managed) plan. The same as Pro, but you don't need to administer the server yourself — RustDesk hosts and maintains the nodes on its own infrastructure."
     }
-  }
+  },
+  "images": [
+    "asset/soft/rustdesk/1.png",
+    "asset/soft/rustdesk/2.png",
+    "asset/soft/rustdesk/3.png"
+  ],
+  "mobileName": "RustDesk"
 }

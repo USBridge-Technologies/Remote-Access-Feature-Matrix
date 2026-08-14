@@ -2,7 +2,7 @@
   {
     "name": "FPS",
     "categories": [
-      "video"
+      "Latency"
     ],
     "description": "Maximum frame rate.",
     "type": "text"
@@ -10,7 +10,7 @@
   {
     "name": "Latency",
     "categories": [
-      "video"
+      "Latency"
     ],
     "description": "End-to-end delay.",
     "type": "text"
@@ -18,7 +18,7 @@
   {
     "name": "Resolution",
     "categories": [
-      "video"
+      "Latency"
     ],
     "description": "Maximum supported resolution.",
     "type": "text"
@@ -26,7 +26,7 @@
   {
     "name": "Dynamic Bandwidth Tuning",
     "categories": [
-      "video"
+      "Latency"
     ],
     "description": "Automatically adjusts video quality and bitrate on the fly to match the user's current internet bandwidth.",
     "type": "boolean"
@@ -34,7 +34,7 @@
   {
     "name": "Video Stream Protocol",
     "categories": [
-      "video"
+      "Latency"
     ],
     "description": "Choice of transmission protocol (WebRTC for minimal latency vs. H.264/MJPEG for compatibility).",
     "type": "text"
@@ -42,7 +42,7 @@
   {
     "name": "USB HID Emulation",
     "categories": [
-      "hardware"
+      "Peripherals"
     ],
     "description": "Software emulation of a keyboard and mouse (including absolute/relative positioning).",
     "type": "boolean"
@@ -50,7 +50,7 @@
   {
     "name": "Mouse Modes (Absolute / Relative)",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Switches between mouse modes (absolute — for browser/BIOS use, relative — for games and 3D applications).",
     "type": "boolean"
@@ -58,7 +58,7 @@
   {
     "name": "Audio Streaming",
     "categories": [
-      "hardware"
+      "Peripherals"
     ],
     "description": "Captures and streams audio from the target machine.",
     "type": "boolean"
@@ -66,7 +66,7 @@
   {
     "name": "Microphone",
     "categories": [
-      "hardware"
+      "Peripherals"
     ],
     "description": "Passes through the client's microphone.",
     "type": "boolean"
@@ -74,7 +74,7 @@
   {
     "name": "Gamepad Support",
     "categories": [
-      "hardware"
+      "Peripherals"
     ],
     "description": "Supports passthrough of gamepads and game controllers.",
     "type": "boolean"
@@ -82,7 +82,7 @@
   {
     "name": "Power Control",
     "categories": [
-      "hardware"
+      "Peripherals"
     ],
     "description": "Remote power on, power off, and hard-reset functionality for the PC.",
     "type": "boolean"
@@ -90,7 +90,7 @@
   {
     "name": "Virtual Media Emulation",
     "categories": [
-      "hardware"
+      "Peripherals"
     ],
     "description": "Mounts virtual ISO, CD/DVD, and flash drive images for remote OS installation.",
     "type": "boolean"
@@ -98,8 +98,8 @@
   {
     "name": "Physical HDD Emulation & RAM Cache",
     "categories": [
-      "hardware",
-      "software"
+      "Peripherals",
+      "Software"
     ],
     "description": "Emulates a full physical drive (HDD/SSD) with LPDDR4X caching of the network stream.",
     "type": "boolean"
@@ -107,7 +107,7 @@
   {
     "name": "Read-Write Overlay (Non-Destructive Mode)",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "A safe overlay mode: session writes go to a separate layer, keeping the original image untouched.",
     "type": "boolean"
@@ -115,7 +115,7 @@
   {
     "name": "GPIO Control via Web UI",
     "categories": [
-      "hardware"
+      "Peripherals"
     ],
     "description": "Controls GPIO pins (relays, smart outlets, lights) directly from the web interface.",
     "type": "boolean"
@@ -123,7 +123,7 @@
   {
     "name": "Multiport KVM Support",
     "categories": [
-      "hardware"
+      "Peripherals"
     ],
     "description": "Software support for chaining and switching between multiple hosts.",
     "type": "boolean"
@@ -131,7 +131,7 @@
   {
     "name": "PoE Support",
     "categories": [
-      "network"
+      "Network"
     ],
     "description": "Power over Ethernet.",
     "type": "boolean"
@@ -139,7 +139,7 @@
   {
     "name": "Wake-on-LAN (WoL) Sender",
     "categories": [
-      "network"
+      "Network"
     ],
     "description": "Sends Magic Packets directly from the KVM UI to wake devices on the local network.",
     "type": "boolean"
@@ -147,7 +147,7 @@
   {
     "name": "Wi-Fi",
     "categories": [
-      "network"
+      "Network"
     ],
     "description": "Wireless network support.",
     "type": "boolean"
@@ -155,7 +155,7 @@
   {
     "name": "Ethernet (LAN)",
     "categories": [
-      "network"
+      "Network"
     ],
     "description": "Wired local network connection via RJ-45 cable.",
     "type": "boolean"
@@ -163,7 +163,7 @@
   {
     "name": "Virtual Network Adapter",
     "categories": [
-      "network"
+      "Network"
     ],
     "description": "Emulates a virtual network card to share internet/network access with the target host.",
     "type": "boolean"
@@ -171,7 +171,7 @@
   {
     "name": "Zero-Config Remote Access",
     "categories": [
-      "network"
+      "Network"
     ],
     "description": "Built-in VPN tunnel support (Tailscale / ZeroTier) for accessing the KVM without a public IP.",
     "type": "boolean"
@@ -179,7 +179,7 @@
   {
     "name": "Clientless Browser",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Desktop access without installing third-party clients, Java, or plugins (HTML5 / WebRTC).",
     "type": "boolean"
@@ -187,7 +187,7 @@
   {
     "name": "Event Notifications (Alerting)",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Sends notifications to Telegram, Discord, Slack, or Email on events (power loss, overheating, etc.).",
     "type": "boolean"
@@ -195,7 +195,7 @@
   {
     "name": "Multi-User Collaboration",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Collaborative mode where several admins view the same screen and hand control off to one another.",
     "type": "boolean"
@@ -203,7 +203,7 @@
   {
     "name": "Open Source Firmware & Plugins",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Open firmware source code, with support for installing third-party community modules/plugins.",
     "type": "boolean"
@@ -211,7 +211,7 @@
   {
     "name": "REST API / Webhooks",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "An open API for controlling the KVM via scripts (Python, Ansible, Terraform).",
     "type": "boolean"
@@ -219,7 +219,7 @@
   {
     "name": "Scripting",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Support for scripting and automation (API, macros).",
     "type": "boolean"
@@ -227,7 +227,7 @@
   {
     "name": "Serial Console Web Gateway",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Opens and controls the serial console port directly through the web interface or SSH.",
     "type": "boolean"
@@ -235,7 +235,7 @@
   {
     "name": "Software Ecosystem & Client",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "An ecosystem of applications and dedicated clients for access.",
     "type": "boolean"
@@ -243,7 +243,7 @@
   {
     "name": "Software USB Replug",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Software-simulated USB cable disconnect/reconnect (to reset devices that got stuck).",
     "type": "boolean"
@@ -251,7 +251,7 @@
   {
     "name": "System Health & Fan Control",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Software monitoring of system health and temperatures, plus control over cooling profiles.",
     "type": "boolean"
@@ -259,7 +259,7 @@
   {
     "name": "2FA / TOTP Support",
     "categories": [
-      "security"
+      "Security"
     ],
     "description": "Supports two-factor authentication when logging into the KVM.",
     "type": "boolean"
@@ -267,7 +267,7 @@
   {
     "name": "Audit Trail / Event Logging",
     "categories": [
-      "security"
+      "Security"
     ],
     "description": "A detailed activity log for the system (login events, ATX commands, image mounts).",
     "type": "boolean"
@@ -275,7 +275,7 @@
   {
     "name": "Encrypted Stream (TLS 1.3 / AES-256)",
     "categories": [
-      "security"
+      "Security"
     ],
     "description": "Software-level encryption of the video stream and input commands.",
     "type": "boolean"
@@ -283,7 +283,7 @@
   {
     "name": "Enterprise Auth (LDAP / AD / SSO)",
     "categories": [
-      "security"
+      "Security"
     ],
     "description": "Ability to integrate with corporate user directories.",
     "type": "boolean"
@@ -291,7 +291,7 @@
   {
     "name": "No Subscription (On-Premise Only)",
     "categories": [
-      "security"
+      "Security"
     ],
     "description": "All features are guaranteed to work without paid subscriptions, cloud lock-in, or third-party servers.",
     "type": "boolean"
@@ -299,7 +299,7 @@
   {
     "name": "Role-Based Access Control (RBAC)",
     "categories": [
-      "security"
+      "Security"
     ],
     "description": "Permission segregation (e.g. view-only, full access, ATX-only access).",
     "type": "boolean"
@@ -307,7 +307,7 @@
   {
     "name": "Session Recording",
     "categories": [
-      "security"
+      "Security"
     ],
     "description": "Automatically records the admin session's video stream for later security audits.",
     "type": "boolean"
@@ -315,7 +315,7 @@
   {
     "name": "AI Agents",
     "categories": [
-      "advanced"
+      "AI & Advanced"
     ],
     "description": "Integration with AI agents for task automation and host management.",
     "type": "boolean"
@@ -323,7 +323,7 @@
   {
     "name": "BIOS-in-Terminal (OCR)",
     "categories": [
-      "advanced"
+      "AI & Advanced"
     ],
     "description": "Ability to work in the BIOS via a terminal, using OCR for text recognition.",
     "type": "boolean"
@@ -331,7 +331,7 @@
   {
     "name": "Fleet Management / Central Dashboard",
     "categories": [
-      "advanced"
+      "AI & Advanced"
     ],
     "description": "Support for consolidating multiple KVMs into a single management dashboard (data centers, device fleets).",
     "type": "boolean"
@@ -339,7 +339,7 @@
   {
     "name": "Immutable Snapshots",
     "categories": [
-      "advanced"
+      "AI & Advanced"
     ],
     "description": "Support for immutable state snapshots for safe rollback.",
     "type": "boolean"
@@ -347,7 +347,7 @@
   {
     "name": "IPMI / Redfish Emulation",
     "categories": [
-      "advanced"
+      "AI & Advanced"
     ],
     "description": "The KVM's ability to present itself as a standard server IPMI/iDRAC interface, for integration with monitoring systems.",
     "type": "boolean"
@@ -355,7 +355,7 @@
   {
     "name": "Mass Deployment / Auto-Provisioning",
     "categories": [
-      "advanced"
+      "AI & Advanced"
     ],
     "description": "Ability to quickly configure dozens of KVMs via configuration files (cloud-init / Ansible).",
     "type": "boolean"
@@ -363,7 +363,7 @@
   {
     "name": "Privacy / Blank Screen Mode",
     "categories": [
-      "advanced"
+      "AI & Advanced"
     ],
     "description": "Ability to programmatically turn off the physical monitor on the target PC during a session.",
     "type": "boolean"
@@ -371,7 +371,7 @@
   {
     "name": "OTA Updates",
     "categories": [
-      "software"
+      "Software"
     ],
     "description": "Over-the-air (wireless) firmware/software updates.",
     "type": "boolean"

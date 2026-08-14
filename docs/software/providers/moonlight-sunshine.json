@@ -257,5 +257,10 @@
     "Enterprise": {
       "status": "$0"
     }
-  }
+  },
+  "images": [
+    "asset/soft/moonlight-sunshine/1.png",
+    "asset/soft/moonlight-sunshine/2.png"
+  ],
+  "mobileName": "Moonlight"
 }

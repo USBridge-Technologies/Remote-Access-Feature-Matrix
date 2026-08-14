@@ -1,0 +1,101 @@
+.editing-action-panel {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background-color: #1a1a1a;
+  border: 1px solid #c3e679;
+  border-radius: 12px;
+  padding: 12px 16px 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: slideInRight 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.editing-info {
+  font-size: 14px;
+  color: #dddddd;
+}
+
+.editing-info strong {
+  color: #ffffff;
+}
+
+.change-count {
+  color: #888888;
+  margin-left: 6px;
+}
+
+.editing-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-propose {
+  background-color: #c3e679;
+  color: #111111;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-propose:active {
+  transform: scale(0.96);
+}
+
+.btn-propose:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-propose:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-close-edit {
+  background-color: #333333;
+  color: #a0a0a0;
+  border: none;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-close-edit:hover {
+  background-color: #444444;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .editing-action-panel {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 12px 16px;
+    justify-content: space-between;
+    gap: 12px;
+  }
+}
