@@ -104,8 +104,8 @@
       "comment": "The end user being helped doesn't need an account (ad-hoc session links can be generated), but the administrator/technician does need a MeshCentral account on the server"
     },
     "KVM Integration": {
-      "status": "Yes",
-      "comment": "The \"local device group\" feature can relay to agent-less devices over SSH/RDP/VNC — MeshCentral's own documentation cites this being used to reach Raritan IP-KVM switch ports remotely"
+      "status": "No",
+      "comment": ""
     },
     "Shared Clipboard": {
       "status": "Yes",
