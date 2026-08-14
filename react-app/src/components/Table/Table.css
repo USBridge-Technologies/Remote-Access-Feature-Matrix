@@ -1,7 +1,7 @@
 .table-container {
   overflow-x: auto;
   overflow-y: auto;
-  max-height: 65vh; /* Internal scrolling */
+  max-height: 80vh; /* Internal scrolling */
   border-radius: 8px;
   border: 1px solid #333333;
   background-color: #1a1a1a;
