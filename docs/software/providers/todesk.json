@@ -1,0 +1,262 @@
+{
+  "name": "ToDesk",
+  "key": "todesk",
+  "type": "software",
+  "website": "https://www.todesk.com",
+  "github": "",
+  "description": "A fast-growing Chinese remote-access platform (founded 2020, Haikou) built around a proprietary low-latency ZeroSync engine and OTT SD-WAN routing — claims sub-40ms typical latency (as low as ~3ms in ideal conditions), with editions specifically tuned for gaming, design, and high-frame-rate use, on top of 150M+ installs.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Unknown"
+    },
+    "P2P (Direct Connection)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Relay Server": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "LAN Discovery": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Tailscale Support": {
+      "status": "No"
+    },
+    "Open Source": {
+      "status": "No",
+      "comment": "Fully closed-source commercial product"
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes",
+      "comment": "Flexible multi-monitor / split-screen display, emphasized in the Performance edition"
+    },
+    "Drawing Tablet Support": {
+      "status": "Unknown"
+    },
+    "Gamepad Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audio Streaming": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Microphone Passthrough": {
+      "status": "Unknown"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": "OTT SD-WAN intelligent bandwidth control, claimed to stay usable at up to ~30% packet loss"
+    },
+    "H.264 Codec": {
+      "status": "Unknown",
+      "comment": "Uses a proprietary \"ToDesk Codec\"; not confirmed whether it's H.264-based under the hood"
+    },
+    "H.265 Codec": {
+      "status": "Unknown"
+    },
+    "AV1 Codec": {
+      "status": "Unknown"
+    },
+    "V-Sync": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Session Sharing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Multi-User Sessions": {
+      "status": "No"
+    },
+    "Virtual Display": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Unknown"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Up to 360 (Performance tier)",
+      "comment": "Base tiers target smooth 4K; the Performance edition markets up to 8K resolution and 360 FPS"
+    },
+    "Session Recording": {
+      "status": "Yes",
+      "comment": "Cloud-encrypted session recording for archiving/security audits, emphasized on the Enterprise edition"
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "Unknown"
+    },
+    "Pre-Login Access": {
+      "status": "Partial",
+      "comment": "Positioned for unattended business remote access, though not explicitly confirmed with a direct source"
+    },
+    "No Account Required": {
+      "status": "Partial",
+      "comment": "Ad-hoc one-time connections are possible, but persistent unattended access and the File Center feature require an account"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes"
+    },
+    "SSO / OIDC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "2FA / MFA": {
+      "status": "Unknown"
+    },
+    "Address Book": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audit Logs": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Mass Deployment": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "RBAC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Remote Printing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Generic USB Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "File Manager UI": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Text Chat": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "On-Screen Whiteboard": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Proxy Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "UAC Handling": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "HDR Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "OTA Updates": {
+      "status": "UNKNOWN",
+      "comment": ""
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Yes"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes",
+      "comment": "Official .deb/.rpm packages and an AUR build are available"
+    },
+    "Linux Wayland: Host": {
+      "status": "Unknown"
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "Partial",
+      "comment": "Controlling an Android device is offered as a specialized paid add-on, not a default capability"
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "No",
+      "comment": "No official browser-based client found; native apps only"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Unknown",
+      "comment": "GPU tier is marketed as relevant (Gaming/Performance editions target 4K/8K/360fps), but no published comparative benchmark table exists"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Unknown"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Unknown"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Unknown"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Unknown"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Unknown"
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Personal Free Edition, marketed as free with unlimited connection speed"
+    },
+    "Personal: Monthly": {
+      "status": "Paid",
+      "comment": "Professional/Gaming/Design editions exist; exact published USD pricing wasn't found in English-language sources"
+    },
+    "Personal: Annual": {
+      "status": "Paid"
+    },
+    "Team / Business: Monthly": {
+      "status": "Paid",
+      "comment": "Performance edition targets demanding professional/creative use cases"
+    },
+    "Team / Business: Annual": {
+      "status": "Paid"
+    },
+    "Enterprise": {
+      "status": "Custom pricing",
+      "comment": "Adds centralized device/account management, batch deployment, granular permissions, and session recording for audits"
+    }
+  },
+  "mobileName": "ToDesk",
+  "subtype": "application"
+}

@@ -23,5 +23,6 @@
   "ssh-x11-forwarding",
   "dwservice",
   "hp-teradici-pcoip",
-  "citrix-hdx-ica"
+  "citrix-hdx-ica",
+  "todesk"
 ]
