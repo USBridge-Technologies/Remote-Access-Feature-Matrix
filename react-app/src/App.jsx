@@ -394,13 +394,13 @@ function App() {
       // Check pricing
       const priceData = provider.pricing?.Enterprise?.status || provider.pricing?.['Commercial Use']?.status || provider.pricing?.['Personal Use']?.status;
       if (priceData) {
-        // Strip out non-numeric characters (except dot) to see if it's a valid number
-        const numericPrice = priceData.replace(/[^0-9.]/g, '');
-        if (numericPrice && !isNaN(parseFloat(numericPrice))) {
+        // Only parse if it's a pure number (possibly with decimals or a leading dollar sign)
+        const match = /^\$?(\d+(\.\d+)?)$/.exec(priceData.trim());
+        if (match && match[1]) {
           item.offers = {
             "@type": "Offer",
-            "price": numericPrice,
-            "priceCurrency": "USD" // assuming USD for now, or could omit currency if unknown
+            "price": match[1],
+            "priceCurrency": "USD"
           };
         }
       }

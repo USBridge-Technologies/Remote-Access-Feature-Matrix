@@ -1,11 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useId } from 'react';
 import { createPortal } from 'react-dom';
 import './Tooltip.css';
 
 export function Tooltip({ text, children }) {
   const [isVisible, setIsVisible] = useState(false);
   const triggerRef = useRef(null);
-  const [coords, setCoords] = useState({ left: -9999, top: -9999, arrowOffset: 0 });
+  const [coords, setCoords] = useState({ left: 0, top: 0, arrowOffset: 0 });
+  const tooltipId = useId();
 
   useEffect(() => {
     if (isVisible && triggerRef.current) {
@@ -42,17 +43,20 @@ export function Tooltip({ text, children }) {
         className="tooltip-container"
         onMouseEnter={() => setIsVisible(true)}
         onMouseLeave={() => setIsVisible(false)}
+        aria-describedby={tooltipId}
       >
         {children}
       </div>
       {typeof document !== 'undefined' && createPortal(
         <div 
+          id={tooltipId}
           className={`tooltip-box ${isVisible ? 'visible' : ''}`} 
           style={{ 
             left: coords.left, 
             top: coords.top,
             '--arrow-offset': `${coords.arrowOffset}px`
           }}
+          role="tooltip"
         >
           {text}
         </div>,
