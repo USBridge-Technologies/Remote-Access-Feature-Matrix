@@ -21,5 +21,6 @@
   "vmware-blast-extreme",
   "apple-remote-desktop",
   "ssh-x11-forwarding",
-  "dwservice"
+  "dwservice",
+  "hp-teradici-pcoip"
 ]
