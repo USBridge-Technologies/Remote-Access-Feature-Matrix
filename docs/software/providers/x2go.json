@@ -1,0 +1,264 @@
+{
+  "name": "X2Go",
+  "key": "x2go",
+  "type": "software",
+  "website": "https://wiki.x2go.org",
+  "github": "https://github.com/x2go",
+  "description": "A fully open-source terminal-server-style remote desktop built on the original open NX libraries, transported entirely over SSH. Its signature feature is session persistence — suspend a full Linux desktop session and resume it later from anywhere, apps still running.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "No",
+      "comment": "Strictly tied to X11/Xorg; the server side does not support Wayland sessions at all"
+    },
+    "P2P (Direct Connection)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Relay Server": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "LAN Discovery": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Tailscale Support": {
+      "status": "No",
+      "comment": "No native integration; works over any network reachability, including a VPN like Tailscale"
+    },
+    "Open Source": {
+      "status": "Yes",
+      "comment": "Fully open source (GPL), built on the original open NX protocol libraries"
+    },
+    "Multi-Monitor Support": {
+      "status": "Unknown"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Gamepad Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audio Streaming": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Microphone Passthrough": {
+      "status": "No",
+      "comment": "Audio forwarding is host-to-client (playback); client-mic-to-host passthrough isn't documented"
+    },
+    "Adaptive Bitrate": {
+      "status": "Partial",
+      "comment": "Link-quality profile (modem/ISDN/ADSL/WAN/LAN) is manually selected per session, not auto-detected"
+    },
+    "H.264 Codec": {
+      "status": "No"
+    },
+    "H.265 Codec": {
+      "status": "No"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "V-Sync": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Session Sharing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Multi-User Sessions": {
+      "status": "Yes",
+      "comment": "Runs as a terminal-server: multiple independent concurrent user sessions per server are core to its design"
+    },
+    "Virtual Display": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Not applicable",
+      "comment": "Uses NX-derived differential/image compression rather than a video codec pipeline"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Not applicable",
+      "comment": "Not a video-streaming tool; performance is measured in responsiveness, not FPS"
+    },
+    "Session Recording": {
+      "status": "No"
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "No"
+    },
+    "Pre-Login Access": {
+      "status": "No",
+      "comment": "Creates a new virtual X11 desktop session rather than unlocking the physical machine's actual login screen"
+    },
+    "No Account Required": {
+      "status": "Yes",
+      "comment": "Just needs SSH credentials on the target machine; no cloud account of any kind"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Clipboard mode (both/server/client/none) is configurable per session for security"
+    },
+    "SSO / OIDC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "2FA / MFA": {
+      "status": "No",
+      "comment": "No built-in 2FA layer; relies entirely on whatever SSH authentication (password/key) is configured"
+    },
+    "Address Book": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audit Logs": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Mass Deployment": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "RBAC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Remote Printing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Generic USB Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "File Manager UI": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Text Chat": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "On-Screen Whiteboard": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Proxy Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "UAC Handling": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "HDR Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "OTA Updates": {
+      "status": "UNKNOWN",
+      "comment": ""
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "No",
+      "comment": "The X2Go server only runs on Linux"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "No",
+      "comment": "The X2Go server only runs on Linux"
+    },
+    "macOS: Client": {
+      "status": "Yes",
+      "comment": "Some reported window-resizing quirks on recent macOS releases"
+    },
+    "Linux X11: Host": {
+      "status": "Yes",
+      "comment": "The only supported host platform, and the project's native environment"
+    },
+    "Linux Wayland: Host": {
+      "status": "No"
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "No"
+    },
+    "Android: Client": {
+      "status": "Unknown"
+    },
+    "iOS: Client": {
+      "status": "Unknown"
+    },
+    "Web Browser: Client": {
+      "status": "No",
+      "comment": "Native Qt-based client only, no official browser client"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable"
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Entirely free and open source, no paid tiers at all"
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$0"
+    },
+    "Team / Business: Annual": {
+      "status": "$0"
+    },
+    "Enterprise": {
+      "status": "$0",
+      "comment": "No official paid/enterprise tier; purely community-maintained"
+    }
+  },
+  "mobileName": "X2Go"
+}
