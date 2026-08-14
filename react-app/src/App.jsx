@@ -382,6 +382,20 @@ function App() {
   const generateJsonLd = () => {
     if (rawData.loading || rawData.error || !rawData.columns) return null;
 
+    const generateOperatingSystem = (osData) => {
+      if (!osData) return null;
+      
+      const platforms = [];
+      if (osData["Windows: Host"]?.status === "Yes" || osData["Windows: Client"]?.status === "Yes") platforms.push("Windows");
+      if (osData["macOS: Host"]?.status === "Yes" || osData["macOS: Client"]?.status === "Yes") platforms.push("macOS");
+      if (osData["Linux X11: Host"]?.status === "Yes" || osData["Linux: Client"]?.status === "Yes") platforms.push("Linux");
+      if (osData["Android: Client"]?.status === "Yes") platforms.push("Android");
+      if (osData["iOS: Client"]?.status === "Yes") platforms.push("iOS");
+      if (osData["Web Browser: Client"]?.status === "Yes") platforms.push("Web");
+      
+      return platforms.length > 0 ? platforms.join(", ") : null;
+    };
+
     const itemListElement = rawData.columns.filter(p => p.key !== 'draft').map((provider, index) => {
       const item = {
         "@type": "SoftwareApplication",
@@ -403,6 +417,11 @@ function App() {
             "priceCurrency": "USD"
           };
         }
+      }
+
+      const operatingSystem = generateOperatingSystem(provider.os);
+      if (operatingSystem) {
+        item.operatingSystem = operatingSystem;
       }
 
       return item;
