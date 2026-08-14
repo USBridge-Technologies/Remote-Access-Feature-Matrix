@@ -327,7 +327,7 @@
     border-right: none;
     margin-left: -24px;
     margin-right: -24px;
-    width: calc(100% + 48px);
+    width: auto;
     height: auto;
     max-height: calc(100dvh - 235px);
   }
