@@ -1,5 +1,19 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "MeshCentral",
+  "key": "meshcentral",
+  "type": "soft",
+  "changes": {
+    "features": {
+      "KVM Integration": {
+        "status": {
+          "before": "Yes",
+          "after": "No"
+        },
+        "comment": {
+          "before": "The \"local device group\" feature can relay to agent-less devices over SSH/RDP/VNC — MeshCentral's own documentation cites this being used to reach Raritan IP-KVM switch ports remotely",
+          "after": ""
+        }
+      }
+    }
+  }
 }
