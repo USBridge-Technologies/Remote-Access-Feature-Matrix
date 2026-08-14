@@ -19,5 +19,6 @@
   "nomachine-nx",
   "x2go",
   "vmware-blast-extreme",
-  "apple-remote-desktop"
+  "apple-remote-desktop",
+  "ssh-x11-forwarding"
 ]
