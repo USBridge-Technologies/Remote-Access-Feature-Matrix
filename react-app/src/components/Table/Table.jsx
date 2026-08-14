@@ -123,7 +123,7 @@ export function Table({
                         {provider.name.charAt(0).toUpperCase()}
                       </div>
                     )}
-                    <span className="provider-name" style={{ display: 'inline-block' }}>
+                    <span className="provider-name" style={{ display: 'inline-block', color: provider.subtype === 'protocol' ? '#a87ffb' : undefined }}>
                       {isMobile ? (provider.mobileName || provider.name) : provider.name}
                     </span>
                   </div>
