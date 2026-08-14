@@ -275,19 +275,6 @@ export function Table({
 
   return (
     <div style={{ position: 'relative' }}>
-      <div 
-        style={{
-          position: 'absolute',
-          top: '1px',
-          right: '1px',
-          width: '8px',
-          height: '55px',
-          backgroundColor: '#242424',
-          zIndex: 10,
-          borderTopRightRadius: '7px',
-          pointerEvents: 'none'
-        }}
-      />
       <div className={`table-container ${data.loading ? 'loading' : ''}`}>
         <table className="matrix-table" style={{ minWidth: `${minTableWidth}px` }}>
         <thead>
