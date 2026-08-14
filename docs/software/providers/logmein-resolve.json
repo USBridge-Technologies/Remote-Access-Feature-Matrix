@@ -1,0 +1,260 @@
+{
+  "name": "LogMeIn Resolve",
+  "key": "logmein-resolve",
+  "type": "software",
+  "website": "https://www.logmein.com/products/resolve",
+  "github": "",
+  "description": "The modern successor to the LogMeIn/GoTo Assist brand (rebranded from GoTo Resolve in Jan 2025) — an all-in-one IT management suite combining remote support, unattended access, helpdesk ticketing, patch management, and endpoint monitoring in one console.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "No",
+      "comment": "Linux isn't in the officially listed supported OS set at all (Windows, macOS, iOS, Android, ChromeOS)"
+    },
+    "P2P (Direct Connection)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Relay Server": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "LAN Discovery": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Tailscale Support": {
+      "status": "No"
+    },
+    "Open Source": {
+      "status": "No"
+    },
+    "Multi-Monitor Support": {
+      "status": "Unknown"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Gamepad Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audio Streaming": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Microphone Passthrough": {
+      "status": "Partial",
+      "comment": "VoIP audio for talking with the end user is offered as a paid add-on"
+    },
+    "Adaptive Bitrate": {
+      "status": "Unknown"
+    },
+    "H.264 Codec": {
+      "status": "Unknown"
+    },
+    "H.265 Codec": {
+      "status": "Unknown"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "V-Sync": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Session Sharing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Multi-User Sessions": {
+      "status": "No"
+    },
+    "Virtual Display": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Unknown"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Unknown"
+    },
+    "Session Recording": {
+      "status": "Yes",
+      "comment": "Records on-screen support session activity; higher-fidelity annotations/recordings available as a paid add-on"
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "Unknown"
+    },
+    "Pre-Login Access": {
+      "status": "Yes",
+      "comment": "Runs persistent \"Background Access\" for unattended support and deploying updates while users work"
+    },
+    "No Account Required": {
+      "status": "No",
+      "comment": "Access is tied to a licensed GoTo/LogMeIn account"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes"
+    },
+    "SSO / OIDC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "2FA / MFA": {
+      "status": "Yes",
+      "comment": "Multi-Factor Authentication is an explicit account security feature"
+    },
+    "Address Book": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audit Logs": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Mass Deployment": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "RBAC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Remote Printing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Generic USB Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "File Manager UI": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Text Chat": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "On-Screen Whiteboard": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Proxy Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "UAC Handling": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "HDR Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "OTA Updates": {
+      "status": "UNKNOWN",
+      "comment": ""
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Yes"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "No",
+      "comment": "Not part of the officially supported device platforms"
+    },
+    "Linux Wayland: Host": {
+      "status": "No"
+    },
+    "Linux: Client": {
+      "status": "Partial",
+      "comment": "Browser-based access likely works even though Linux isn't an officially supported host platform"
+    },
+    "Android: Host": {
+      "status": "Yes",
+      "comment": "Android devices are explicitly managed as endpoints through the UEM console"
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "Partial",
+      "comment": "Sessions can be joined via link/browser; a fully \"Zero Download\" end-user experience is a paid add-on"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable",
+      "comment": "An IT management/support tool, not a GPU-accelerated streaming tool"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable"
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "\"Start for Free\" tier exists, with a credit-based system for higher-usage features"
+    },
+    "Personal: Monthly": {
+      "status": "Not applicable",
+      "comment": "Business/IT-team focused pricing, no dedicated personal-use tier"
+    },
+    "Personal: Annual": {
+      "status": "Not applicable"
+    },
+    "Team / Business: Monthly": {
+      "status": "From ~$23-29/mo",
+      "comment": "Starting price varies by source/promo; billed per technician seat"
+    },
+    "Team / Business: Annual": {
+      "status": "Discounted vs. monthly billing"
+    },
+    "Enterprise": {
+      "status": "Custom pricing",
+      "comment": "Adds SSO, Zero Trust access controls, mass device deployment, advanced reporting/activity logs"
+    }
+  },
+  "mobileName": "LogMeIn Resolve"
+}
