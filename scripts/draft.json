@@ -1,5 +1,171 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "TightVNC",
+  "key": "tightvnc",
+  "type": "software",
+  "website": "https://www.tightvnc.com",
+  "github": "https://github.com/TightVNC/tightvnc",
+  "description": "The bare-bones, free, open-source VNC implementation — the RFB protocol as-is, with no cloud layer, no account system, and no modern security bolted on. Still actively maintained, but functionally frozen in the VNC's original spirit.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "No",
+      "comment": "Requires X11; not compatible with Wayland sessions out of the box"
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Partial",
+      "comment": "Raw/Hextile encodings are lossless; Tight encoding can drop to lossy JPEG at lower quality settings"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Unknown",
+      "comment": "Pixel-diffing protocol, not a fixed-FPS video pipeline"
+    },
+    "Session Recording": {
+      "status": "No"
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Adaptive Bitrate": {
+      "status": "Partial",
+      "comment": "Tight encoding adjusts JPEG quality/compression level, but it's manual/basic compared to modern ABR"
+    },
+    "H.264 Codec": {
+      "status": "No",
+      "comment": "Uses pixel encodings (Tight/Hextile), not video codecs"
+    },
+    "H.265 Codec": {
+      "status": "No"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "Multi-User Sessions": {
+      "status": "No",
+      "comment": "Attaches to one existing desktop session, no isolated multi-user session support"
+    },
+    "Tailscale Support": {
+      "status": "No",
+      "comment": "No native integration; works over any reachable network incl. a VPN like Tailscale"
+    },
+    "Open Source": {
+      "status": "Yes",
+      "comment": "GPL-licensed, fully open source"
+    },
+    "Multi-Monitor Support": {
+      "status": "No",
+      "comment": "Basic/limited handling of multi-monitor setups"
+    },
+    "Microphone Passthrough": {
+      "status": "No",
+      "comment": "The RFB protocol has no built-in audio channel at all"
+    },
+    "Wake-on-LAN": {
+      "status": "No"
+    },
+    "Pre-Login Access": {
+      "status": "Partial",
+      "comment": "Possible on Windows if the server is installed and run as a system service"
+    },
+    "No Account Required": {
+      "status": "Yes",
+      "comment": "Just an IP address and a password; no account or cloud registration at all"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Basic bidirectional text clipboard sync"
+    },
+    "2FA / MFA": {
+      "status": "No",
+      "comment": "Only a single static password; no two-factor authentication support"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes",
+      "comment": "The most mature and commonly used platform for TightVNC"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "No",
+      "comment": "No official TightVNC server build for macOS"
+    },
+    "macOS: Client": {
+      "status": "Partial",
+      "comment": "Third-party/generic VNC viewers can connect, no dedicated official TightVNC macOS client"
+    },
+    "Linux X11: Host": {
+      "status": "Yes"
+    },
+    "Linux Wayland: Host": {
+      "status": "No"
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "No"
+    },
+    "Android: Client": {
+      "status": "Partial",
+      "comment": "Generic third-party VNC viewer apps work, no official TightVNC Android app"
+    },
+    "iOS: Client": {
+      "status": "Partial",
+      "comment": "Generic third-party VNC viewer apps work, no official TightVNC iOS app"
+    },
+    "Web Browser: Client": {
+      "status": "No",
+      "comment": "No native browser client; the separate noVNC project can be paired with it manually"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable"
+    }
+  },
+  "pricing": {
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Entirely free, no paid tiers exist at all"
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$0"
+    },
+    "Team / Business: Annual": {
+      "status": "$0"
+    },
+    "Enterprise": {
+      "status": "$0",
+      "comment": "No enterprise SKU, licensing, or management console — same free build for everyone"
+    }
+  },
+  "mobileName": "TightVNC"
 }
