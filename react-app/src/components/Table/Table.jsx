@@ -168,11 +168,14 @@ export function Table({
             }
 
             let badgeClass = null;
-            if (val === 'Yes') badgeClass = 'badge-yes';
-            else if (val === 'No') badgeClass = 'badge-no';
-            else if (val === 'Partial') badgeClass = 'badge-partial';
-            else if (val === 'Paid') badgeClass = 'badge-paid';
-            else if (val === 'Unknown') badgeClass = 'badge-unknown';
+            if (val && typeof val === 'string') {
+              const lowerVal = val.toLowerCase();
+              if (lowerVal === 'yes') badgeClass = 'badge-yes';
+              else if (lowerVal === 'no') badgeClass = 'badge-no';
+              else if (lowerVal === 'partial') badgeClass = 'badge-partial';
+              else if (lowerVal === 'paid') badgeClass = 'badge-paid';
+              else if (lowerVal === 'unknown') badgeClass = 'badge-unknown';
+            }
 
             // If it's a text type, don't show badges for 'Unknown', 'Yes', 'No' etc unless it really makes sense.
             // The user requested that text parameters show text, not boolean badges.
