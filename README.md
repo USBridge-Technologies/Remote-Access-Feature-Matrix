@@ -61,5 +61,3 @@ The system will automatically generate a JSON file and send a Pull Request on yo
 - **Unknown** — we couldn't find a reliable public source either way. We'd rather show "Unknown" than guess.
 
 **This is why it's open-source.** Software changes fast — a "Partial" today might be "Yes" next release, and pricing pages update constantly. Rather than claiming to be a permanently accurate authority, we're built so **anyone can fix what's wrong right now**, without touching code (see "How to Contribute" above). Every entry, right or wrong, is meant to get better over time through the community — not through us alone.
-
-**Conflict of interest note:** USBridge (both the KVM and the remote-access software) is our own product, listed alongside its competitors. We've tried to be evenhanded, but you should weigh that when reading our own entries.
