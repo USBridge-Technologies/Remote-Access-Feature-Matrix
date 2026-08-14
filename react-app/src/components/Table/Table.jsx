@@ -191,7 +191,7 @@ export function Table({
                 onClick={() => {
                   if (isMobile) {
                     if (isEditing) {
-                      onEditFeature(provider.key, featureName, val, comment);
+                      onEditFeature(provider.key, featureName, val, comment, featureType);
                     } else {
                       setMobileModalData({
                         title: `${provider.name} - ${featureName}`,
@@ -237,7 +237,7 @@ export function Table({
                         className="inline-edit-btn"
                         onClick={(e) => {
                           e.stopPropagation();
-                          onEditFeature(provider.key, featureName, val, comment);
+                          onEditFeature(provider.key, featureName, val, comment, featureType);
                         }}
                         title="Edit this feature"
                       >

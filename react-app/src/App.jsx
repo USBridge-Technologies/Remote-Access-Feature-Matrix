@@ -466,8 +466,8 @@ function App() {
           onHideFeature={toggleFeature}
           onEnterEditMode={setEditingProvider}
           selectedProviders={selectedProviders}
-          onEditFeature={(providerKey, featureName, initialValue, initialComment) => {
-            setEditingFeature({ providerKey, featureName, initialValue, initialComment });
+          onEditFeature={(providerKey, featureName, initialValue, initialComment, featureType) => {
+            setEditingFeature({ providerKey, featureName, initialValue, initialComment, featureType });
           }}
         />
       </main>
@@ -503,6 +503,7 @@ function App() {
           featureName={editingFeature.featureName}
           initialValue={editingFeature.initialValue}
           initialComment={editingFeature.initialComment}
+          featureType={editingFeature.featureType}
           onSave={({ status, comment }) => {
             setPendingChanges(prev => ({
               ...prev,

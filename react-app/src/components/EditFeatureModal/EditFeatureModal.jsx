@@ -92,14 +92,14 @@ function StatusSelect({ value, onChange, isTextField }) {
   );
 }
 
-export function EditFeatureModal({ providerName, featureName, initialValue, initialComment, onSave, onClose }) {
+export function EditFeatureModal({ providerName, featureName, initialValue, initialComment, featureType, onSave, onClose }) {
   const [status, setStatus] = useState(initialValue || 'Unknown');
   const [comment, setComment] = useState(initialComment || '');
   const MAX_CHARS = 150;
   
   // Determine if this is a custom text field instead of a standard status
-  const isTextField = initialValue && 
-    !STATUS_OPTIONS.some(opt => opt.value.toLowerCase() === initialValue.toLowerCase());
+  const isTextField = featureType === 'text' || (!featureType && initialValue && 
+    !STATUS_OPTIONS.some(opt => opt.value.toLowerCase() === initialValue.toLowerCase()));
 
   useEffect(() => {
     setStatus(initialValue || 'Unknown');
