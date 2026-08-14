@@ -1,19 +1,5 @@
 {
-  "name": "USBridge",
-  "key": "usbridge",
-  "type": "soft",
-  "changes": {
-    "features": {
-      "Frame Rate (FPS)": {
-        "status": {
-          "before": "120",
-          "after": "120"
-        },
-        "comment": {
-          "before": "Supports up to 240 FPS via the Moonlight protocol (limited only by the underlying hardware).",
-          "after": "Supports up to 120 FPS via the Moonlight protocol (limited only by the underlying hardware)."
-        }
-      }
-    }
-  }
+  "name": "",
+  "key": "",
+  "changes": {}
 }

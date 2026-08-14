@@ -79,7 +79,7 @@
     },
     "Frame Rate (FPS)": {
       "status": "120",
-      "comment": "Supports up to 240 FPS via the Moonlight protocol (limited only by the underlying hardware)."
+      "comment": "Supports up to 120 FPS via the Moonlight protocol (limited only by the underlying hardware)."
     },
     "Session Recording": {
       "status": "No"
