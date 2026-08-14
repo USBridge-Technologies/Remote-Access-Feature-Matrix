@@ -1,5 +1,170 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "Apple Remote Desktop (ARD)",
+  "key": "apple-remote-desktop",
+  "type": "software",
+  "website": "https://apps.apple.com/app/apple-remote-desktop/id409907375",
+  "github": "",
+  "description": "Apple's own macOS fleet management console, sold as a one-time Mac App Store purchase since 2002. Built on an enhanced VNC extension with Apple's own adaptive MVS codec, tuned specifically for managing Macs (software push, remote scripts, inventory) rather than being a general cross-platform remote desktop app.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Not applicable",
+      "comment": "ARD doesn't target Linux desktops at all; it's built specifically around macOS management"
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Unknown"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Unknown"
+    },
+    "Session Recording": {
+      "status": "No"
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": "The MVS (Multi-Variant Stream) codec adaptively scales quality, notably optimized for Retina displays"
+    },
+    "H.264 Codec": {
+      "status": "No",
+      "comment": "Uses Apple's own MVS codec, an enhancement over standard VNC's zlib compression"
+    },
+    "H.265 Codec": {
+      "status": "No"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "Multi-User Sessions": {
+      "status": "No"
+    },
+    "Tailscale Support": {
+      "status": "No"
+    },
+    "Open Source": {
+      "status": "No"
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes",
+      "comment": "Multi-monitor navigation for remote Macs"
+    },
+    "Microphone Passthrough": {
+      "status": "Unknown"
+    },
+    "Wake-on-LAN": {
+      "status": "Yes",
+      "comment": "A long-standing ARD feature for powering on managed Macs remotely"
+    },
+    "Pre-Login Access": {
+      "status": "Yes",
+      "comment": "Can reach the login window via macOS's Remote Management framework"
+    },
+    "No Account Required": {
+      "status": "Yes",
+      "comment": "Uses local macOS credentials/Remote Management settings, no Apple ID or cloud account required"
+    },
+    "KVM Integration": {
+      "status": "No",
+      "comment": "Can manage headless Macs without a physical KVM switch attached, but doesn't integrate with KVM-over-IP devices"
+    },
+    "Shared Clipboard": {
+      "status": "Yes"
+    },
+    "2FA / MFA": {
+      "status": "No",
+      "comment": "No dedicated 2FA layer built into ARD itself; security relies on macOS account credentials and AES-128 encryption"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "No",
+      "comment": "The ARD admin console only runs on macOS"
+    },
+    "Windows: Client": {
+      "status": "No",
+      "comment": "No official ARD client app for Windows"
+    },
+    "macOS: Host": {
+      "status": "Yes",
+      "comment": "The primary and only fully-featured target platform"
+    },
+    "macOS: Client": {
+      "status": "Yes",
+      "comment": "The admin console itself is a native macOS app"
+    },
+    "Linux X11: Host": {
+      "status": "Partial",
+      "comment": "Reachable only as a basic VNC-compatible target, without ARD's Mac-specific management features"
+    },
+    "Linux Wayland: Host": {
+      "status": "No"
+    },
+    "Linux: Client": {
+      "status": "No"
+    },
+    "Android: Host": {
+      "status": "No"
+    },
+    "Android: Client": {
+      "status": "No",
+      "comment": "No official ARD app for Android"
+    },
+    "iOS: Client": {
+      "status": "No",
+      "comment": "No official ARD app for iOS; the admin console is Mac-only"
+    },
+    "Web Browser: Client": {
+      "status": "No",
+      "comment": "Native macOS app only, no official browser-based access"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable",
+      "comment": "Not a GPU-benchmarked streaming tool, despite being Apple-Silicon-native software"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable"
+    }
+  },
+  "pricing": {
+    "Free Tier": {
+      "status": "No",
+      "comment": "No free version; no subscription either — it's a flat one-time purchase"
+    },
+    "Personal: Monthly": {
+      "status": "Not applicable",
+      "comment": "One-time purchase model, not a subscription"
+    },
+    "Personal: Annual": {
+      "status": "Not applicable"
+    },
+    "Team / Business: Monthly": {
+      "status": "Not applicable"
+    },
+    "Team / Business: Annual": {
+      "status": "Not applicable"
+    },
+    "Enterprise": {
+      "status": "$79.99 one-time",
+      "comment": "Single Mac App Store purchase per admin console; can manage an unlimited number of Macs"
+    }
+  },
+  "mobileName": "Apple Remote Desktop (ARD)"
 }
