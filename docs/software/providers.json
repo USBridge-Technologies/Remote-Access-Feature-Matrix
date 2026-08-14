@@ -10,5 +10,6 @@
   "moonlight-sunshine",
   "chrome-remote-desktop",
   "microsoft-rdp",
-  "tightvnc"
+  "tightvnc",
+  "realvnc-connect"
 ]
