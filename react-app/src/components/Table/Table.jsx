@@ -218,18 +218,20 @@ export function Table({
                   }
                 }}
               >
-                {badgeClass ? (
-                  <span className={`badge ${badgeClass} ${hasChanged ? 'changed' : ''}`}>
-                    {val.toUpperCase()}
-                  </span>
-                ) : (
-                  <span className={`plain-text-value ${hasChanged ? 'changed' : ''}`}>
-                    {val}
-                  </span>
-                )}
+                <div style={{ gridColumn: 2, display: 'flex', justifyContent: 'center' }}>
+                  {badgeClass ? (
+                    <span className={`badge ${badgeClass} ${hasChanged ? 'changed' : ''}`}>
+                      {val.toUpperCase()}
+                    </span>
+                  ) : (
+                    <span className={`plain-text-value ${hasChanged ? 'changed' : ''}`}>
+                      {val}
+                    </span>
+                  )}
+                </div>
                 
                 {(isEditing || comment) && (
-                  <div style={{ display: 'flex', gap: '4px', alignItems: 'center', flexShrink: 0 }}>
+                  <div className="status-cell-icons">
                     {isEditing && (
                       <button 
                         className="inline-edit-btn"

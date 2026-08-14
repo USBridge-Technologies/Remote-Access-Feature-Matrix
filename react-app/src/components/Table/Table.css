@@ -242,10 +242,19 @@
 }
 
 .status-cell {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
+  justify-items: center;
+}
+
+.status-cell-icons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  grid-column: 3;
+  justify-self: start;
+  margin-left: 6px;
 }
 
 .info-icon {
