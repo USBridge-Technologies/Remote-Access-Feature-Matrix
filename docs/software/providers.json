@@ -11,5 +11,6 @@
   "chrome-remote-desktop",
   "microsoft-rdp",
   "tightvnc",
-  "realvnc-connect"
+  "realvnc-connect",
+  "splashtop"
 ]
