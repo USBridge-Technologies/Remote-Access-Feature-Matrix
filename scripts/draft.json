@@ -1,5 +1,173 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "VMware Blast Extreme",
+  "key": "vmware-blast-extreme",
+  "type": "software",
+  "website": "https://www.omnissa.com/products/horizon",
+  "github": "",
+  "description": "VMware Horizon's proprietary VDI display protocol — not a standalone app, but the transport layer that delivers virtual desktops/apps to clients. Dynamically switches between H.264, HEVC, and its own Blast codec, and is the required protocol for Linux VDI desktops. Now part of Omnissa/Broadcom's licensing since the 2023 VMware acquisition.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Unknown",
+      "comment": "Not clearly documented; the Horizon Linux desktop agent has historically targeted X11"
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Partial",
+      "comment": "Lossy by default, but a \"build-to-lossless\" mode exists for use cases like medical imaging"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Configurable",
+      "comment": "Frame rate caps are set via Active Directory GPO/Horizon policy, not a fixed number"
+    },
+    "Session Recording": {
+      "status": "Unknown",
+      "comment": "Not a documented core feature of the protocol itself"
+    },
+    "ISO Mounting": {
+      "status": "No",
+      "comment": "Client drive redirection maps local drives into the session, but it's not virtual-media/ISO mounting"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": "Dynamically compensates for latency/bandwidth changes over both TCP and UDP transport"
+    },
+    "H.264 Codec": {
+      "status": "Yes"
+    },
+    "H.265 Codec": {
+      "status": "Yes",
+      "comment": "HEVC support, including with HDR since Horizon 8 (2106)"
+    },
+    "AV1 Codec": {
+      "status": "No"
+    },
+    "Multi-User Sessions": {
+      "status": "Yes",
+      "comment": "Works with RDSH shared-session desktops in addition to per-user VDI VMs"
+    },
+    "Tailscale Support": {
+      "status": "No"
+    },
+    "Open Source": {
+      "status": "No",
+      "comment": "Fully proprietary VMware/Omnissa protocol"
+    },
+    "Multi-Monitor Support": {
+      "status": "Yes",
+      "comment": "Up to 4 monitors, or up to 2 monitors at 1920x1200 (or 1 at 4K) when 3D rendering is enabled"
+    },
+    "Microphone Passthrough": {
+      "status": "Yes",
+      "comment": "Bidirectional audio in/out is supported"
+    },
+    "Wake-on-LAN": {
+      "status": "Unknown"
+    },
+    "Pre-Login Access": {
+      "status": "Partial",
+      "comment": "Users first authenticate to the Horizon Connection Server broker, then reach the VM's actual guest login screen"
+    },
+    "No Account Required": {
+      "status": "No",
+      "comment": "Requires Horizon/Active Directory credentials to broker the connection"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Bidirectional clipboard redirection, though admins can restrict it via policy"
+    },
+    "2FA / MFA": {
+      "status": "Partial",
+      "comment": "Supported at the Horizon Connection Server/platform level (RADIUS, SAML, smart card), not a Blast Extreme protocol feature itself"
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes",
+      "comment": "The primary and best-supported VDI desktop OS"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Partial",
+      "comment": "Only in niche VMware Horizon configurations that virtualize macOS on Apple hardware; not a mainstream desktop pool target"
+    },
+    "macOS: Client": {
+      "status": "Yes"
+    },
+    "Linux X11: Host": {
+      "status": "Yes",
+      "comment": "Blast Extreme is specifically required (not optional) for connections to Linux VDI desktops"
+    },
+    "Linux Wayland: Host": {
+      "status": "Unknown"
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "No"
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "Yes",
+      "comment": "HTML Access provides a browser-based client using JPG/PNG, or H.264 on Chrome"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Not applicable",
+      "comment": "Targets datacenter/professional GPU virtualization (NVIDIA vGPU/GRID on Quadro/Tesla-class cards), not consumer GeForce cards"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Not applicable"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Not applicable"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Not applicable"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Not applicable"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Not applicable"
+    }
+  },
+  "pricing": {
+    "Free Tier": {
+      "status": "No",
+      "comment": "Requires the full paid Horizon/vSphere infrastructure; there's no standalone free version of the protocol"
+    },
+    "Personal: Monthly": {
+      "status": "Not applicable",
+      "comment": "Not sold to individuals; this is enterprise VDI infrastructure"
+    },
+    "Personal: Annual": {
+      "status": "Not applicable"
+    },
+    "Team / Business: Monthly": {
+      "status": "Not applicable",
+      "comment": "Licensed per concurrent user/named user through a reseller, not a self-serve monthly price"
+    },
+    "Team / Business: Annual": {
+      "status": "Not applicable"
+    },
+    "Enterprise": {
+      "status": "Custom pricing",
+      "comment": "Per-CCU or named-user Horizon licensing via reseller; now bundled under Broadcom/Omnissa post-2023 VMware acquisition"
+    }
+  },
+  "mobileName": "VMware Blast Extreme"
 }
