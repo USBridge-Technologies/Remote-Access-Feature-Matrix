@@ -25,6 +25,7 @@ function App() {
 
   // Filter states
   const [selectedProviders, setSelectedProviders] = useState(new Set());
+  const [isProvidersInitialized, setIsProvidersInitialized] = useState(false);
   const [selectedFeatures, setSelectedFeatures] = useState(new Set());
   const [activeCategory, setActiveCategory] = useState(null);
   const [pinnedFeatures, setPinnedFeatures] = useState(new Set());
@@ -104,12 +105,13 @@ function App() {
         return new Set(defaultKeys);
       });
       setSelectedFeatures(new Set(rawData.rows.map(r => r.name)));
+      setIsProvidersInitialized(true);
     }
   }, [type, tab, rawData.loading, isMobile]);
 
   // Update URL params
   useEffect(() => {
-    if (!rawData.rows) return;
+    if (!rawData.rows || !isProvidersInitialized) return;
     
     const newParams = new URLSearchParams(window.location.search);
     let changed = false;
