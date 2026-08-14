@@ -345,10 +345,10 @@
   .provider-name {
     max-width: 140px;
   }
-}
-
-.table-container::-webkit-scrollbar-track {
-  margin-top: 55px; /* height of the header */
-  background: #1a1a1a;
-  border-radius: 4px;
+  
+  .table-container::-webkit-scrollbar-track {
+    margin-top: 55px; /* height of the header */
+    background: #1a1a1a;
+    border-radius: 4px;
+  }
 }
