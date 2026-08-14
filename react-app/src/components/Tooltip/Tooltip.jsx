@@ -5,7 +5,7 @@ import './Tooltip.css';
 export function Tooltip({ text, children }) {
   const [isVisible, setIsVisible] = useState(false);
   const triggerRef = useRef(null);
-  const [coords, setCoords] = useState({ left: 0, top: 0, arrowOffset: 0 });
+  const [coords, setCoords] = useState({ left: -9999, top: -9999, arrowOffset: 0 });
 
   useEffect(() => {
     if (isVisible && triggerRef.current) {
@@ -45,9 +45,9 @@ export function Tooltip({ text, children }) {
       >
         {children}
       </div>
-      {isVisible && createPortal(
+      {typeof document !== 'undefined' && createPortal(
         <div 
-          className="tooltip-box" 
+          className={`tooltip-box ${isVisible ? 'visible' : ''}`} 
           style={{ 
             left: coords.left, 
             top: coords.top,

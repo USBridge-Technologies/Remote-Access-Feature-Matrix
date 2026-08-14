@@ -379,8 +379,53 @@ function App() {
     });
   };
 
+  const generateJsonLd = () => {
+    if (rawData.loading || rawData.error || !rawData.columns) return null;
+
+    const itemListElement = rawData.columns.filter(p => p.key !== 'draft').map((provider, index) => {
+      const item = {
+        "@type": "SoftwareApplication",
+        "position": index + 1,
+        "name": provider.name,
+        "applicationCategory": "RemoteAccessSoftware",
+        "url": provider.website || undefined,
+      };
+
+      // Check pricing
+      const priceData = provider.pricing?.Enterprise?.status || provider.pricing?.['Commercial Use']?.status || provider.pricing?.['Personal Use']?.status;
+      if (priceData) {
+        // Strip out non-numeric characters (except dot) to see if it's a valid number
+        const numericPrice = priceData.replace(/[^0-9.]/g, '');
+        if (numericPrice && !isNaN(parseFloat(numericPrice))) {
+          item.offers = {
+            "@type": "Offer",
+            "price": numericPrice,
+            "priceCurrency": "USD" // assuming USD for now, or could omit currency if unknown
+          };
+        }
+      }
+
+      return item;
+    });
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Remote Access & KVM Software Comparison",
+      "itemListElement": itemListElement
+    };
+
+    return (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    );
+  };
+
   return (
     <div className="app-container">
+      {generateJsonLd()}
       <header className="app-header">
         <div className="type-switch">
           <button 
