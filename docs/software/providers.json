@@ -20,5 +20,6 @@
   "x2go",
   "vmware-blast-extreme",
   "apple-remote-desktop",
-  "ssh-x11-forwarding"
+  "ssh-x11-forwarding",
+  "dwservice"
 ]
