@@ -27,7 +27,41 @@ body {
 .app-header {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 24px;
   margin-bottom: 24px;
+  position: relative;
+  width: 100%;
+}
+
+.github-link-btn {
+  color: var(--bg-dark);
+  background-color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 14px;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+  flex-shrink: 0;
+  position: absolute;
+  right: 0;
+  top: -4px;
+  text-decoration: none;
+}
+
+.github-link-text {
+  margin-left: 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+
+.github-link-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .app-header h1 {
@@ -242,6 +276,26 @@ body {
 }
 
 @media (max-width: 768px) {
+  .app-container {
+    padding: 16px;
+  }
+  
+  .github-link-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    top: -4px;
+    border-radius: 50%;
+  }
+  
+  .github-link-text {
+    display: none;
+  }
+  
+  .github-link-btn svg {
+    margin: 0;
+  }
+
   .main-content {
     padding-bottom: calc(80px + env(safe-area-inset-bottom, 12px));
   }
