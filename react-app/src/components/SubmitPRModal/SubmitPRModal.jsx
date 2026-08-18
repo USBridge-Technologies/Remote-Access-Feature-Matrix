@@ -31,8 +31,15 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
 
       // Apply pending changes
       Object.keys(pendingChanges || {}).forEach(featureName => {
-        if (!fullData.features) fullData.features = {};
-        const targetFeature = fullData.features[featureName] || {};
+        let section = 'features';
+        for (const s of ['features', 'hardware', 'pricing', 'os']) {
+          if (rawData[s] && rawData[s][featureName]) {
+            section = s;
+            break;
+          }
+        }
+        if (!fullData[section]) fullData[section] = {};
+        const targetFeature = fullData[section][featureName] || {};
         
         targetFeature.status = pendingChanges[featureName].status;
         if (pendingChanges[featureName].comment) {
@@ -40,7 +47,7 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
         } else {
           delete targetFeature.comment;
         }
-        fullData.features[featureName] = targetFeature;
+        fullData[section][featureName] = targetFeature;
       });
 
       if (fullData.icon) delete fullData.icon;
@@ -59,14 +66,24 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
       name: providerName,
       key: providerKey,
       type: rawData.type || 'soft',
-      changes: {
-        features: {}
-      }
+      changes: {}
     };
 
     Object.keys(pendingChanges).forEach(featureName => {
+      let section = 'features';
+      for (const s of ['features', 'hardware', 'pricing', 'os']) {
+        if (rawData[s] && rawData[s][featureName]) {
+          section = s;
+          break;
+        }
+      }
+
+      if (!diffObject.changes[section]) {
+        diffObject.changes[section] = {};
+      }
+
       const modVal = pendingChanges[featureName];
-      const origFeature = (rawData.features && rawData.features[featureName]) || {};
+      const origFeature = (rawData[section] && rawData[section][featureName]) || {};
       
       const origStatus = origFeature.status || "";
       const origComment = origFeature.comment || "";
@@ -80,7 +97,7 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
         featureDiff.comment = { before: origComment, after: modComment };
       }
       
-      diffObject.changes.features[featureName] = featureDiff;
+      diffObject.changes[section][featureName] = featureDiff;
     });
 
     setDiffJsonStr(JSON.stringify(diffObject, null, 2));
@@ -97,15 +114,23 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
     
     // Apply pending changes
     Object.keys(pendingChanges).forEach(featureName => {
-      if (!fullData.features) fullData.features = {};
-      const targetFeature = fullData.features[featureName] || {};
+      let section = 'features';
+      for (const s of ['features', 'hardware', 'pricing', 'os']) {
+        if (rawData[s] && rawData[s][featureName]) {
+          section = s;
+          break;
+        }
+      }
+
+      if (!fullData[section]) fullData[section] = {};
+      const targetFeature = fullData[section][featureName] || {};
       targetFeature.status = pendingChanges[featureName].status;
       if (pendingChanges[featureName].comment) {
         targetFeature.comment = pendingChanges[featureName].comment;
       } else {
         delete targetFeature.comment; 
       }
-      fullData.features[featureName] = targetFeature;
+      fullData[section][featureName] = targetFeature;
     });
     
     if (fullData.icon) delete fullData.icon;
