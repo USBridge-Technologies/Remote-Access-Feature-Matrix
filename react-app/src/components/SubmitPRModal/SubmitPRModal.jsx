@@ -58,7 +58,7 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
     const diffObject = {
       name: providerName,
       key: providerKey,
-      type: 'soft', // currently hardcoded for soft (from app.js logic)
+      type: rawData.type || 'soft',
       changes: {
         features: {}
       }
