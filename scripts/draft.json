@@ -1,5 +1,15 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "USBridge KVM 2.0",
+  "key": "usbridgekvm2.0",
+  "type": "kvm",
+  "changes": {
+    "features": {
+      "Device Price": {
+        "status": {
+          "before": "$219",
+          "after": "$219"
+        }
+      }
+    }
+  }
 }
