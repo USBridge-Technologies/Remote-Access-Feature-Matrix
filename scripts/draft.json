@@ -1,5 +1,19 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "USBridge KVM 2.0",
+  "key": "usbridgekvm2.0",
+  "type": "kvm",
+  "changes": {
+    "pricing": {
+      "Device Price": {
+        "status": {
+          "before": "Unknown",
+          "after": "$219"
+        },
+        "comment": {
+          "before": "",
+          "after": "Available on Crowd Supply - https://www.crowdsupply.com/usbridge-technologies/usbridge-kvm-2-0"
+        }
+      }
+    }
+  }
 }
