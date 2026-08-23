@@ -140,7 +140,7 @@ def sync_schemas():
         
         # Enforce standard order for top-level keys
         ordered_data = {}
-        for k in ["name", "key", "type", "website", "github", "description"]:
+        for k in ["name", "manufacturer", "key", "type", "website", "github", "description"]:
             if k in data:
                 ordered_data[k] = data.pop(k)
         

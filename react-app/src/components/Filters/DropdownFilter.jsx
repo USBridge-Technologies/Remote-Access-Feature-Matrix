@@ -184,9 +184,16 @@ export function DropdownFilter({
                       </span>
                     )}
                     <span className="dropdown-item-text">
-                      {item.label}
-                      {item.subtype === 'protocol' && (
-                        <span className="dropdown-item-subtype">(protocol)</span>
+                      <span className="dropdown-item-label">
+                        {item.label}
+                        {item.subtype === 'protocol' && (
+                          <span className="dropdown-item-subtype">(protocol)</span>
+                        )}
+                      </span>
+                      {item.manufacturer && (
+                        <span className="dropdown-item-manufacturer" style={{ display: 'block', fontSize: '11px', color: '#888', marginTop: '2px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                          {item.manufacturer}
+                        </span>
                       )}
                     </span>
                   </span>

@@ -124,7 +124,14 @@ export function Table({
                       </div>
                     )}
                     <span className="provider-name" style={{ display: 'inline-block', color: provider.subtype === 'protocol' ? '#a87ffb' : undefined }}>
-                      {isMobile ? (provider.mobileName || provider.name) : provider.name}
+                      <span style={{ display: 'block' }}>
+                        {isMobile ? (provider.mobileName || provider.name) : provider.name}
+                      </span>
+                      {provider.manufacturer && (
+                        <span style={{ display: 'block', fontSize: '11px', color: '#888', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+                          {provider.manufacturer}
+                        </span>
+                      )}
                     </span>
                   </div>
                 </div>

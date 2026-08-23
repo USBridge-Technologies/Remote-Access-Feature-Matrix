@@ -11,6 +11,7 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
   
   // New state for draft provider
   const [draftName, setDraftName] = useState('');
+  const [draftManufacturer, setDraftManufacturer] = useState('');
   const [draftWebsite, setDraftWebsite] = useState('');
   const [draftGithub, setDraftGithub] = useState('');
   const [draftDescription, setDraftDescription] = useState('Draft of a new provider for filling and proposing changes.');
@@ -24,6 +25,7 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
       // Build Full JSON for Draft
       const fullData = JSON.parse(JSON.stringify(rawData));
       fullData.name = draftName || 'Draft';
+      if (draftManufacturer) fullData.manufacturer = draftManufacturer;
       fullData.key = generateKey(draftName);
       fullData.website = draftWebsite;
       fullData.github = draftGithub;
@@ -282,8 +284,12 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
             <h3 className="draft-fields-title">New software provider information</h3>
             <div className="draft-fields-grid">
               <div className="form-group">
-                <label>Provider Name *:</label>
-                <input type="text" className="submit-pr-input" value={draftName} onChange={e => setDraftName(e.target.value)} placeholder="e.g.: MyRemoteDesktop" />
+                <label>Provider Name (Model) *:</label>
+                <input type="text" className="submit-pr-input" value={draftName} onChange={e => setDraftName(e.target.value)} placeholder="e.g.: Notecons01" />
+              </div>
+              <div className="form-group">
+                <label>Manufacturer:</label>
+                <input type="text" className="submit-pr-input" value={draftManufacturer} onChange={e => setDraftManufacturer(e.target.value)} placeholder="e.g.: Startech" />
               </div>
               <div className="form-group">
                 <label>Official Website:</label>
