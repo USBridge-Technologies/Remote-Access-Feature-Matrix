@@ -1,5 +1,15 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "JetKVM",
+  "key": "jetkvm",
+  "type": "kvm",
+  "changes": {
+    "hardware": {
+      "VGA / DE-15": {
+        "status": {
+          "before": "UNKNOWN",
+          "after": "No"
+        }
+      }
+    }
+  }
 }
