@@ -54,6 +54,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 16px;
 }
 
@@ -87,7 +88,7 @@
   color: #cccccc;
   font-size: 12px;
   line-height: 1.4;
-  text-align: left;
+  text-align: center;
 }
 
 .provider-carousel {
