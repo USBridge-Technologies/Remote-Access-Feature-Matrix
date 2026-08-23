@@ -1,0 +1,372 @@
+{
+  "name": "Notecons01",
+  "manufacturer": "Startechcom",
+  "key": "notecons01",
+  "type": "kvm",
+  "website": "https://www.startech.com/en-us/kvm-switches-accessories/notecons01",
+  "github": "",
+  "description": "KVM adaptaor, connect a laptop console to a VGA & keyboard mouse of",
+  "mobileName": "Draft",
+  "features": {
+    "FPS": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Latency": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Resolution": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Dynamic Bandwidth Tuning": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Video Stream Protocol": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "USB HID Emulation": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Mouse Modes (Absolute / Relative)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audio Streaming": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Microphone": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Gamepad Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Power Control": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Virtual Media Emulation": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Physical HDD Emulation & RAM Cache": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Read-Write Overlay (Non-Destructive Mode)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "GPIO Control via Web UI": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Multiport KVM Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "PoE Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Wake-on-LAN (WoL) Sender": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Wi-Fi": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Ethernet (LAN)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Virtual Network Adapter": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Zero-Config Remote Access": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Clientless Browser": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Event Notifications (Alerting)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Multi-User Collaboration": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Open Source Firmware & Plugins": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "REST API / Webhooks": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Scripting": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Serial Console Web Gateway": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Software Ecosystem & Client": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Software USB Replug": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "System Health & Fan Control": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "2FA / TOTP Support": {
+      "status": "No"
+    },
+    "Audit Trail / Event Logging": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Encrypted Stream (TLS 1.3 / AES-256)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Enterprise Auth (LDAP / AD / SSO)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "No Subscription (On-Premise Only)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Role-Based Access Control (RBAC)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Session Recording": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "AI Agents": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "BIOS-in-Terminal (OCR)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Fleet Management / Central Dashboard": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Immutable Snapshots": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "IPMI / Redfish Emulation": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Mass Deployment / Auto-Provisioning": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Privacy / Blank Screen Mode": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "OTA Updates": {
+      "status": "UNKNOWN",
+      "comment": ""
+    }
+  },
+  "os": {},
+  "hardware": {
+    "SoC / Processor": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "RAM": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Onboard Storage": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "SD Card": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Capture Chip": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Max. Input Resolution/Refresh Rate": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "HDCP Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "USB Ports": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "HDMI Input": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "HDMI Output": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Ethernet Port": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Serial/RS232 Port": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "GPIO Pins": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Expansion Slot": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Kensington Lock": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Wi-Fi": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Bluetooth": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Cellular/LTE/5G": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Display": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "LED Indicators": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Power Supply": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Voltage/Power Connector": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Power Consumption": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "PoE (Power over Ethernet)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Backup Power / Supercapacitor": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Cooling": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Case Material": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Form Factor": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Dimensions (L×W×H)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Weight": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Mounting": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Operating Temperature": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Power Control Interface": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Watchdog / Auto-Reboot": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Certifications": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Warranty": {
+      "status": "UNKNOWN",
+      "comment": ""
+    }
+  },
+  "pricing": {
+    "Device Price": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "What's Included": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Cloud Access": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Subscription": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Additional Accessories": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Software Licensing Model": {
+      "status": "UNKNOWN",
+      "comment": ""
+    }
+  }
+}
