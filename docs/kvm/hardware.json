@@ -80,6 +80,14 @@
     "type": "text"
   },
   {
+    "name": "VGA / DE-15",
+    "categories": [
+      "Ports & Connectors"
+    ],
+    "description": "VGA input/output support.",
+    "type": "text"
+  },
+  {
     "name": "Ethernet Port",
     "categories": [
       "Ports & Connectors"

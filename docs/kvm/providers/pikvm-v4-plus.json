@@ -211,6 +211,10 @@
       "status": "2",
       "comment": ""
     },
+    "VGA / DE-15": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
     "Ethernet Port": {
       "status": "1× RJ45, 1 Gbit/s",
       "comment": ""

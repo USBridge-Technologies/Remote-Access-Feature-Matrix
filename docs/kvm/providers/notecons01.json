@@ -204,6 +204,10 @@
       "status": "No",
       "comment": ""
     },
+    "VGA / DE-15": {
+      "status": "1x Input",
+      "comment": ""
+    },
     "Ethernet Port": {
       "status": "No",
       "comment": ""

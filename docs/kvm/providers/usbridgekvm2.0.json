@@ -238,6 +238,10 @@
       "status": "1",
       "comment": ""
     },
+    "VGA / DE-15": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
     "Ethernet Port": {
       "status": "No",
       "comment": "via an external adapter"
