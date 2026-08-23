@@ -3,6 +3,9 @@
   "manufacturer": "StarTech",
   "key": "notecons01",
   "type": "kvm",
+  "website": "https://www.startech.com/en-us/kvm-switches-accessories/notecons01",
+  "description": "KVM adaptaor, connect a laptop console to a VGA & keyboard mouse of",
+  "mobileName": "notecons01",
   "features": {
     "FPS": {
       "status": "Unknown"
