@@ -1,5 +1,155 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
-}
+  "name": "Notecons01",
+  "key": "notecons01",
+  "type": "kvm",
+  "changes": {
+    "features": {
+"Backup Power / Supercapacitor": {
+"status": "No"
+},
+"Bluetooth": {
+"status": "No"
+},
+"2FA / TOTP Support": {
+"status": "No"
+},
+"AI Agents": {
+"status": "No"
+},
+"Audio Streaming": {
+"status": "No"
+},
+"Audit Trail / Event Logging": {
+"status": "Partial",
+"comment": "Depend on the host computer"
+},
+"BIOS-in-Terminal (OCR)": {
+"status": "No"
+},
+"Clientless Browser": {
+"status": "No",
+"comment": "Application for windows and Mac, opensource version on github for linux "
+},
+"Dynamic Bandwidth Tuning": {
+"status": "No"
+},
+"Encrypted Stream (TLS 1.3 / AES-256)": {
+"status": "No"
+},
+"Enterprise Auth (LDAP / AD / SSO)": {
+"status": "No"
+},
+"Ethernet (LAN)": {
+"status": "No"
+},
+"Event Notifications (Alerting)": {
+"status": "No"
+},
+"Fleet Management / Central Dashboard": {
+"status": "No"
+},
+"FPS": {
+"status": "Unknown"
+},
+"Gamepad Support": {
+"status": "No"
+},
+"GPIO Control via Web UI": {
+"status": "No"
+},
+"Immutable Snapshots": {
+"status": "No"
+},
+"IPMI / Redfish Emulation": {
+"status": "No"
+},
+"Mass Deployment / Auto-Provisioning": {
+"status": "No"
+},
+"Microphone": {
+"status": "No"
+},
+"Multi-User Collaboration": {
+"status": "Partial",
+"comment": "user can share the screen\n"
+},
+"Multiport KVM Support": {
+"status": "No"
+},
+"No Subscription (On-Premise Only)": {
+"status": "Yes"
+},
+"Open Source Firmware & Plugins": {
+"status": "Partial",
+"comment": "Comercial open source app for linux https://github.com/gwojcieszczuk/StartechNotecons01 "
+},
+"OTA Updates": {
+"status": "No"
+},
+"Physical HDD Emulation & RAM Cache": {
+"status": "Partial"
+},
+"PoE Support": {
+"status": "No"
+},
+"Power Control": {
+"status": "No"
+},
+"Privacy / Blank Screen Mode": {
+"status": "No"
+},
+"Read-Write Overlay (Non-Destructive Mode)": {
+"status": "No"
+},
+"Resolution": {
+"status": "1920x1200 @ 60Hz"
+},
+"REST API / Webhooks": {
+"status": "No"
+},
+"Role-Based Access Control (RBAC)": {
+"status": "No"
+},
+"Scripting": {
+"status": "No"
+},
+"Serial Console Web Gateway": {
+"status": "No"
+},
+"Session Recording": {
+"status": "Partial",
+"comment": "can be recorded in the terminal"
+},
+"Software Ecosystem & Client": {
+"status": "No"
+},
+"Software USB Replug": {
+"status": "No"
+},
+"System Health & Fan Control": {
+"status": "No"
+},
+"USB HID Emulation": {
+"status": "Yes"
+},
+"Virtual Media Emulation": {
+"status": "Yes"
+},
+"Video Stream Protocol": {
+"status": "Unknown"
+},
+"Virtual Network Adapter": {
+"status": "No"
+},
+"Wake-on-LAN (WoL) Sender": {
+"status": "No"
+},
+"Wi-Fi": {
+"status": "No"
+},
+"Zero-Config Remote Access": {
+"status": "No"
+        }
+      }
+    }
+  }
