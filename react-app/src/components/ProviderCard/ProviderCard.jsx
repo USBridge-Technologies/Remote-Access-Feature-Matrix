@@ -76,10 +76,10 @@ export function ProviderCard({ provider, onClose, onEdit, onHide }) {
               />
             )}
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <h2 className="provider-card-title" style={{ marginBottom: provider.manufacturer ? '4px' : '0' }}>{provider.name}</h2>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '8px', flexWrap: 'wrap' }}>
+            <h2 className="provider-card-title">{provider.name}</h2>
             {provider.manufacturer && (
-              <span style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+              <span style={{ fontSize: '13px', color: '#888', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
                 {provider.manufacturer}
               </span>
             )}
