@@ -264,7 +264,7 @@
       "comment": "No HDMI passthrough output"
     },
     "VGA / DE-15": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Ethernet Port": {
