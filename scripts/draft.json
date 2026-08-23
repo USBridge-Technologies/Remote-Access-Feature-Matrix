@@ -1,5 +1,15 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "Notecons01",
+  "key": "notecons01",
+  "type": "kvm",
+  "changes": {
+    "pricing": {
+      "Device Price": {
+        "status": {
+          "before": "Unknown",
+          "after": "$523.76"
+        }
+      }
+    }
+  }
 }
