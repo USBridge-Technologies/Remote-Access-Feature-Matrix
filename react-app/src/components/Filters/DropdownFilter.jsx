@@ -191,7 +191,7 @@ export function DropdownFilter({
                         )}
                       </span>
                       {item.manufacturer && (
-                        <span className="dropdown-item-manufacturer" style={{ display: 'block', fontSize: '11px', color: '#888', marginTop: '2px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                        <span className="dropdown-item-manufacturer" style={{ fontSize: '11px', color: '#888', marginTop: '2px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                           {item.manufacturer}
                         </span>
                       )}

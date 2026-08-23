@@ -282,12 +282,25 @@
 }
 
 .dropdown-item-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dropdown-item-label {
   white-space: nowrap;
   overflow: hidden;
-  /* Removed to allow mobile scrolling */
   text-overflow: ellipsis;
-  display: flex;
-  align-items: center;
+  max-width: 100%;
+}
+
+.dropdown-item-manufacturer {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .dropdown-item-subtype {
