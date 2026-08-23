@@ -1,19 +1,5 @@
 {
-  "name": "USBridge KVM 2.0",
-  "key": "usbridgekvm2.0",
-  "type": "kvm",
-  "changes": {
-    "hardware": {
-      "VGA / DE-15": {
-        "status": {
-          "before": "UNKNOWN",
-          "after": "No"
-        },
-        "comment": {
-          "before": "",
-          "after": "Through an adapter"
-        }
-      }
-    }
-  }
+  "name": "",
+  "key": "",
+  "changes": {}
 }
