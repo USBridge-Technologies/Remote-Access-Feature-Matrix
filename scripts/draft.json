@@ -1,15 +1,5 @@
 {
-  "name": "PiKVM V4 Plus",
-  "key": "pikvm-v4-plus",
-  "type": "kvm",
-  "changes": {
-    "hardware": {
-      "VGA / DE-15": {
-        "status": {
-          "before": "UNKNOWN",
-          "after": "No"
-        }
-      }
-    }
-  }
+  "name": "",
+  "key": "",
+  "changes": {}
 }
