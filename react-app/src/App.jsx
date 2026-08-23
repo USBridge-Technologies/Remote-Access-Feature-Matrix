@@ -598,6 +598,7 @@ function App() {
           providerName={rawData.columns.find(c => c.key === editingProvider)?.name || editingProvider}
           pendingChanges={pendingChanges}
           rawData={rawData.columns.find(c => c.key === editingProvider) || {}}
+          currentType={type}
           onClose={() => setIsSubmitModalOpen(false)}
           onSuccess={() => {
             setIsSubmitModalOpen(false);

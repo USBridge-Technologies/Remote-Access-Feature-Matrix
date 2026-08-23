@@ -1,6 +1,5 @@
 {
   "name": "SSH + X11 Forwarding",
-  "manufacturer": "OpenBSD (OpenSSH)",
   "key": "ssh-x11-forwarding",
   "type": "software",
   "website": "https://www.openssh.com",

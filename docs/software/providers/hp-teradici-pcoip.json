@@ -1,6 +1,5 @@
 {
   "name": "HP Teradici PCoIP",
-  "manufacturer": "HP (Teradici)",
   "key": "hp-teradici-pcoip",
   "type": "software",
   "website": "https://www.hp.com/us-en/workstations/hp-anyware.html",

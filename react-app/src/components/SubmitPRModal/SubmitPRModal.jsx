@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import './SubmitPRModal.css';
-
-export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawData, onClose, onSuccess }) {
+export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawData, currentType, onClose, onSuccess }) {
   const [showAuthBlock, setShowAuthBlock] = useState(false);
   const [githubPat, setGithubPat] = useState('');
   const [commitMessage, setCommitMessage] = useState('Update provider data');
@@ -284,13 +283,15 @@ export function SubmitPRModal({ providerKey, providerName, pendingChanges, rawDa
             <h3 className="draft-fields-title">New software provider information</h3>
             <div className="draft-fields-grid">
               <div className="form-group">
-                <label>Provider Name (Model) *:</label>
-                <input type="text" className="submit-pr-input" value={draftName} onChange={e => setDraftName(e.target.value)} placeholder="e.g.: Notecons01" />
+                <label>Provider Name {currentType === 'kvm' ? '(Model) ' : ''}*:</label>
+                <input type="text" className="submit-pr-input" value={draftName} onChange={e => setDraftName(e.target.value)} placeholder="e.g.: MyProvider" />
               </div>
-              <div className="form-group">
-                <label>Manufacturer:</label>
-                <input type="text" className="submit-pr-input" value={draftManufacturer} onChange={e => setDraftManufacturer(e.target.value)} placeholder="e.g.: Startech" />
-              </div>
+              {currentType === 'kvm' && (
+                <div className="form-group">
+                  <label>Manufacturer:</label>
+                  <input type="text" className="submit-pr-input" value={draftManufacturer} onChange={e => setDraftManufacturer(e.target.value)} placeholder="e.g.: Startech" />
+                </div>
+              )}
               <div className="form-group">
                 <label>Official Website:</label>
                 <input type="text" className="submit-pr-input" value={draftWebsite} onChange={e => setDraftWebsite(e.target.value)} placeholder="https://example.com" />

@@ -1,6 +1,5 @@
 {
   "name": "Microsoft RDP",
-  "manufacturer": "Microsoft Corporation",
   "key": "microsoft-rdp",
   "type": "software",
   "website": "https://learn.microsoft.com/windows-server/remote/remote-desktop-services/welcome-to-rds",
