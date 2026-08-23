@@ -1,15 +1,5 @@
 {
-  "name": "Notecons01",
-  "key": "notecons01",
-  "type": "kvm",
-  "changes": {
-    "features": {
-      "2FA / TOTP Support": {
-        "status": {
-          "before": "No",
-          "after": "Yes"
-        }
-      }
-    }
-  }
+  "name": "",
+  "key": "",
+  "changes": {}
 }
