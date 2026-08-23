@@ -194,7 +194,9 @@
     "OTA Updates": {
       "status": "UNKNOWN",
       "comment": ""
-    }
+    },
+    "Backup Power / Supercapacitor": {},
+    "Bluetooth": {}
   },
   "os": {},
   "hardware": {
