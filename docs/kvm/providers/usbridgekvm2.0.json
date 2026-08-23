@@ -1,5 +1,6 @@
 {
   "name": "USBridge KVM 2.0",
+  "manufacturer": "USBridge Technologies",
   "key": "usbridgekvm2.0",
   "type": "kvm",
   "website": "https://usbridge.io",

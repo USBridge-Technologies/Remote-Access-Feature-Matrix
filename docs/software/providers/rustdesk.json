@@ -1,5 +1,6 @@
 {
   "name": "RustDesk",
+  "manufacturer": "RustDesk",
   "key": "rustdesk",
   "type": "software",
   "website": "https://rustdesk.com",

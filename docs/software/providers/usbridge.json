@@ -1,5 +1,6 @@
 {
   "name": "USBridge",
+  "manufacturer": "USBridge Technologies",
   "key": "usbridge",
   "type": "software",
   "website": "https://usbridge.io",

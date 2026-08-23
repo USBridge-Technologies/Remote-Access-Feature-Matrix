@@ -1,5 +1,6 @@
 {
   "name": "JetKVM",
+  "manufacturer": "JetKVM",
   "key": "jetkvm",
   "type": "kvm",
   "website": "https://jetkvm.com",

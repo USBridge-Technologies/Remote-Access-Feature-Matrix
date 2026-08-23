@@ -1,5 +1,6 @@
 {
   "name": "PiKVM V4 Plus",
+  "manufacturer": "PiKVM",
   "key": "pikvm-v4-plus",
   "type": "kvm",
   "website": "https://pikvm.org/",
