@@ -8,7 +8,7 @@
       "status": "Unknown"
     },
     "Latency": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Resolution": {
@@ -18,13 +18,14 @@
       "status": "No"
     },
     "Video Stream Protocol": {
-      "status": "Unknown"
+      "status": "Not applicable",
+      "comment": "Direct local USB video passthrough to the connected laptop, not a network streaming protocol"
     },
     "USB HID Emulation": {
       "status": "Yes"
     },
     "Mouse Modes (Absolute / Relative)": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Audio Streaming": {
@@ -40,10 +41,12 @@
       "status": "No"
     },
     "Virtual Media Emulation": {
-      "status": "Yes"
+      "status": "No",
+      "comment": "Confirmed via the official manual: no virtual media/ISO/disk mounting feature exists on this device"
     },
     "Physical HDD Emulation & RAM Cache": {
-      "status": "Partial"
+      "status": "No",
+      "comment": "No storage emulation of any kind; the device only handles video capture and USB HID passthrough"
     },
     "Read-Write Overlay (Non-Destructive Mode)": {
       "status": "No"
@@ -162,174 +165,174 @@
   "os": {},
   "hardware": {
     "SoC / Processor": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Unknown",
+      "comment": "Proprietary USB video-capture ASIC; exact chip not publicly disclosed"
     },
     "RAM": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Onboard Storage": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "SD Card": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Capture Chip": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Max. Input Resolution/Refresh Rate": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "1920x1200@60Hz",
+      "comment": "StarTech recommends staying at 1080p or below for best performance"
     },
     "HDCP Support": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No",
+      "comment": "Analog VGA input; HDCP is not applicable to this connector type"
     },
     "USB Ports": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "1x USB-A (to laptop, via mini-B cable)",
+      "comment": "A USB-to-PS/2 adapter is included in the box for legacy keyboards (mouse unavailable in that mode)"
     },
     "HDMI Input": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No",
+      "comment": "Uses a DE-15 VGA input, not HDMI; a DVI/HDMI-to-VGA adapter is needed for digital-only sources"
     },
     "HDMI Output": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Ethernet Port": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Serial/RS232 Port": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "GPIO Pins": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Expansion Slot": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Kensington Lock": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Wi-Fi": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Bluetooth": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Cellular/LTE/5G": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Display": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No",
+      "comment": "No built-in screen; video is shown on the connected laptop"
     },
     "LED Indicators": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Yes",
+      "comment": "\"Server KB/Mouse\" (USB HID activity) and \"Server VGA\" (valid video signal) LEDs"
     },
     "Power Supply": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Bus-powered via USB",
+      "comment": "No external power adapter; draws power from the laptop's USB port"
     },
     "Voltage/Power Connector": {
-      "status": "UNKNOWN",
+      "status": "USB bus power (5V)",
       "comment": ""
     },
     "Power Consumption": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "PoE (Power over Ethernet)": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Backup Power / Supercapacitor": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Cooling": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Passive",
+      "comment": "Small bus-powered dongle; no active cooling"
     },
     "Case Material": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Form Factor": {
-      "status": "UNKNOWN",
+      "status": "Ultra-compact portable dongle/adapter",
       "comment": ""
     },
     "Dimensions (L×W×H)": {
-      "status": "UNKNOWN",
+      "status": "115 × 115 × 15 mm",
       "comment": ""
     },
     "Weight": {
-      "status": "UNKNOWN",
+      "status": "170 g",
       "comment": ""
     },
     "Mounting": {
-      "status": "UNKNOWN",
+      "status": "Handheld/portable, no mounting hardware",
       "comment": ""
     },
     "Operating Temperature": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Power Control Interface": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No",
+      "comment": "No ATX or host power-control capability of any kind"
     },
     "Watchdog / Auto-Reboot": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Certifications": {
-      "status": "UNKNOWN",
+      "status": "UL, CE, FCC, RoHS, TAA",
       "comment": ""
     },
     "Warranty": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Unknown",
+      "comment": "StarTech commonly offers a 2-year warranty on adapters of this type, but this wasn't confirmed specifically for this SKU"
     }
   },
   "pricing": {
     "Device Price": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "What's Included": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Partial",
+      "comment": "USB crash cart adapter, USB-to-PS/2 adapter, USB mini-B to A cable, driver/software on CD-ROM or USB flash drive"
     },
     "Cloud Access": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Subscription": {
-      "status": "UNKNOWN",
+      "status": "No",
       "comment": ""
     },
     "Additional Accessories": {
-      "status": "UNKNOWN",
+      "status": "Unknown",
       "comment": ""
     },
     "Software Licensing Model": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Partial",
+      "comment": "Official Windows/Mac client bundled free; unofficial open-source Linux client exists on GitHub (gwojcieszczuk/StartechNotecons01)"
     }
   }
 }
