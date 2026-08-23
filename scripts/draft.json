@@ -1,5 +1,312 @@
 {
-  "name": "",
-  "key": "",
-  "changes": {}
+  "name": "Notecons01",
+  "manufacturer": "StarTech",
+  "key": "notecons01",
+  "type": "kvm",
+  "features": {
+    "FPS": {
+      "status": "Unknown"
+    },
+    "Latency": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Resolution": {
+      "status": "1920x1200 @ 60Hz"
+    },
+    "Dynamic Bandwidth Tuning": {
+      "status": "No"
+    },
+    "Video Stream Protocol": {
+      "status": "Not applicable",
+      "comment": "Direct local USB video passthrough to the connected laptop, not a network streaming protocol"
+    },
+    "USB HID Emulation": {
+      "status": "Yes"
+    },
+    "Mouse Modes (Absolute / Relative)": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Audio Streaming": {
+      "status": "No"
+    },
+    "Microphone": {
+      "status": "No"
+    },
+    "Gamepad Support": {
+      "status": "No"
+    },
+    "Power Control": {
+      "status": "No"
+    },
+    "Virtual Media Emulation": {
+      "status": "No",
+      "comment": "Confirmed via the official manual: no virtual media/ISO/disk mounting feature exists on this device"
+    },
+    "Physical HDD Emulation & RAM Cache": {
+      "status": "No",
+      "comment": "No storage emulation of any kind; the device only handles video capture and USB HID passthrough"
+    },
+    "Read-Write Overlay (Non-Destructive Mode)": {
+      "status": "No"
+    },
+    "GPIO Control via Web UI": {
+      "status": "No"
+    },
+    "Multiport KVM Support": {
+      "status": "No"
+    },
+    "PoE Support": {
+      "status": "No"
+    },
+    "Wake-on-LAN (WoL) Sender": {
+      "status": "No"
+    },
+    "Wi-Fi": {
+      "status": "No"
+    },
+    "Ethernet (LAN)": {
+      "status": "No"
+    },
+    "Virtual Network Adapter": {
+      "status": "No"
+    },
+    "Zero-Config Remote Access": {
+      "status": "No"
+    },
+    "Clientless Browser": {
+      "status": "No",
+      "comment": "Application for windows and Mac, opensource version on github for linux "
+    },
+    "Event Notifications (Alerting)": {
+      "status": "No"
+    },
+    "Multi-User Collaboration": {
+      "status": "Partial",
+      "comment": "user can share the screen\n"
+    },
+    "Open Source Firmware & Plugins": {
+      "status": "Partial",
+      "comment": "Comercial open source app for linux https://github.com/gwojcieszczuk/StartechNotecons01 "
+    },
+    "REST API / Webhooks": {
+      "status": "No"
+    },
+    "Scripting": {
+      "status": "No"
+    },
+    "Serial Console Web Gateway": {
+      "status": "No"
+    },
+    "Software Ecosystem & Client": {
+      "status": "No"
+    },
+    "Software USB Replug": {
+      "status": "No"
+    },
+    "System Health & Fan Control": {
+      "status": "No"
+    },
+    "2FA / TOTP Support": {
+      "status": "No"
+    },
+    "Audit Trail / Event Logging": {
+      "status": "Partial",
+      "comment": "Depend on the host computer"
+    },
+    "Encrypted Stream (TLS 1.3 / AES-256)": {
+      "status": "No"
+    },
+    "Enterprise Auth (LDAP / AD / SSO)": {
+      "status": "No"
+    },
+    "No Subscription (On-Premise Only)": {
+      "status": "Yes"
+    },
+    "Role-Based Access Control (RBAC)": {
+      "status": "No"
+    },
+    "Session Recording": {
+      "status": "Partial",
+      "comment": "can be recorded in the terminal"
+    },
+    "AI Agents": {
+      "status": "No"
+    },
+    "BIOS-in-Terminal (OCR)": {
+      "status": "No"
+    },
+    "Fleet Management / Central Dashboard": {
+      "status": "No"
+    },
+    "Immutable Snapshots": {
+      "status": "No"
+    },
+    "IPMI / Redfish Emulation": {
+      "status": "No"
+    },
+    "Mass Deployment / Auto-Provisioning": {
+      "status": "No"
+    },
+    "Privacy / Blank Screen Mode": {
+      "status": "No"
+    },
+    "OTA Updates": {
+      "status": "No"
+    },
+    "Backup Power / Supercapacitor": {
+      "status": "No"
+    },
+    "Bluetooth": {
+      "status": "No"
+    }
+  },
+  "os": {},
+  "hardware": {
+    "SoC / Processor": {
+      "status": "Unknown",
+      "comment": "Proprietary USB video-capture ASIC; exact chip not publicly disclosed"
+    },
+    "RAM": {
+      "status": "Unknown"
+    },
+    "Onboard Storage": {
+      "status": "No"
+    },
+    "SD Card": {
+      "status": "No"
+    },
+    "Capture Chip": {
+      "status": "Unknown"
+    },
+    "Max. Input Resolution/Refresh Rate": {
+      "status": "1920x1200@60Hz",
+      "comment": "StarTech recommends staying at 1080p or below for best performance"
+    },
+    "HDCP Support": {
+      "status": "No",
+      "comment": "Analog VGA input; HDCP is not applicable to this connector type"
+    },
+    "USB Ports": {
+      "status": "1x USB-A (to laptop, via mini-B cable)",
+      "comment": "A USB-to-PS/2 adapter is included in the box for legacy keyboards (mouse unavailable in that mode)"
+    },
+    "HDMI Input": {
+      "status": "No",
+      "comment": "Uses a DE-15 VGA input, not HDMI; a DVI/HDMI-to-VGA adapter is needed for digital-only sources"
+    },
+    "HDMI Output": {
+      "status": "No"
+    },
+    "Ethernet Port": {
+      "status": "No"
+    },
+    "Serial/RS232 Port": {
+      "status": "No"
+    },
+    "GPIO Pins": {
+      "status": "No"
+    },
+    "Expansion Slot": {
+      "status": "No"
+    },
+    "Kensington Lock": {
+      "status": "Unknown"
+    },
+    "Wi-Fi": {
+      "status": "No"
+    },
+    "Bluetooth": {
+      "status": "No"
+    },
+    "Cellular/LTE/5G": {
+      "status": "No"
+    },
+    "Display": {
+      "status": "No",
+      "comment": "No built-in screen; video is shown on the connected laptop"
+    },
+    "LED Indicators": {
+      "status": "Yes",
+      "comment": "\"Server KB/Mouse\" (USB HID activity) and \"Server VGA\" (valid video signal) LEDs"
+    },
+    "Power Supply": {
+      "status": "Bus-powered via USB",
+      "comment": "No external power adapter; draws power from the laptop's USB port"
+    },
+    "Voltage/Power Connector": {
+      "status": "USB bus power (5V)",
+      "comment": ""
+    },
+    "Power Consumption": {
+      "status": "Unknown"
+    },
+    "PoE (Power over Ethernet)": {
+      "status": "No"
+    },
+    "Backup Power / Supercapacitor": {
+      "status": "No"
+    },
+    "Cooling": {
+      "status": "Passive",
+      "comment": "Small bus-powered dongle; no active cooling"
+    },
+    "Case Material": {
+      "status": "Unknown"
+    },
+    "Form Factor": {
+      "status": "Ultra-compact portable dongle/adapter"
+    },
+    "Dimensions (L×W×H)": {
+      "status": "115 × 115 × 15 mm"
+    },
+    "Weight": {
+      "status": "170 g"
+    },
+    "Mounting": {
+      "status": "Handheld/portable, no mounting hardware"
+    },
+    "Operating Temperature": {
+      "status": "Unknown"
+    },
+    "Power Control Interface": {
+      "status": "No",
+      "comment": "No ATX or host power-control capability of any kind"
+    },
+    "Watchdog / Auto-Reboot": {
+      "status": "No"
+    },
+    "Certifications": {
+      "status": "UL, CE, FCC, RoHS, TAA"
+    },
+    "Warranty": {
+      "status": "Unknown",
+      "comment": "StarTech commonly offers a 2-year warranty on adapters of this type, but this wasn't confirmed specifically for this SKU"
+    }
+  },
+  "pricing": {
+    "Device Price": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "What's Included": {
+      "status": "Partial",
+      "comment": "USB crash cart adapter, USB-to-PS/2 adapter, USB mini-B to A cable, driver/software on CD-ROM or USB flash drive"
+    },
+    "Cloud Access": {
+      "status": "No"
+    },
+    "Subscription": {
+      "status": "No"
+    },
+    "Additional Accessories": {
+      "status": "Unknown",
+      "comment": ""
+    },
+    "Software Licensing Model": {
+      "status": "Partial",
+      "comment": "Official Windows/Mac client bundled free; unofficial open-source Linux client exists on GitHub (gwojcieszczuk/StartechNotecons01)"
+    }
+  }
 }
