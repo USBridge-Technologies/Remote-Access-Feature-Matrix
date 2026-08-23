@@ -1,202 +1,163 @@
 {
   "name": "Notecons01",
-  "manufacturer": "Startechcom",
+  "manufacturer": "StarTech",
   "key": "notecons01",
   "type": "kvm",
-  "website": "https://www.startech.com/en-us/kvm-switches-accessories/notecons01",
-  "github": "",
-  "description": "KVM adaptaor, connect a laptop console to a VGA & keyboard mouse of",
-  "mobileName": "Draft",
   "features": {
     "FPS": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Unknown"
     },
     "Latency": {
       "status": "UNKNOWN",
       "comment": ""
     },
     "Resolution": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "1920x1200 @ 60Hz"
     },
     "Dynamic Bandwidth Tuning": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Video Stream Protocol": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Unknown"
     },
     "USB HID Emulation": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Yes"
     },
     "Mouse Modes (Absolute / Relative)": {
       "status": "UNKNOWN",
       "comment": ""
     },
     "Audio Streaming": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Microphone": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Gamepad Support": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Power Control": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Virtual Media Emulation": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Physical HDD Emulation & RAM Cache": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Read-Write Overlay (Non-Destructive Mode)": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "GPIO Control via Web UI": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Multiport KVM Support": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "PoE Support": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Wake-on-LAN (WoL) Sender": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Wi-Fi": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Ethernet (LAN)": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Virtual Network Adapter": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Zero-Config Remote Access": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Clientless Browser": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Event Notifications (Alerting)": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Multi-User Collaboration": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Open Source Firmware & Plugins": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "REST API / Webhooks": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Scripting": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Serial Console Web Gateway": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Software Ecosystem & Client": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "Software USB Replug": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "System Health & Fan Control": {
-      "status": "UNKNOWN",
-      "comment": ""
-    },
-    "2FA / TOTP Support": {
       "status": "Yes"
     },
+    "Physical HDD Emulation & RAM Cache": {
+      "status": "Partial"
+    },
+    "Read-Write Overlay (Non-Destructive Mode)": {
+      "status": "No"
+    },
+    "GPIO Control via Web UI": {
+      "status": "No"
+    },
+    "Multiport KVM Support": {
+      "status": "No"
+    },
+    "PoE Support": {
+      "status": "No"
+    },
+    "Wake-on-LAN (WoL) Sender": {
+      "status": "No"
+    },
+    "Wi-Fi": {
+      "status": "No"
+    },
+    "Ethernet (LAN)": {
+      "status": "No"
+    },
+    "Virtual Network Adapter": {
+      "status": "No"
+    },
+    "Zero-Config Remote Access": {
+      "status": "No"
+    },
+    "Clientless Browser": {
+      "status": "No",
+      "comment": "Application for windows and Mac, opensource version on github for linux "
+    },
+    "Event Notifications (Alerting)": {
+      "status": "No"
+    },
+    "Multi-User Collaboration": {
+      "status": "Partial",
+      "comment": "user can share the screen\n"
+    },
+    "Open Source Firmware & Plugins": {
+      "status": "Partial",
+      "comment": "Comercial open source app for linux https://github.com/gwojcieszczuk/StartechNotecons01 "
+    },
+    "REST API / Webhooks": {
+      "status": "No"
+    },
+    "Scripting": {
+      "status": "No"
+    },
+    "Serial Console Web Gateway": {
+      "status": "No"
+    },
+    "Software Ecosystem & Client": {
+      "status": "No"
+    },
+    "Software USB Replug": {
+      "status": "No"
+    },
+    "System Health & Fan Control": {
+      "status": "No"
+    },
+    "2FA / TOTP Support": {
+      "status": "No"
+    },
     "Audit Trail / Event Logging": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Partial",
+      "comment": "Depend on the host computer"
     },
     "Encrypted Stream (TLS 1.3 / AES-256)": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Enterprise Auth (LDAP / AD / SSO)": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "No Subscription (On-Premise Only)": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Yes"
     },
     "Role-Based Access Control (RBAC)": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Session Recording": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "Partial",
+      "comment": "can be recorded in the terminal"
     },
     "AI Agents": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "BIOS-in-Terminal (OCR)": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Fleet Management / Central Dashboard": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Immutable Snapshots": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "IPMI / Redfish Emulation": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Mass Deployment / Auto-Provisioning": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "Privacy / Blank Screen Mode": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
     "OTA Updates": {
-      "status": "UNKNOWN",
-      "comment": ""
+      "status": "No"
     },
-    "Backup Power / Supercapacitor": {},
-    "Bluetooth": {}
+    "Backup Power / Supercapacitor": {
+      "status": "No"
+    },
+    "Bluetooth": {
+      "status": "No"
+    }
   },
   "os": {},
   "hardware": {

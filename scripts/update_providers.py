@@ -178,11 +178,17 @@ def merge_draft(draft_path, target_path):
                 if param_name not in target_data[section]:
                     target_data[section][param_name] = {}
                 
-                if "status" in edits and "after" in edits["status"]:
-                    target_data[section][param_name]["status"] = edits["status"]["after"]
+                if "status" in edits:
+                    if isinstance(edits["status"], dict) and "after" in edits["status"]:
+                        target_data[section][param_name]["status"] = edits["status"]["after"]
+                    elif not isinstance(edits["status"], dict):
+                        target_data[section][param_name]["status"] = edits["status"]
                 
-                if "comment" in edits and "after" in edits["comment"]:
-                    target_data[section][param_name]["comment"] = edits["comment"]["after"]
+                if "comment" in edits:
+                    if isinstance(edits["comment"], dict) and "after" in edits["comment"]:
+                        target_data[section][param_name]["comment"] = edits["comment"]["after"]
+                    elif not isinstance(edits["comment"], dict):
+                        target_data[section][param_name]["comment"] = edits["comment"]
     else:
         # Fallback: standard deep_merge for full JSON
         deep_merge(target_data, draft_data)
@@ -255,7 +261,19 @@ def apply_draft():
             
         if not os.path.exists(target_path):
             print(f"Creating new provider file: {target_path}")
-            save_json(draft_data, target_path)
+            if "changes" in draft_data:
+                # Initialize a base schema so merge_draft can apply changes properly
+                base_data = {
+                    "name": draft_data.get("name", ""),
+                    "key": draft_data.get("key", ""),
+                    "type": draft_data.get("type", "")
+                }
+                if "manufacturer" in draft_data:
+                    base_data["manufacturer"] = draft_data["manufacturer"]
+                save_json(base_data, target_path)
+                merge_draft(draft_path, target_path)
+            else:
+                save_json(draft_data, target_path)
             save_json({"name": "", "key": "", "changes": {}}, draft_path)
         else:
             merge_draft(draft_path, target_path)
