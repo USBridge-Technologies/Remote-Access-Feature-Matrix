@@ -75,7 +75,7 @@
       "status": "No"
     },
     "4:4:4 Chroma Subsampling": {
-      "status": "Paid"
+      "status": "No"
     },
     "Frame Rate (FPS)": {
       "status": "120",
@@ -91,7 +91,7 @@
       "status": "No"
     },
     "Pre-Login Access": {
-      "status": "Yes",
+      "status": "Partial",
       "comment": "Windows and Linux"
     },
     "No Account Required": {

@@ -1,21 +1,5 @@
 {
-  "name": "USBridge",
-  "key": "usbridge",
-  "type": "software",
-  "changes": {
-    "features": {
-      "4:4:4 Chroma Subsampling": {
-        "status": {
-          "before": "Paid",
-          "after": "No"
-        }
-      },
-      "Pre-Login Access": {
-        "status": {
-          "before": "Yes",
-          "after": "Partial"
-        }
-      }
-    }
-  }
+  "name": "",
+  "key": "",
+  "changes": {}
 }
