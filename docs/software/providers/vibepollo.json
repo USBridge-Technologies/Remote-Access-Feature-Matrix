@@ -1,0 +1,265 @@
+{
+  "name": "Vibepollo",
+  "key": "vibepollo",
+  "type": "software",
+  "website": "https://github.com/Nonary/Vibepollo",
+  "github": "https://github.com/Nonary/Vibepollo",
+  "description": "A fork-of-a-fork: Vibepollo builds on Apollo (itself a Sunshine fork), adding AI-assisted development, automatic virtual-display management, Windows Graphics Capture in Service Mode, and deep Playnite game-library integration. Windows-first in practice, even though the underlying Sunshine codebase is cross-platform.",
+  "features": {
+    "Wayland Unattended Access": {
+      "status": "Unknown",
+      "comment": "The project's own enhancements (virtual display, WGC service mode) are Windows-only; Linux/Wayland behavior isn't clearly documented"
+    },
+    "P2P (Direct Connection)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Relay Server": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "LAN Discovery": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Tailscale Support": {
+      "status": "No",
+      "comment": "No native integration; works over any reachable network"
+    },
+    "Open Source": {
+      "status": "Yes",
+      "comment": "Fully open source on GitHub, in the same license lineage as Sunshine/Apollo"
+    },
+    "Multi-Monitor Support": {
+      "status": "Partial",
+      "comment": "A dropdown lets you pick which display to stream; the virtual display auto-matches the client, but it's one display per session"
+    },
+    "Drawing Tablet Support": {
+      "status": "No"
+    },
+    "Gamepad Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audio Streaming": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Microphone Passthrough": {
+      "status": "No"
+    },
+    "Adaptive Bitrate": {
+      "status": "Yes",
+      "comment": "Inherited from the underlying Sunshine/Moonlight streaming protocol"
+    },
+    "H.264 Codec": {
+      "status": "Yes"
+    },
+    "H.265 Codec": {
+      "status": "Yes",
+      "comment": "Includes fixes for false/incorrect HEVC support detection on headless setups"
+    },
+    "AV1 Codec": {
+      "status": "Unknown"
+    },
+    "V-Sync": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Session Sharing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Multi-User Sessions": {
+      "status": "No",
+      "comment": "Streams a single display/session, not isolated multi-user terminal sessions"
+    },
+    "Virtual Display": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "4:4:4 Chroma Subsampling": {
+      "status": "Unknown"
+    },
+    "Frame Rate (FPS)": {
+      "status": "Unknown",
+      "comment": "Depends on host GPU encoder; the virtual display auto-matches the client's own refresh rate"
+    },
+    "Session Recording": {
+      "status": "No"
+    },
+    "ISO Mounting": {
+      "status": "No"
+    },
+    "Wake-on-LAN": {
+      "status": "Unknown"
+    },
+    "Pre-Login Access": {
+      "status": "No",
+      "comment": "Requires an active logged-in Windows session to capture from, like the Sunshine base it's built on"
+    },
+    "No Account Required": {
+      "status": "Yes",
+      "comment": "Self-hosted with one-time PIN-based client pairing, no cloud account of any kind"
+    },
+    "KVM Integration": {
+      "status": "No"
+    },
+    "Shared Clipboard": {
+      "status": "Yes",
+      "comment": "Explicitly listed as a core feature (inherited from Apollo)"
+    },
+    "SSO / OIDC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "2FA / MFA": {
+      "status": "No"
+    },
+    "Address Book": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Audit Logs": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Mass Deployment": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "RBAC": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Privacy Mode (Black Screen)": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Remote Printing": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Generic USB Passthrough": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "File Manager UI": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Text Chat": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "On-Screen Whiteboard": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Proxy Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "UAC Handling": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "HDR Support": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "OTA Updates": {
+      "status": "UNKNOWN",
+      "comment": ""
+    }
+  },
+  "os": {
+    "Windows: Host": {
+      "status": "Yes",
+      "comment": "The primary, most developed platform — virtual display and WGC service mode are Windows-only features"
+    },
+    "Windows: Client": {
+      "status": "Yes"
+    },
+    "macOS: Host": {
+      "status": "Partial",
+      "comment": "Inherited from the base Sunshine codebase, but Vibepollo's own enhancements don't target macOS"
+    },
+    "macOS: Client": {
+      "status": "Yes",
+      "comment": "Via Artemis (a companion Moonlight fork) or standard Moonlight clients"
+    },
+    "Linux X11: Host": {
+      "status": "Partial",
+      "comment": "Inherited from Sunshine; Vibepollo's headless-specific fixes are documented with Windows in mind"
+    },
+    "Linux Wayland: Host": {
+      "status": "Unknown"
+    },
+    "Linux: Client": {
+      "status": "Yes"
+    },
+    "Android: Host": {
+      "status": "No"
+    },
+    "Android: Client": {
+      "status": "Yes"
+    },
+    "iOS: Client": {
+      "status": "Yes"
+    },
+    "Web Browser: Client": {
+      "status": "No",
+      "comment": "The web UI is for configuration and client pairing, not for viewing the actual video stream in-browser"
+    }
+  },
+  "hardware": {
+    "NVIDIA RTX 4090": {
+      "status": "Unknown",
+      "comment": "No official published benchmark table; performance follows the host GPU's encoder tier (NVIDIA/AMD/Intel)"
+    },
+    "NVIDIA RTX 3090": {
+      "status": "Unknown"
+    },
+    "NVIDIA RTX 3060": {
+      "status": "Unknown"
+    },
+    "NVIDIA GTX 1060": {
+      "status": "Unknown"
+    },
+    "Apple Silicon GPU (Metal)": {
+      "status": "Unknown"
+    },
+    "Intel iGPU (QuickSync)": {
+      "status": "Unknown",
+      "comment": "Intel hardware encoding is explicitly supported"
+    }
+  },
+  "pricing": {
+    "Pricing Model": {
+      "status": "UNKNOWN",
+      "comment": ""
+    },
+    "Free Tier": {
+      "status": "Yes",
+      "comment": "Completely free and open source, no paid tiers at all"
+    },
+    "Personal: Monthly": {
+      "status": "$0"
+    },
+    "Personal: Annual": {
+      "status": "$0"
+    },
+    "Team / Business: Monthly": {
+      "status": "$0"
+    },
+    "Team / Business: Annual": {
+      "status": "$0"
+    },
+    "Enterprise": {
+      "status": "$0"
+    }
+  },
+  "mobileName": "Vibepollo",
+  "subtype": "application"
+}
